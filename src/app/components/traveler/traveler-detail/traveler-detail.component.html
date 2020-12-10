@@ -1,0 +1,22 @@
+<h2>Détail du voyageur</h2>
+
+<p>{{traveler.firstName}} {{traveler.lastName}}</p>
+
+
+<form *ngIf="traveler !== null" class="col-lg-4 offset-4" [formGroup]="travelerForm" (ngSubmit)="onUpdateTraveler()">
+  <div class="form-group">
+    <label for="firstName">Prénom</label>
+    <input type="text" class="form-control" id="firstName" formControlName="firstName">
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Nom</label>
+    <input type="text" class="form-control" id="lastName" formControlName="lastName">
+  </div>
+
+  <button type="submit" class="btn btn-success" [disabled]="travelerForm.invalid || loading">
+    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+    Modifier</button>
+
+</form>
+
