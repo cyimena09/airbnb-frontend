@@ -10,6 +10,7 @@ import {PaymentComponent} from './components/user/booking/real-estate-booking/pa
 import {UsersListComponent} from './components/admin/users-list/users-list.component';
 import {SignupComponent} from './components/public/signup/signup.component';
 import {SigninComponent} from './components/public/signin/signin.component';
+import {RealEstatesListComponent} from './components/admin/real-estates-list/real-estates-list.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
     children: [{path: 'payement', component: PaymentComponent}]},
 
   // ADMIN
-  {path: 'users-list', component: UsersListComponent}
+  {path: 'users-list', component: UsersListComponent},
+  {path: 'realestates-list', component: RealEstatesListComponent}
 
 
 ];

@@ -21,6 +21,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UsersListComponent } from './components/admin/users-list/users-list.component';
 import { SignupComponent } from './components/public/signup/signup.component';
 import { SigninComponent } from './components/public/signin/signin.component';
+import { RealEstatesListComponent } from './components/admin/real-estates-list/real-estates-list.component';
 // import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SigninComponent } from './components/public/signin/signin.component';
     HeaderComponent,
     UsersListComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    RealEstatesListComponent
   ],
   imports: [
     BrowserModule,
