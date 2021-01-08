@@ -7,3 +7,14 @@
 <ul *ngFor="let user of users">
   <li>{{user.firstName}} {{user.lastName}}.</li>
 </ul>
+
+
+<h2>Reservations</h2>
+
+<div *ngFor="let booking of bookings">
+
+
+  <p>Le bien : <strong>{{booking.realEstate.name}}</strong>  à été réservé par l'utilisateur  :  <strong>{{booking.user.firstName}}</strong>
+    du <strong>{{booking.startDate}}</strong>  jusqu'au <strong>{{booking.endDate}}</strong>.
+  </p>
+</div>

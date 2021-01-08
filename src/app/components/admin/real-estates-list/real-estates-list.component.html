@@ -3,6 +3,23 @@
 <button (click)="onCreateRE()">Créer un bien</button>
 
 
-<ul *ngFor="let re of realestates">
-  <li>{{re.name}}  <button (click)="onBooking()">Réserver</button></li>
-</ul>
+<div *ngFor="let re of realestates">
+
+  <p>Nom du bien : {{re.name}}</p>
+
+
+   <button (click)="onCreateBooking()">Réserver</button>
+</div>
+
+
+
+<h2>Reservations par bien</h2>
+
+<div *ngFor="let booking of bookings">
+
+
+  <p>Le bien : <strong>{{booking.realEstate.name}}</strong>  à été réservé par l'utilisateur  :  <strong>{{booking.user.firstName}}</strong>
+    du <strong>{{booking.startDate}}</strong>  jusqu'au <strong>{{booking.endDate}}</strong>.
+  </p>
+  <button (click)="onDeleteBooking(booking.id)">Supprimer</button>
+</div>

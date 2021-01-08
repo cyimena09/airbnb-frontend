@@ -28,8 +28,8 @@ export class UsersListComponent implements OnInit {
 
     onCreateUser(){
     let newUser = new User();
-    newUser.firstName = "Amaury";
-    newUser.lastName = "Cyemezo";
+    newUser.firstName = "Emile";
+    newUser.lastName = "Cyimena";
     this.userService.createUser(newUser).subscribe(
       () => {console.log("L'utilisateur a été créé !")}
     );
