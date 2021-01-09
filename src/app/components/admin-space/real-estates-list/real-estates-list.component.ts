@@ -18,21 +18,24 @@ export class RealEstatesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRealEstates();
-    this.getBookingsByRealEstate()
   }
 
   getRealEstates(){
     this.reService.getRealEstates().subscribe(
-      (data: any) => {this.realestates = data.content;}
+      (data: any) => {
+        this.realestates = data.content;
+      },
+      (error) => {console.log("Une erreur est survenue", error)}
     )
   }
 
   onCreateRE(){
     let newRE = new RealEstate();
-    newRE.name = "Villa";
+    newRE.name = "Hotel Hilton";
     newRE.price = 500;
-    // newRE.FK_CountryID = 1;
-    // newRE.FK_PostalCode = 2
+    newRE.address.street = "Rue cours boisacq"
+    newRE.address.number = 18;
+    newRE.address.postalCode = 1301;
     this.reService.createRealEstate(newRE).subscribe(
       () => {console.log("Le bien a été créé")}
     )
@@ -61,12 +64,5 @@ export class RealEstatesListComponent implements OnInit {
     )
   }
 
-
-
-  getBookingsByRealEstate(){
-    this.bookingService.getBookingsByRealEstate().subscribe(
-      (data: any) => {this.bookings = data.content; console.log(data.content)}
-    );
-  }
 
 }

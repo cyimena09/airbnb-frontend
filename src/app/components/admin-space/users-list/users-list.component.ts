@@ -23,21 +23,14 @@ export class UsersListComponent implements OnInit {
     return this.userService.getUsers().subscribe(
       (data: any) => {
         this.users = data.content;
+        console.log(this.users)
       });
   }
 
-    onCreateUser(){
-    let newUser = new User();
-    newUser.firstName = "Emile";
-    newUser.lastName = "Cyimena";
-    this.userService.createUser(newUser).subscribe(
-      () => {console.log("L'utilisateur a été créé !")}
-    );
-  }
 
   getBookingByUser(){
-    return this.bookingService.getBookingsByUser().subscribe(
-      (data: any) => {this.bookings = data.content; console.log(data)}
+    return this.bookingService.getBookingsByUser(1).subscribe(
+      (data: any) => {this.bookings = data.content;}
     )
   }
 

@@ -1,0 +1,11 @@
+<h2>Liste des réservations</h2>
+<div *ngIf="bookings !== null">
+
+
+<div *ngFor="let booking of bookings">
+  <ul>
+    <li>Début : {{booking.startDate}} Fin: {{booking.endDate}}</li>
+  </ul>
+  <p></p>
+</div>
+</div>

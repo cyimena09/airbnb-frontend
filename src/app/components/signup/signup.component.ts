@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from '../../../models/User';
-import {UserService} from '../../../services/user/user.service';
+import {User} from '../../models/User';
+import {UserService} from '../../services/user/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,11 +15,15 @@ export class SignupComponent implements OnInit {
   }
 
 
-  createUser(){
+
+
+  onCreateUser(){
     let newUser = new User();
-    newUser.firstName = "Emile";
-    newUser.lastName = "Cyimena";
-    this.userService.createUser(newUser).subscribe();
+    newUser.firstName = "Amaury";
+    newUser.lastName = "Cyemezo";
+    this.userService.createUser(newUser).subscribe(
+      () => {console.log("L'utilisateur a été créé !")}
+    );
   }
 
 }

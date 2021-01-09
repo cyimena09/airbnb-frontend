@@ -9,11 +9,16 @@ export class BookingService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getBookingsByRealEstate(){
-    return this.httpClient.get('/api/v1/realestates/3/bookings/');
+  getBookings(){
+    return this.httpClient.get(this.apiURL);
   }
-  getBookingsByUser(){
-    return this.httpClient.get('/api/v1/users/2/bookings');
+
+  getBookingsByRealEstate(id){
+    return this.httpClient.get('/api/v1/realestates/' + id + '/bookings');
+  }
+
+  getBookingsByUser(id){
+    return this.httpClient.get('/api/v1/users/' + id + '/bookings');
   }
 
   createBooking(newBooking) {

@@ -1,0 +1,20 @@
+<h2>Location</h2>
+<div *ngIf="realEstate != null ">
+<p>Nom : {{realEstate.name}}</p>
+<p>Type : {{realEstate.type}}</p>
+<p>Description : {{realEstate.description}}</p>
+<p>Chambres : {{realEstate.bedroom}}</p>
+<p *ngIf="realEstate.garden">La villa dispose d'un jardin</p>
+<p>Nom : {{realEstate.name}}</p>
+
+
+
+<label for="periodeBooking">Date de location</label>
+<input id="periodeBooking" type="text">
+
+<p>Contacter le propriétaire : 0484090855</p>
+
+<p>Prix total :  {{realEstate.price}} €/j</p>
+<button (click)="onCreateBooking(realEstate.id)">Payer (réserver)</button>
+
+</div>

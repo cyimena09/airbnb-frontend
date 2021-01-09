@@ -1,8 +1,14 @@
+import {Address} from './Address';
+
 export class RealEstate {
   id;
   name: string;
+  type: string;
+  description: string;
+  bedroom: string;
+  garden: Boolean;
   price: number;
-  // FK_Type;
-  // FK_CountryID;
-  // FK_PostalCode
+  rating;
+  address: Address = new Address();
+
 }
