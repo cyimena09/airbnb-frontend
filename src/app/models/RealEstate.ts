@@ -5,7 +5,7 @@ export class RealEstate {
   name: string;
   type: string;
   description: string;
-  bedroom: string;
+  bedroom: number;
   garden: Boolean;
   price: number;
   rating;

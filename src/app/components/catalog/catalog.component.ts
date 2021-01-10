@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RealEstateService} from '../../services/real-estate/real-estate.service';
 import {RealEstate} from '../../models/RealEstate';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-catalog',
@@ -9,11 +10,21 @@ import {RealEstate} from '../../models/RealEstate';
 })
 export class CatalogComponent implements OnInit {
   realEstates: [RealEstate];
+  loading = false;
+  catalogForm: FormGroup;
 
-  constructor(private realEstateService: RealEstateService) { }
+  constructor(private realEstateService: RealEstateService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.initForm();
     this.getRealEstates();
+    this.onSearch();
+  }
+
+  initForm(): void {
+    this.catalogForm = this.formBuilder.group({
+      type: ['', Validators.required]
+    });
   }
 
   getRealEstates(){
@@ -21,8 +32,42 @@ export class CatalogComponent implements OnInit {
       (data: any) => {
         this.realEstates = data.content;
       },
-      (error) => {console.log("Une erreur est survenue", error)}
-    )
+      () => {
+        console.log("Une erreur est survenue")
+      });
   }
+
+  onSearch(){
+    console.log(this.catalogForm.value.type)
+
+    this.realEstateService.searchRealEstate().subscribe(
+      (data) => {
+        console.log(data)
+      },
+      (error) => {console.log(error)})
+    }
+
+
+    // this.loading = true;
+    // let newRE = new RealEstate();
+    // newRE.type = this.catalogForm.value.type;
+    // this.realEstateService.createRealEstate(newRE).subscribe(
+    //   () => {
+    //     console.log("Le bien a été créé")
+    //     this.loading = false;
+    //   },
+    //   (message) => {
+    //     console.log(message.error);
+    //     this.loading = false;
+    //   });
+
+ // }
+
+
+  get f() {
+    return this.catalogForm.controls;
+  }
+
+
 
 }

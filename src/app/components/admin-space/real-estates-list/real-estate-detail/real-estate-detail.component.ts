@@ -9,6 +9,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class RealEstateDetailComponent implements OnInit {
   id = this.activatedRoute.snapshot.params['id'];
+  realEstate: any = { };
+  bookings;
 
   constructor(private bookingService: BookingService, private activatedRoute: ActivatedRoute) { }
 
@@ -18,7 +20,10 @@ export class RealEstateDetailComponent implements OnInit {
 
   getBookingByRealEstate(){
     return this.bookingService.getBookingsByRealEstate(this.id).subscribe(
-      (data: any) => {console.log(data)}
-    )
+      (data: any) => {
+        this.bookings = data.content;
+        this.realEstate = this.bookings[0].realEstate;
+      });
   }
+
 }

@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
-import {AddRealEstateComponent} from './components/user/add-real-estate/add-real-estate.component';
-import {UserRealEstateListComponent} from './components/user/user-space/user-real-estate-list/user-real-estate-list.component';
-import {UserRealEstateUpdateComponent} from './components/user/user-space/user-real-estate-update/user-real-estate-update.component';
+import {AddRealEstateComponent} from './components/user-space/add-real-estate/add-real-estate.component';
 import {RealEstateBookingComponent} from './components/catalog/real-estate-booking/real-estate-booking.component';
 import {UsersListComponent} from './components/admin-space/users-list/users-list.component';
 import {SignupComponent} from './components/signup/signup.component';
@@ -14,6 +12,7 @@ import {BookingsListComponent} from './components/admin-space/bookings-list/book
 import {UserDetailComponent} from './components/admin-space/users-list/user-detail/user-detail.component';
 import {RealEstateDetailComponent} from './components/admin-space/real-estates-list/real-estate-detail/real-estate-detail.component';
 import {RealEstateLearnMoreComponent} from './components/catalog/real-estate-learn-more/real-estate-learn-more.component';
+import {UserSpaceComponent} from './components/user-space/user-space.component';
 
 
 const routes: Routes = [
@@ -28,9 +27,10 @@ const routes: Routes = [
 
 
   // USER
-  {path: 'add-real-estate', component: AddRealEstateComponent},
-  {path: 'user-space/user-real-estate-list', component: UserRealEstateListComponent},
-  {path: 'user-space/real-estate-update/:id', component: UserRealEstateUpdateComponent},
+  {path: 'user-space', component: UserSpaceComponent,
+  children: [
+      {path: 'add-real-estate', component: AddRealEstateComponent},
+  ]},
 
   // ADMIN
   {

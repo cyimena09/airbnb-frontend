@@ -1,0 +1,62 @@
+
+<form class="col-lg-4 offset-4" [formGroup]="realEstateForm" (ngSubmit)="onCreateRE()">
+
+  <h3>Information de votre propriété</h3>
+  <label for="realEstateName">Nom du bien</label>
+  <input type="text" class="form-control" id="realEstateName" formControlName="name">
+
+  <label for="type"></label>
+  <select name="type" id="type" formControlName="type">
+    <option value="">--Please choose an option--</option>
+    <option value="dog">Appartement</option>
+    <option value="cat">Maison</option>
+    <option value="cat">Auberge</option>
+    <option value="cat">Villa</option>
+  </select>
+
+  <label for="description">Description</label>
+  <input type="text" class="form-control" id="description" formControlName="description">
+
+  <label for="bedroom">Nombre de chambre</label>
+  <input type="text" class="form-control" id="bedroom" formControlName="bedroom">
+
+  <p>Jardin :</p>
+
+<div>
+  <input type="radio" id="yes" formControlName="garden" value=true checked>
+  <label for="yes">Oui</label>
+</div>
+
+<div>
+  <input type="radio" id="no" formControlName="garden" value=false>
+  <label for="no">Non</label>
+</div>
+
+
+  <label for="price">Prix</label>
+  <input type="text" class="form-control" id="price" formControlName="price">
+
+  <h3>Adresse</h3>
+
+  <label for="street">Rue</label>
+  <input type="text" class="form-control" id="street" formControlName="street">
+
+  <label for="number">Numéro</label>
+  <input type="text" class="form-control" id="number" formControlName="number">
+
+  <label for="postalCode">Code postal</label>
+  <input type="text" class="form-control" id="postalCode" formControlName="postalCode">
+
+  <label for="country">Pays</label>
+  <input type="text" class="form-control" id="country" formControlName="country">
+
+  <label for="photo">Ajouter une photo</label>
+  <input type="text" class="form-control" id="photo">
+
+
+
+  <button type="submit" class="btn btn-success" [disabled]="realEstateForm.invalid || loading">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Enregistrer</button>
+</form>
+

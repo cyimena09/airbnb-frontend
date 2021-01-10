@@ -1,6 +1,8 @@
 <h2>Liste des utilisateurs</h2>
 
+<div *ngIf="users !== null">
+  <ul *ngFor="let user of users">
+    <li>{{user.firstName}} {{user.lastName}} <button routerLink="{{user.id}}">Détails</button></li>
+  </ul>
+</div>
 
-<ul *ngFor="let user of users">
-  <li>{{user.firstName}} {{user.lastName}} <button routerLink="{{user.id}}">Détails</button></li>
-</ul>

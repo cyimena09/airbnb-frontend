@@ -9,7 +9,7 @@ import {BookingService} from '../../../services/booking/booking.service';
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
-  users;
+  users = [];
   bookings;
 
   constructor(private userService: UserService, private bookingService: BookingService) { }
@@ -23,15 +23,15 @@ export class UsersListComponent implements OnInit {
     return this.userService.getUsers().subscribe(
       (data: any) => {
         this.users = data.content;
-        console.log(this.users)
       });
   }
 
 
   getBookingByUser(){
     return this.bookingService.getBookingsByUser(1).subscribe(
-      (data: any) => {this.bookings = data.content;}
-    )
+      (data: any) => {
+        this.bookings = data.content;
+      });
   }
 
 }

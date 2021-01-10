@@ -18,7 +18,9 @@ export class BookingsListComponent implements OnInit {
 
   getBookingsByUser(){
     return this.bookingService.getBookings().subscribe(
-      (data: any) => {this.bookings = data.content; console.log(data.content)}
+      (data: any) => {
+        this.bookings = data.content;
+      }
     );
   }
 

@@ -37,7 +37,11 @@ export class RealEstateBookingComponent implements OnInit {
     newBooking.endDate = "2021-01-06 11:30:01";
 
     this.bookingService.createBooking(newBooking).subscribe(
-      () => {console.log("Le bien a été réservé ")});
+      () => {
+        console.log("Le bien a été réservé ")
+      },
+      (message) => {console.log(message.error)}
+      );
   }
 
 }

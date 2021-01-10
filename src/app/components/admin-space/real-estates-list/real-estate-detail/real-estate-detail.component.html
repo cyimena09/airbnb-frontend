@@ -1,1 +1,8 @@
-<p>real-estate-detail works!</p>
+
+<div *ngIf="bookings !== null">
+<h2>Liste des réservations de {{realEstate.name}}</h2>
+
+<ul *ngFor="let booking of bookings">
+  <li>Début :  {{booking.startDate}}  Fin : {{booking.endDate}}  Réservé par : {{booking.user.firstName}} {{booking.user.lastName}}</li>
+</ul>
+</div>

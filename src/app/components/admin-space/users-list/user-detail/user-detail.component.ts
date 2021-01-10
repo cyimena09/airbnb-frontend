@@ -11,7 +11,7 @@ import {User} from '../../../../models/User';
 })
 export class UserDetailComponent implements OnInit {
   id = this.activatedRoute.snapshot.params['id'];
-  user = '';
+  user: any = { };
   bookings;
 
   constructor(private userService: UserService,
@@ -27,10 +27,7 @@ export class UserDetailComponent implements OnInit {
       (data: any) => {
         this.bookings = data.content;
         this.user = this.bookings[0].user;
-
-        //console.log(data.content)
-      }
-    );
+      });
   }
 
 }
