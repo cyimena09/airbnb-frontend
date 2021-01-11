@@ -2,7 +2,9 @@
 export class Address{
   id;
   street;
-  number;
+  streetNumber;
   postalCode;
   country;
+  city;
+  address: Address = new Address();
 }

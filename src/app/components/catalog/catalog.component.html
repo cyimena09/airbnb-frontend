@@ -6,10 +6,14 @@
     <label for="pet-select">Que souhaitez-vous louer ?</label>
 
     <select id="pet-select" formControlName="type">
-      <option value="">--Please choose an option--</option>
-      <option value="dog">Appartement</option>
-      <option value="cat">Maison</option>
+      <option value="">-- Type d'immobilier --</option>
+      <option value="appartment">Appartement</option>
+      <option value="house">Maison</option>
+      <option value="villa">Villa</option>
     </select>
+
+        <label for="price">Prix maximum</label>
+    <input id="price" type="text" formControlName="price">
 
 <!--    <label for="country">Pays</label>-->
 <!--    <input id="country" type="text" formControlName="country">-->
@@ -17,8 +21,7 @@
 <!--     <label for="city">Ville</label>-->
 <!--    <input id="city" type="text" formControlName="city">-->
 
-<!--    <label for="price">Fourchette de prix</label>-->
-<!--    <input id="price" type="text" formControlName="price">-->
+
 
 <!--    <label for="startDate">Période de location</label>-->
 <!--    <p>Du</p>-->

@@ -18,12 +18,12 @@ export class CatalogComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
     this.getRealEstates();
-    this.onSearch();
   }
 
   initForm(): void {
     this.catalogForm = this.formBuilder.group({
-      type: ['', Validators.required]
+      type: ['', Validators.required],
+      price: ['', Validators.required]
     });
   }
 
@@ -38,10 +38,13 @@ export class CatalogComponent implements OnInit {
   }
 
   onSearch(){
-    console.log(this.catalogForm.value.type)
+    let type = this.catalogForm.value.type;
 
-    this.realEstateService.searchRealEstate().subscribe(
-      (data) => {
+     type = "vaiselle";
+
+    this.realEstateService.searchRealEstate(type).subscribe(
+      (data: any) => {
+        this.realEstates = data.content;
         console.log(data)
       },
       (error) => {console.log(error)})
