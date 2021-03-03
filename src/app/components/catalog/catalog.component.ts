@@ -18,12 +18,18 @@ export class CatalogComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
     this.getRealEstates();
+
   }
 
   initForm(): void {
     this.catalogForm = this.formBuilder.group({
       type: ['', Validators.required],
-      price: ['', Validators.required]
+      bedroom: ['', Validators.required],
+      price: ['', Validators.required],
+      country: ['', Validators.required],
+      city: ['', Validators.required],
+      startDate: ['', Validators.required],
+      endDate: ['', Validators.required]
     });
   }
 
@@ -38,16 +44,25 @@ export class CatalogComponent implements OnInit {
   }
 
   onSearch(){
-    let type = this.catalogForm.value.type;
+    // warning search is case sensitive
+    let formValue = this.catalogForm.value;
+    let type = formValue.type;
+    let bedroom = formValue.bedroom;
+    let price = formValue.price;
+    let country = formValue.country;
+    let city = formValue.city;
+    let startDate = formValue.startDate;
+    let endDate = formValue.endDate;
 
-     type = "vaiselle";
+    console.log(startDate);
 
-    this.realEstateService.searchRealEstate(type).subscribe(
+    this.realEstateService.searchRealEstate(type, bedroom, price, country, city, startDate, endDate).subscribe(
       (data: any) => {
         this.realEstates = data.content;
-        console.log(data)
       },
-      (error) => {console.log(error)})
+      (error) => {
+        console.log(error)
+      });
     }
 
 
@@ -70,6 +85,12 @@ export class CatalogComponent implements OnInit {
   get f() {
     return this.catalogForm.controls;
   }
+
+
+
+
+
+
 
 
 

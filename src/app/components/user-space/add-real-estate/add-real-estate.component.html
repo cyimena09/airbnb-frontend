@@ -8,10 +8,11 @@
   <label for="type"></label>
   <select name="type" id="type" formControlName="type">
     <option value="">--Please choose an option--</option>
-    <option value="dog">Appartement</option>
-    <option value="cat">Maison</option>
-    <option value="cat">Auberge</option>
-    <option value="cat">Villa</option>
+    <option value="appartment">Appartement</option>
+    <option value="house">Maison</option>
+    <option value="hostel">Auberge</option>
+    <option value="hotel">Hôtel</option>
+    <option value="villa">Villa</option>
   </select>
 
   <label for="description">Description</label>
@@ -22,15 +23,15 @@
 
   <p>Jardin :</p>
 
-<div>
-  <input type="radio" id="yes" formControlName="garden" value=true checked>
-  <label for="yes">Oui</label>
-</div>
+  <div>
+    <input type="radio" id="yes"  value=true checked formControlName="garden">
+    <label for="yes">Oui</label>
+  </div>
 
-<div>
-  <input type="radio" id="no" formControlName="garden" value=false>
-  <label for="no">Non</label>
-</div>
+  <div>
+    <input type="radio" id="no" value=false formControlName="garden">
+    <label for="no">Non</label>
+  </div>
 
 
   <label for="price">Prix</label>
@@ -41,8 +42,11 @@
   <label for="street">Rue</label>
   <input type="text" class="form-control" id="street" formControlName="street">
 
-  <label for="number">Numéro</label>
-  <input type="text" class="form-control" id="number" formControlName="number">
+  <label for="streetNumber">Numéro</label>
+  <input type="text" class="form-control" id="streetNumber" formControlName="streetNumber">
+
+  <label for="city">Ville</label>
+  <input type="text" class="form-control" id="city" formControlName="city">
 
   <label for="postalCode">Code postal</label>
   <input type="text" class="form-control" id="postalCode" formControlName="postalCode">
@@ -54,9 +58,7 @@
   <input type="text" class="form-control" id="photo">
 
 
-
-  <button type="submit" class="btn btn-success" [disabled]="realEstateForm.invalid || loading">
-      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-      Enregistrer</button>
+  <button type="submit">Enregistrer</button>
 </form>
+
 

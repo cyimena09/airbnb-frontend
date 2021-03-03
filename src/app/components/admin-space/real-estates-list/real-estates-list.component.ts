@@ -10,19 +10,25 @@ export class RealEstatesListComponent implements OnInit {
   realestates
   bookings;
 
-  constructor(private reService: RealEstateService) { }
+  constructor(private realEstateService: RealEstateService) { }
 
   ngOnInit(): void {
     this.getRealEstates();
   }
 
   getRealEstates(){
-    this.reService.getRealEstates().subscribe(
+    this.realEstateService.getRealEstates().subscribe(
       (data: any) => {
         this.realestates = data.content;
       },
       () => {console.log("Une erreur est survenue");
       });
+  }
+
+  onDeleteRealEstate(id){
+    this.realEstateService.deleteRealEstate(id).subscribe(
+      () => {console.log("real estate deleted")}
+    )
   }
 
 }

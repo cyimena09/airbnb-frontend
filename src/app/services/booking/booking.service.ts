@@ -25,8 +25,9 @@ export class BookingService {
     return this.httpClient.post(this.apiURL, newBooking);
   }
 
-  deleteBooking(id){
-    return this.httpClient.delete(this.apiURL + id)
+  updateBooking(id){
+    // set status on cancelled
+    return this.httpClient.put(this.apiURL + id, null)
   }
 
 

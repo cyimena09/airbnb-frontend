@@ -22,6 +22,8 @@ import { RealEstateLearnMoreComponent } from './components/catalog/real-estate-l
 import {RealEstateDetailComponent} from './components/admin-space/real-estates-list/real-estate-detail/real-estate-detail.component';
 import { UserSpaceComponent } from './components/user-space/user-space.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RatingComponent } from './components/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +44,15 @@ import {ReactiveFormsModule} from '@angular/forms';
     BookingsListComponent,
     UserDetailComponent,
     RealEstateLearnMoreComponent,
-    UserSpaceComponent
+    UserSpaceComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

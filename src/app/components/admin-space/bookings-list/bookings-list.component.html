@@ -1,10 +1,16 @@
-<h2>Liste des réservations</h2>
+<h2>Liste de toutes les réservations</h2>
 <div *ngIf="bookings !== null">
 
 
 <div *ngFor="let booking of bookings">
   <ul>
-    <li>Début : {{booking.startDate}} Fin: {{booking.endDate}}</li>
+    <li>Nom du bien : {{booking.realEstate.name}}
+      Début : {{booking.startDate}} Fin: {{booking.endDate}}
+      Par : {{booking.user.firstName}} {{booking.user.lastName}}
+      Statut : {{booking.status}}
+      <button (click)="onCancelBooking(booking.id)">Annuler</button>
+    </li>
+
   </ul>
   <p></p>
 </div>

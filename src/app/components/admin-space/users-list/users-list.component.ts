@@ -12,11 +12,10 @@ export class UsersListComponent implements OnInit {
   users = [];
   bookings;
 
-  constructor(private userService: UserService, private bookingService: BookingService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.getUsers();
-    this.getBookingByUser();
   }
 
   getUsers(){
@@ -26,12 +25,11 @@ export class UsersListComponent implements OnInit {
       });
   }
 
-
-  getBookingByUser(){
-    return this.bookingService.getBookingsByUser(1).subscribe(
-      (data: any) => {
-        this.bookings = data.content;
-      });
+  onDeleteUser(id){
+    this.userService.deleteUser(id).subscribe(
+      () => {console.log("User deleted")}
+    );
   }
+
 
 }

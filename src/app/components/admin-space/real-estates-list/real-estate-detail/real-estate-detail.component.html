@@ -1,6 +1,21 @@
 
+<div *ngIf="realEstate != null">
+
+
+<h2>Information sur le bien</h2>
+<p>Nom :{{realEstate.name}}</p>
+<p>Type : {{realEstate.type}}</p>
+<p>Description : {{realEstate.description}} </p>
+<p *ngIf="realEstate.garden">Jardin : oui </p>
+<p *ngIf="!realEstate.garden">Jardin : non </p>
+<p>Prix : {{realEstate.price}}</p>
+<p>Adresse : {{realEstate.address.street}} {{realEstate.address.streetNumber}}
+{{realEstate.address.city}} {{realEstate.address.country}}</p>
+</div>
+
+
 <div *ngIf="bookings !== null">
-<h2>Liste des réservations de {{realEstate.name}}</h2>
+<h2> réservations </h2>
 
 <ul *ngFor="let booking of bookings">
   <li>Début :  {{booking.startDate}}  Fin : {{booking.endDate}}  Réservé par : {{booking.user.firstName}} {{booking.user.lastName}}</li>

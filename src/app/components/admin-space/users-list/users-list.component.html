@@ -2,7 +2,10 @@
 
 <div *ngIf="users !== null">
   <ul *ngFor="let user of users">
-    <li>{{user.firstName}} {{user.lastName}} <button routerLink="{{user.id}}">Détails</button></li>
+    <li>{{user.firstName}} {{user.lastName}}
+      <button routerLink="{{user.id}}">Détails</button>
+      <button (click)="onDeleteUser(user.id)">Supprimer</button>
+    </li>
   </ul>
 </div>
 

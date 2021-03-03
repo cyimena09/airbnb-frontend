@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {RealEstate} from '../../../models/RealEstate';
 import {RealEstateService} from '../../../services/real-estate/real-estate.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {RealEstate} from '../../../models/RealEstate';
 
 @Component({
   selector: 'app-add-real-estate',
@@ -27,12 +27,13 @@ export class AddRealEstateComponent implements OnInit {
       garden: ['', Validators.required],
       price: ['', Validators.required],
       street: ['', Validators.required],
-      number: ['', Validators.required],
+      streetNumber: ['', Validators.required],
       postalCode: ['', Validators.required],
+      city: ['', Validators.required],
       country: ['', Validators.required],
-
     });
   }
+
 
   onCreateRE(){
     this.loading = true;
@@ -45,8 +46,9 @@ export class AddRealEstateComponent implements OnInit {
     newRE.garden = this.realEstateForm.value.garden;
     newRE.price = this.realEstateForm.value.price;
     newRE.address.street = this.realEstateForm.value.street;
-    newRE.address.number = this.realEstateForm.value.number;
+    newRE.address.streetNumber = this.realEstateForm.value.streetNumber;
     newRE.address.postalCode = this.realEstateForm.value.postalCode;
+    newRE.address.city = this.realEstateForm.value.city;
     newRE.address.country = this.realEstateForm.value.country
 
     this.realEstateService.createRealEstate(newRE).subscribe(

@@ -16,13 +16,17 @@ export class BookingsListComponent implements OnInit {
     this.getBookingsByUser();
   }
 
-  getBookingsByUser(){
+  getBookingsByUser() {
     return this.bookingService.getBookings().subscribe(
       (data: any) => {
         this.bookings = data.content;
-      }
-    );
+      });
   }
 
+  onCancelBooking(id) {
+    this.bookingService.updateBooking(id).subscribe(
+      () => {console.log("réservation annulé")}
+    );
+  }
 
 }

@@ -3,6 +3,7 @@ import {User} from '../../models/User';
 import {UserService} from '../../services/user/user.service';
 import {RealEstateService} from '../../services/real-estate/real-estate.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {RealEstate} from '../../models/RealEstate';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  signUpForm: FormGroup
+  loading = false;
+  signUpForm: FormGroup;
 
   constructor(private userService: UserService, private formBuilder: FormBuilder) { }
 
@@ -35,12 +37,28 @@ export class SignupComponent implements OnInit {
   }
 
   onCreateUser(){
+    this.loading = true;
     let newUser = new User();
-    newUser.firstName = "Amaury";
-    newUser.lastName = "Cyemezo";
+
+    newUser.firstName = this.signUpForm.value.firstName;
+    newUser.lastName = this.signUpForm.value.lastName;
+    newUser.birthDate = this.signUpForm.value.birthDate;
+    newUser.email = this.signUpForm.value.email;
+    newUser.password = this.signUpForm.value.password;
+    newUser.phoneNumber = this.signUpForm.value.phoneNumber;
+    newUser.address.street = this.signUpForm.value.street;
+    newUser.address.streetNumber = this.signUpForm.value.streetNumber;
+    newUser.address.postalCode = this.signUpForm.value.postalCode;
+    newUser.address.country = this.signUpForm.value.country;
+    newUser.address.city = this.signUpForm.value.city;
+
     this.userService.createUser(newUser).subscribe(
-      () => {console.log("L'utilisateur a été créé !")}
-    );
+      () => {
+        console.log("L'utilisateur a été créé !");
+        this.loading = true;
+        }, () => {
+        this.loading = true;
+      });
   }
 
 }

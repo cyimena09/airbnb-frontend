@@ -5,50 +5,75 @@
   <form action="" [formGroup]="catalogForm" (ngSubmit)="onSearch()">
     <label for="pet-select">Que souhaitez-vous louer ?</label>
 
+<!--    getType()-->
+    <p>Type d'immobilier</p>
     <select id="pet-select" formControlName="type">
-      <option value="">-- Type d'immobilier --</option>
+      <option value="">Tous</option>
       <option value="appartment">Appartement</option>
       <option value="house">Maison</option>
       <option value="villa">Villa</option>
+      <option value="hotel">Hôtel</option>
+      <option value="hotel">Auberge</option>
     </select>
+
+    <label for="bedroom">Nombre de chambre</label>
+    <input id="bedroom" type="text" formControlName="bedroom">
 
         <label for="price">Prix maximum</label>
     <input id="price" type="text" formControlName="price">
 
-<!--    <label for="country">Pays</label>-->
-<!--    <input id="country" type="text" formControlName="country">-->
+    <label for="country">Pays</label>
+    <input id="country" type="text" formControlName="country">
 
-<!--     <label for="city">Ville</label>-->
-<!--    <input id="city" type="text" formControlName="city">-->
+     <label for="city">Ville</label>
+    <input id="city" type="text" formControlName="city">
 
+    <p>Période de location</p>
+    <label for="startDate">Du</label>
+    <input id="startDate" type="date" formControlName="startDate">
 
-
-<!--    <label for="startDate">Période de location</label>-->
-<!--    <p>Du</p>-->
-<!--    <input id="startDate" type="text" formControlName="startDate">-->
-
-<!--    <p>Au</p>-->
-<!--    <label for="endDate">Période de location</label>-->
-<!--    <input id="endDate" type="text" formControlName="endDate">-->
+    <label for="endDate">Au</label>
+    <input id="endDate" type="date" formControlName="endDate">
 
     <button type="submit">Lancer la recherche</button>
   </form>
 
 
-    <h2>Résultat de la recherche</h2>
+  <h2>Résultat de la recherche</h2>
+
+  <p>Trier par Date, note etc</p>
 
   <div *ngFor="let re of realEstates" class="result">
     <div class="realestate">
       <img src="../../../assets/images/realestate.jpg" alt="">
+      <app-rating></app-rating>
       <p class="description">{{re.name}}</p>
+      <p>Type : {{re.type}}</p>
       <p>{{re.description}}</p>
-      <p>{{re.address.street}} {{re.address.number}} {{re.address.country}}</p>
+      <p>{{re.address.street}} {{re.address.streetNumber}} {{re.address.city}} {{re.address.country}}</p>
       <p>{{re.rating}}</p>
       <p>{{re.bedroom}} chambres - <span *ngIf="re.garden">1 jardin</span></p>
       <p>{{re.price}} €/j</p>
       <button routerLink="/real-estate-learn-more/{{re.id}}">Learn more</button>
       <button routerLink="/real-estate-booking/{{re.id}}">Réserver</button>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
 

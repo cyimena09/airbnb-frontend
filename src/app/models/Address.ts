@@ -6,5 +6,4 @@ export class Address{
   postalCode;
   country;
   city;
-  address: Address = new Address();
 }

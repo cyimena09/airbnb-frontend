@@ -3,6 +3,9 @@
 
 <ul *ngFor="let re of realestates">
 
-  <li>Nom du bien : {{re.name}}  <button routerLink="{{re.id}}">Détail</button></li>
+  <li>Nom du bien : {{re.name}}
+    <button routerLink="{{re.id}}">Détail</button>
+    <button (click)="onDeleteRealEstate(re.id)">Supprimer</button>
+  </li>
 
 </ul>
