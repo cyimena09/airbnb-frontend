@@ -27,9 +27,7 @@ export class CatalogComponent implements OnInit {
       bedroom: ['', Validators.required],
       price: ['', Validators.required],
       country: ['', Validators.required],
-      city: ['', Validators.required],
-      startDate: ['', Validators.required],
-      endDate: ['', Validators.required]
+      city: ['', Validators.required]
     });
   }
 
@@ -54,8 +52,6 @@ export class CatalogComponent implements OnInit {
     let startDate = formValue.startDate;
     let endDate = formValue.endDate;
 
-    console.log(startDate);
-
     this.realEstateService.searchRealEstate(type, bedroom, price, country, city, startDate, endDate).subscribe(
       (data: any) => {
         this.realEstates = data.content;
@@ -63,35 +59,10 @@ export class CatalogComponent implements OnInit {
       (error) => {
         console.log(error)
       });
-    }
-
-
-    // this.loading = true;
-    // let newRE = new RealEstate();
-    // newRE.type = this.catalogForm.value.type;
-    // this.realEstateService.createRealEstate(newRE).subscribe(
-    //   () => {
-    //     console.log("Le bien a été créé")
-    //     this.loading = false;
-    //   },
-    //   (message) => {
-    //     console.log(message.error);
-    //     this.loading = false;
-    //   });
-
- // }
-
+  }
 
   get f() {
     return this.catalogForm.controls;
   }
-
-
-
-
-
-
-
-
 
 }
