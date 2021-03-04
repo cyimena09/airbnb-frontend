@@ -1,13 +1,9 @@
-
-form{
-  display: flex;
-  flex-direction: column;
-  width: 300px;
+* {
+  font-family: serif;
 }
 
-img{
-  width: 300px;
-}
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+.box-shadow {
+  box-shadow: 0 5px 5px #d6d4d4;
+  border: solid 1px #d6d4d4;
+}

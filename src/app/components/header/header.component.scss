@@ -1,6 +1,47 @@
 header{
   display: flex;
-  border: solid red;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+
+  input {
+    width: 400px;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+    border-right: black solid 1px;
+    border-left: unset;
+  }
+
+  .icon-search-wrapper {
+    border: solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    font-size: 10px;
+  }
+
+}
+
+.shortcuts {
+  display: flex;
+}
+
+.shortcut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  border-radius: 100%;
+  margin-left: 5px;
+}
+
+img {
+  border-radius: 100%;
+  width: 100%;
 }
 
 ul{

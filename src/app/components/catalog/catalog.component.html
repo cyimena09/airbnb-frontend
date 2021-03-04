@@ -1,73 +1,78 @@
-<h2>Louer un bien </h2>
 
-<div class="content">
+<div class="page">
+  <div class="content">
 
-  <form action="" [formGroup]="catalogForm" (ngSubmit)="onSearch()">
-    <label for="pet-select">Que souhaitez-vous louer ?</label>
+    <div>
+      <form action="" [formGroup]="catalogForm" (ngSubmit)="onSearch()">
 
-<!--    getType()-->
-    <p>Type d'immobilier</p>
-    <select id="pet-select" formControlName="type">
-      <option value="">Tous</option>
-      <option value="appartment">Appartement</option>
-      <option value="house">Maison</option>
-      <option value="villa">Villa</option>
-      <option value="hotel">Hôtel</option>
-      <option value="hotel">Auberge</option>
-    </select>
+        <h2 >Que souhaitez-vous louer ?</h2>
 
-    <label for="bedroom">Nombre de chambre</label>
-    <input id="bedroom" type="text" formControlName="bedroom">
+        <div class="group">
+          <label for="re-type">Type d'immobilier</label>
+          <select id="re-type" formControlName="type">
+            <option value="">Tous</option>
+            <option value="appartment">Appartement</option>
+            <option value="house">Maison</option>
+            <option value="villa">Villa</option>
+            <option value="hotel">Hôtel</option>
+            <option value="hotel">Auberge</option>
+          </select>
+        </div>
 
-        <label for="price">Prix maximum</label>
-    <input id="price" type="text" formControlName="price">
+        <div class="group">
+          <label for="bedroom">Nombre de chambre</label>
+          <input id="bedroom" type="text" formControlName="bedroom">
+        </div>
 
-    <label for="country">Pays</label>
-    <input id="country" type="text" formControlName="country">
+        <div class="group">
+          <label for="price">Prix maximum</label>
+          <input id="price" type="text" formControlName="price">
+        </div>
 
-     <label for="city">Ville</label>
-    <input id="city" type="text" formControlName="city">
+        <div class="group">
+          <label for="country">Pays</label>
+          <input id="country" type="text" formControlName="country">
+        </div>
 
-    <button type="submit">Lancer la recherche</button>
-  </form>
+        <div class="group">
+          <label for="city">Ville</label>
+          <input id="city" type="text" formControlName="city">
+        </div>
 
+        <div class="group">
+          <button type="submit">Lancer la recherche</button>
+        </div>
 
-  <h2>Résultat de la recherche</h2>
-
-  <p>Trier par Date, note etc</p>
-
-  <div *ngFor="let re of realEstates" class="result">
-    <div class="realestate">
-      <img src="../../../assets/images/realestate.jpg" alt="">
-      <app-rating></app-rating>
-      <p class="description">{{re.name}}</p>
-      <p>Type : {{re.type}}</p>
-      <p>{{re.description}}</p>
-      <p>{{re.address.street}} {{re.address.streetNumber}} {{re.address.city}} {{re.address.country}}</p>
-      <p>{{re.rating}}</p>
-      <p>{{re.bedroom}} chambres - <span *ngIf="re.garden">1 jardin</span></p>
-      <p>{{re.price}} €/j</p>
-      <button routerLink="/real-estate-learn-more/{{re.id}}">Learn more</button>
-      <button routerLink="/real-estate-booking/{{re.id}}">Réserver</button>
+      </form>
     </div>
 
+    <div class="wrapper">
+      <h2>Résultat de la recherche</h2>
 
+      <div *ngFor="let re of realEstates" class="result">
 
+        <div class="realestate box-shadow">
+          <img src="../../../assets/images/realestate.jpg" alt="">
+          <div class="wrapper">
+            <ul>
+              <li>{{re.name}} <app-rating></app-rating></li>
+              <li>Type : {{re.type}}</li>
+              <li>{{re.bedroom}} chambres - <span *ngIf="re.garden">1 jardin</span></li>
+              <li>{{re.price}} €/j</li>
+              <li>{{re.description}}</li>
+              <li>{{re.address.street}} {{re.address.streetNumber}} {{re.address.city}} {{re.address.country}}</li>
+            </ul>
 
+            <div>
+              <a routerLink="">Contacter le propriétaire</a>
+            </div>
 
+            <button routerLink="/real-estate-learn-more/{{re.id}}">Learn more</button>
+            <button routerLink="/real-estate-booking/{{re.id}}">Réserver</button>
+          </div>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
+      </div>
+    </div>
   </div>
-
 </div>
