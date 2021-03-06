@@ -24,6 +24,7 @@ import { UserSpaceComponent } from './components/user-space/user-space.component
 import {ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RatingComponent } from './components/rating/rating.component';
+import { MessengerComponent } from './components/messenger/messenger.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { RatingComponent } from './components/rating/rating.component';
     UserDetailComponent,
     RealEstateLearnMoreComponent,
     UserSpaceComponent,
-    RatingComponent
+    RatingComponent,
+    MessengerComponent
   ],
   imports: [
     BrowserModule,

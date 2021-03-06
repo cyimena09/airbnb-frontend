@@ -13,6 +13,7 @@ import {UserDetailComponent} from './components/admin-space/users-list/user-deta
 import {RealEstateDetailComponent} from './components/admin-space/real-estates-list/real-estate-detail/real-estate-detail.component';
 import {RealEstateLearnMoreComponent} from './components/catalog/real-estate-learn-more/real-estate-learn-more.component';
 import {UserSpaceComponent} from './components/user-space/user-space.component';
+import {MessengerComponent} from './components/messenger/messenger.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'signin', component: SigninComponent},
+  {path: 'messenger', component: MessengerComponent},
   {path: 'real-estate-learn-more/:id', component: RealEstateLearnMoreComponent},
   {path: 'real-estate-booking/:id', component: RealEstateBookingComponent},
 
@@ -28,9 +30,9 @@ const routes: Routes = [
 
   // USER
   {path: 'user-space', component: UserSpaceComponent,
-  children: [
+    children: [
       {path: 'add-real-estate', component: AddRealEstateComponent},
-  ]},
+    ]},
 
   // ADMIN
   {
