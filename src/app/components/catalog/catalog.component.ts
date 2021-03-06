@@ -42,7 +42,7 @@ export class CatalogComponent implements OnInit {
   }
 
   onSearch(){
-    // warning search is case sensitive
+    // warning, search is case sensitive
     let formValue = this.catalogForm.value;
     let type = formValue.type;
     let bedroom = formValue.bedroom;
@@ -52,7 +52,7 @@ export class CatalogComponent implements OnInit {
     let startDate = formValue.startDate;
     let endDate = formValue.endDate;
 
-    this.realEstateService.searchRealEstate(type, bedroom, price, country, city, startDate, endDate).subscribe(
+    this.realEstateService.searchRealEstate(type, bedroom, price, country, city).subscribe(
       (data: any) => {
         this.realEstates = data.content;
       },

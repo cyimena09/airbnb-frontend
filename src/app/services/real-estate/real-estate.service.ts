@@ -31,36 +31,14 @@ export class RealEstateService {
     return this.httpClient.delete(this.apiURL + id)
   }
 
-  searchRealEstate(type, bedroom, price, country, city, startDate, endDate){
-    // if(startDate === ""){
-    //   startDate = null;
-    // }
-    // if(endDate === ""){
-    //   endDate = null;
-    // }
-    // type = "maison";
-    //bedroom = 4;
-    //price = 251
-    // country = "Belgique";
-    // city = "Bruxelles";
-
-    startDate = "2018-01-05 11:30:01";
-    endDate = "2018-01-06 11:30:01";
-
-
-
-
-
-
+  searchRealEstate(type, bedroom, price, country, city){
 
     let params = new HttpParams()
       .set('type', type)
       .set('bedroom', bedroom)
       .set('price', price)
       .set('country', country)
-      .set('city', city)
-      .set('startDate', startDate)
-      .set('endDate', endDate);
+      .set('city', city);
 
     return this.httpClient.get(this.apiURL + 'search',{params: params} )
   }
