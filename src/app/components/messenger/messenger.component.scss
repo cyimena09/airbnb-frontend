@@ -136,21 +136,30 @@ h2 {
 
 // FORM
 
-form {
+.form {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 
   textarea {
-    width: 95%;
+    width: 92%;
     padding: 10px;
   }
 
   div {
-    width: 5%;
-    display: flex;
-    align-items: flex-end;
 
     button {
-      width: 100%;
+      border: unset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 3px;
+      margin-bottom: 2px;
+      padding: 7px;
+      color: white;
+      background-color: #0ba9f7;
+      border-radius: 100%;
+      cursor: pointer;
     }
   }
 
