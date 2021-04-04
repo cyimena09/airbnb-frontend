@@ -1,62 +1,39 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import { HomebisComponent } from './components/homebis/homebis.component';
-import { AddRealEstateComponent } from './components/user-space/add-real-estate/add-real-estate.component';
-import { RealEstateBookingComponent } from './components/catalog/real-estate-booking/real-estate-booking.component';
-import { HeaderComponent } from './components/header/header.component';
-import { UsersListComponent } from './components/admin-space/users-list/users-list.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { SigninComponent } from './components/signin/signin.component';
-import { RealEstatesListComponent } from './components/admin-space/real-estates-list/real-estates-list.component';
-import { CatalogComponent } from './components/catalog/catalog.component';
-import { SearchRealEstateComponent } from './components/search-real-estate/search-real-estate.component';
-import { AdminSpaceComponent } from './components/admin-space/admin-space.component';
-import { BookingsListComponent } from './components/admin-space/bookings-list/bookings-list.component';
-import { UserDetailComponent } from './components/admin-space/users-list/user-detail/user-detail.component';
-import { RealEstateLearnMoreComponent } from './components/catalog/real-estate-learn-more/real-estate-learn-more.component';
-import {RealEstateDetailComponent} from './components/admin-space/real-estates-list/real-estate-detail/real-estate-detail.component';
-import { UserSpaceComponent } from './components/user-space/user-space.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RatingComponent } from './components/rating/rating.component';
-import { MessengerComponent } from './components/messenger/messenger.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {RealEstateModule} from './real-estate/real-estate.module';
+import {PublicModule} from './public/public.module';
+import {AdminSpaceModule} from './admin-space/admin-space.module';
+import {UserSpaceModule} from './user-space/user-space.module';
+import {BookingModule} from './booking/booking.module';
+import {MessengerModule} from './messenger/messenger.module';
+import {AuthModule} from './auth/auth.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    RealEstateDetailComponent,
-    HomebisComponent,
-    AddRealEstateComponent,
-    RealEstateBookingComponent,
-    HeaderComponent,
-    UsersListComponent,
-    SignupComponent,
-    SigninComponent,
-    RealEstatesListComponent,
-    CatalogComponent,
-    SearchRealEstateComponent,
-    AdminSpaceComponent,
-    BookingsListComponent,
-    UserDetailComponent,
-    RealEstateLearnMoreComponent,
-    UserSpaceComponent,
-    RatingComponent,
-    MessengerComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    RealEstateModule,
+    PublicModule,
+    AdminSpaceModule,
+    UserSpaceModule,
+    BookingModule,
+    MessengerModule,
+    AuthModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
