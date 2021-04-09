@@ -1,0 +1,44 @@
+h3 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 900px;
+}
+
+label, p {
+  font-weight: bold;
+}
+
+.form-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group {
+  width: 250px;
+}
+
+.radio-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+// Propriety information
+
+#bedroom {
+  width: 45px;
+}
+
+// Address
+
+.street-and-number {
+  display: flex;
+}
+
+.streetNumber {
+  margin-left: 15px;
+  width: 60px;
+}

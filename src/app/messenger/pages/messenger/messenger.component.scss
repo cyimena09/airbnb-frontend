@@ -1,20 +1,7 @@
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.page {
-  display: flex;
-  justify-content: center;
-}
-
 .content-page {
-  display: flex;
+  flex-direction: row;
   border: solid #dedbdb 1px;
-  width: 1000px;
-  height: 800px;
-  background-color: white;
 }
 
 h2 {

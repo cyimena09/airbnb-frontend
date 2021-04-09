@@ -8,6 +8,6 @@ export class RealEstate {
   bedroom: number;
   garden: boolean;
   price: number;
-  rating;
+  rating: number;
   address: Address;
 }

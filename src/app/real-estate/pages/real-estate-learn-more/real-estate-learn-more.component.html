@@ -1,25 +1,61 @@
-<h2>Détail du bien</h2>
+<div class="page">
+  <div class="content-page">
 
+    <!--    Main content-->
+    <div class="container-main">
+      <app-single-real-estate [realEstate]="realEstate"></app-single-real-estate>
+      <section class="box-shadow">
+        <app-add-comment></app-add-comment>
+        <h2>Avis des utilisateurs</h2>
+        <app-list-comments [comments]="comments"></app-list-comments>
+      </section>
 
-    <div class="realestate">
-      <img src="../../../../assets/images/real-estates/realestate.jpg" alt="">
-      <p class="description"> Lorem lipsum</p>
-      <app-rating></app-rating>
-      <p>5 chambres -  1 salle de bain - 1 jardin</p>
-      <p>300€/j</p>
-      <button>Louer</button>
     </div>
 
-<h2>Avis</h2>
+    <!--    Side content-->
+    <div class="right-side">
+      <!--    pictures gallery-->
+      <section class="photos-gallery-container box-shadow">
+        <h2>Gallerie photos</h2>
+        <div class="slider-photos">
+          <img src="assets/images/real-estates/realestate.jpg" alt="">
+          <img src="assets/images/real-estates/realestate.jpg" alt="">
+          <img src="assets/images/real-estates/realestate.jpg" alt="">
+          <img src="assets/images/real-estates/realestate.jpg" alt="">
+        </div>
+      </section>
 
-<ul>
-  <li>Avis 1</li>
-  <li>Avis 2</li>
-  <li>Avis 3</li>
-  <li>Avis 4</li>
-  <li>Avis 5</li>
+      <!--    Owner info -->
+      <section class="container-owner box-shadow">
+        <h2>Le propriétaire</h2>
+        <div class="image-infos">
+          <div class="image-container">
+            <img src="assets/images/profiles/emile.jpg" alt="">
+          </div>
+          <div class="personal-infos">
+            <div class="group-info">
+              <p class="label">Prénom et Nom</p>
+              <p>Sylvie Dupont</p>
+            </div>
+            <div class="group-info">
+              <p class="label">Téléphone</p>
+              <p>+32 487 123 456</p>
+            </div>
+            <div class="group-info">
+              <p class="label">Email</p>
+              <p>sylvie_dupont@email.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="btn-container" routerLink="/messenger">
+          <a>Contacter sur Airbnb</a>
+        </div>
+        <div class="other-propriety">
+          <p>Voir ses autres propriétés </p>
+          <p class="no-propriety">Sylvie Dupont ne possède pas d'autres propriétés</p>
+        </div>
+      </section>
+    </div>
 
-
-</ul>
-
-<a href="">Ajouter un avis</a>
+  </div>
+</div>

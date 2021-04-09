@@ -23,7 +23,7 @@ export class RealEstateBookingComponent implements OnInit {
   }
 
   getRealEstate(){
-    this.realEstateService.getRealEstate(this.id).subscribe(
+    this.realEstateService.getRealEstateById(this.id).subscribe(
       (data: any) => {
         this.realEstate = data;
       });

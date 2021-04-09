@@ -1,0 +1,91 @@
+// containers
+
+.comments {
+  margin-top: 20px;
+}
+
+.comment {
+  margin: 20px 0;
+}
+
+.image-username {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.image-container {
+  width: 30px;
+  margin-right: 10px;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.username-date {
+  display: flex;
+  align-items: center;
+
+  .username {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .date {
+    font-weight: lighter;
+    font-size: 11px;
+    color: grey;
+  }
+}
+
+.message-likes {
+  margin-bottom: 10px;
+}
+
+.message {
+  padding: 10px;
+  background-color: #0ba9f7;
+  color: white;
+  border-radius: 3px;
+}
+
+// Actions
+
+.wrapper-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.likes-dislikes {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+
+  i {
+    cursor: pointer;
+  }
+
+  .likes {
+    margin-right: 20px;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  .dislikes {
+    i {
+      margin-left: 5px;
+    }
+  }
+}
+
+.answer {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  textarea {
+    height: 50px;
+    padding: 20px;
+  }
+}

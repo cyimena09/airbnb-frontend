@@ -1,0 +1,29 @@
+section {
+  display: flex;
+  flex-direction: row;
+}
+
+.personal-infos {
+  margin-right: 100px;
+}
+
+.group-info {
+  .label {
+    font-size: 14px;
+    color: #9a9a98;
+    width: 150px;
+  }
+  display: flex;
+}
+
+.localisation {
+  margin-top: 20px;
+}
+
+.btn-container {
+  color: white;
+}
+
+.image-container {
+  width: 100px;
+}

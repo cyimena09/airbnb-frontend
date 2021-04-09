@@ -1,0 +1,30 @@
+<header class="page">
+  <div class="content-page">
+
+    <div class="logo" routerLink="/home">
+      Airbnb
+    </div>
+
+    <div *ngIf="disconnected == false">
+      <button routerLink="/signup">S'inscrire</button>
+      <!--    <button routerLink="/signin">Se connecter</button>-->
+      <button (click)="onLogin()">Se connecter</button>
+    </div>
+
+    <div *ngIf="disconnected == true" class="shortcuts">
+      <div class="shortcut" routerLink="/messenger">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="shortcut">
+        <i class="fas fa-bell"></i>
+      </div>
+
+      <div class="shortcut" routerLink="add_real_estate">
+        <i class="fas fa-plus"></i>
+      </div>
+      <div class="shortcut" routerLink="user_space">
+        <img src="assets/images/profiles/emile.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</header>

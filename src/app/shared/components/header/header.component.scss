@@ -1,0 +1,54 @@
+@import "src/scss/variables";
+
+// Container
+
+header {
+  background-color: $color-main-green;
+  padding: 20px;
+}
+
+.content-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+}
+
+// General
+
+.logo {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+img {
+  border-radius: 100%;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+// Shortcuts
+
+.shortcuts {
+  display: flex;
+}
+
+.shortcut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  border-radius: 100%;
+  margin-left: 15px;
+  color: white;
+  cursor: pointer;
+}

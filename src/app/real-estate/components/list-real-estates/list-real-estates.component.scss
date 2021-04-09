@@ -1,0 +1,73 @@
+// containers
+
+.real-estate {
+  width: 800px;
+  margin-bottom: 40px;
+}
+
+.wrapper-text {
+  width: 50%;
+  padding: 20px 20px 0 20px;
+}
+
+.description {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.image-container {
+  display: flex;
+  width: 50%;
+}
+
+// General
+
+h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+h4 {
+  margin-bottom: 5px;
+}
+
+img {
+  object-fit: contain;
+}
+
+.label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #9a9a98;
+  width: 45px;
+}
+
+// Real-estate
+
+.image-main-info {
+  display: flex;
+}
+
+.info-group {
+  margin-bottom: 15px;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.price {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.footer-real-estate {
+  display: flex;
+  padding: 0 20px 20px 20px;
+}
+
+.btn-container {
+  margin-top: 0;
+  margin-right: 10px;
+}

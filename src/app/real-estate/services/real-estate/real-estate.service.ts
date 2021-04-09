@@ -1,21 +1,26 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RealEstateService {
 
-    private apiURL = '/api/v1/realestates/';
+  private apiURL = '/api/v1/real_estates/';
 
   constructor(private httpClient: HttpClient) {
   }
 
   getRealEstates() {
-    return this.httpClient.get(this.apiURL);
+    return this.httpClient.get(this.apiURL).pipe(
+      map(response => {
+        return response['content'];
+      })
+    );
   }
 
-  getRealEstate(id) {
+  getRealEstateById(id) {
     return this.httpClient.get(this.apiURL + id);
   }
 
@@ -28,10 +33,10 @@ export class RealEstateService {
   }
 
   deleteRealEstate(id) {
-    return this.httpClient.delete(this.apiURL + id)
+    return this.httpClient.delete(this.apiURL + id);
   }
 
-  searchRealEstate(type, bedroom, price, country, city){
+  searchRealEstate(type, bedroom, price, country, city) {
 
     let params = new HttpParams()
       .set('type', type)
@@ -40,7 +45,7 @@ export class RealEstateService {
       .set('country', country)
       .set('city', city);
 
-    return this.httpClient.get(this.apiURL + 'search',{params: params} )
+    return this.httpClient.get(this.apiURL + 'search', {params: params});
   }
 
 }

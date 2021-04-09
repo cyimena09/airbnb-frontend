@@ -6,19 +6,34 @@ import {RealEstateBookingComponent} from './pages/real-estate-booking/real-estat
 import {RealEstateLearnMoreComponent} from './pages/real-estate-learn-more/real-estate-learn-more.component';
 import {RatingComponent} from './components/rating/rating.component';
 import {NgbRatingModule} from '@ng-bootstrap/ng-bootstrap';
+import {AddRealEstateComponent} from './pages/add-real-estate/add-real-estate.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { ListRealEstatesComponent } from './components/list-real-estates/list-real-estates.component';
+import { SingleRealEstateComponent } from './components/single-real-estate/single-real-estate.component';
+import { ListCommentsComponent } from './components/list-comments/list-comments.component';
+import { AddCommentComponent } from './components/add-comment/add-comment.component';
 
 
 @NgModule({
   declarations: [
     RealEstateBookingComponent,
     RealEstateLearnMoreComponent,
-    RatingComponent
+    RatingComponent,
+    AddRealEstateComponent,
+    ListRealEstatesComponent,
+    SingleRealEstateComponent,
+    ListCommentsComponent,
+    AddCommentComponent
   ],
   imports: [
     CommonModule,
     RealEstateRoutingModule,
-    NgbRatingModule
+    NgbRatingModule,
+    ReactiveFormsModule
   ],
-  exports: [RatingComponent]
+  exports: [
+    RatingComponent,
+    ListRealEstatesComponent
+  ]
 })
 export class RealEstateModule { }

@@ -1,0 +1,32 @@
+<section *ngIf="realEstate" class="box-shadow">
+  <div class="header">
+    <h1>{{realEstate.name}}</h1>
+    <p class="label">4500 utilisateurs ont déjà réservé cette habitation</p>
+    <div class="rating">
+      <app-rating></app-rating>
+      <p>(Noté par 1350 visiteurs)</p>
+    </div>
+  </div>
+
+  <div class="image-text-container">
+    <div class="image-container">
+      <img src="assets/images/real-estates/realestate.jpg" alt="">
+    </div>
+    <p>Tarif : <span>{{realEstate.price}} €/j</span></p>
+  </div>
+
+  <div class="info description">
+    <h3>Description</h3>
+    <p>{{realEstate.description}}</p>
+  </div>
+
+  <div class="info characteristic">
+    <h3>Caractéristiques</h3>
+    <p>{{realEstate.bedroom}} chambres - {{realEstate.garden}} jardin</p>
+  </div>
+
+  <div class="btn-container">
+    <a>Louer</a>
+  </div>
+
+</section>
