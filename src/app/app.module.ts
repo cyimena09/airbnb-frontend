@@ -13,6 +13,8 @@ import {MessengerModule} from './messenger/messenger.module';
 import {AuthModule} from './auth/auth.module';
 import {HomeModule} from './home/home.module';
 import {SharedModule} from './shared/shared.module';
+import { NotificationModule } from './notification/notification.module';
+import { AlertModule } from './alert/alert.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import {SharedModule} from './shared/shared.module';
     AuthModule,
     SharedModule,
     AppRoutingModule,
+    NotificationModule,
+    AlertModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
