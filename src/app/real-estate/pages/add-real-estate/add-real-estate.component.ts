@@ -3,6 +3,7 @@ import {RealEstateService} from '../../services/real-estate/real-estate.service'
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RealEstate} from '../../../../lib/models/real-estate';
 import {Address} from '../../../../lib/models/address';
+import {User} from '../../../../lib/models/user';
 
 @Component({
   selector: 'app-add-real-estate',
@@ -67,8 +68,12 @@ export class AddRealEstateComponent implements OnInit {
     address.postalCode = '1301';
     address.city = 'Kigali';
     address.country = 'Rwanda';
-    // Add address in real estate
+    // User
+    let user = new User();
+    user.id = 1;
+    // Add address & user in real estate
     newRE.address = address;
+    newRE.user = user;
 
     this.realEstateService.createRealEstate(newRE).subscribe(
       () => {

@@ -5,13 +5,13 @@
       Airbnb
     </div>
 
-    <div *ngIf="disconnected == false">
+    <div *ngIf="disconnected == true">
       <button routerLink="/signup">S'inscrire</button>
       <!--    <button routerLink="/signin">Se connecter</button>-->
       <button (click)="onLogin()">Se connecter</button>
     </div>
 
-    <div *ngIf="disconnected == true" class="shortcuts">
+    <div *ngIf="disconnected == false" class="shortcuts">
       <div class="shortcut" routerLink="/messenger">
         <i class="fas fa-envelope"></i>
       </div>
@@ -22,7 +22,7 @@
       <div class="shortcut" routerLink="add_real_estate">
         <i class="fas fa-plus"></i>
       </div>
-      <div class="shortcut" routerLink="user_space">
+      <div class="shortcut" routerLink="user/user_space">
         <img src="assets/images/profiles/emile.jpg" alt="">
       </div>
     </div>

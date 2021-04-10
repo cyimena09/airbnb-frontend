@@ -1,5 +1,11 @@
-<section class="box-shadow">
+<section *ngIf="userRES" class="box-shadow">
   <h2>Vos logements</h2>
-  <p>Bien 1 Statut : libre voir</p>
-  <p>Logement 2 :  Statut : en location voir</p>
+
+  <div class="real-estate" *ngFor="let userRE of userRES">
+    <p>{{userRE.name}} Statut : libre</p>
+    <div class="btn-container" routerLink="">
+      <a routerLink="/user/real_estate/{{userRE.id}}">Voir</a>
+    </div>
+  </div>
+
 </section>

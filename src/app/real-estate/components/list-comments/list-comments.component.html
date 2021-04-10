@@ -8,14 +8,14 @@
       </div>
       <div class="username-date">
         <p class="username">Emile Cyimena</p>
-        <p class="date"> le 8 avril 2021</p>
+        <p class="date"> {{comment.lastModifiedDate | date:'dd MMMM yyyy'}}</p>
       </div>
     </div>
 
     <!--    Message & likes-->
     <div class="message-likes">
       <div class="message">
-        <p>{{comment.text}}</p>
+        <p [innerHTML]="comment.text"></p>
       </div>
 
       <!--      Actions-->

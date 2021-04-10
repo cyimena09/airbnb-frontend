@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {RealEstate} from '../../../../lib/models/real-estate';
 
 @Component({
   selector: 'app-user-real-estates-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-real-estates-list.component.scss']
 })
 export class UserRealEstatesListComponent implements OnInit {
+
+  @Input() userRES: RealEstate[];
 
   constructor() { }
 

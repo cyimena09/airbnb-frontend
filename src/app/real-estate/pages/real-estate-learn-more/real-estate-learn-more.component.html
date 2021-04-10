@@ -5,7 +5,7 @@
     <div class="container-main">
       <app-single-real-estate [realEstate]="realEstate"></app-single-real-estate>
       <section class="box-shadow">
-        <app-add-comment></app-add-comment>
+        <app-add-comment [realEstateId]="id"></app-add-comment>
         <h2>Avis des utilisateurs</h2>
         <app-list-comments [comments]="comments"></app-list-comments>
       </section>

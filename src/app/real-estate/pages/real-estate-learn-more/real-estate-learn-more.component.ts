@@ -26,6 +26,14 @@ export class RealEstateLearnMoreComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.getRealEstate();
     this.getCommentsByRealEstateId();
+
+    // subscription au commentaire
+    this.commentService.commentSubject.subscribe(
+      () => {
+        console.log('Rechargement des commentaires');
+        this.getCommentsByRealEstateId();
+      }
+    );
   }
 
   getRealEstate() {

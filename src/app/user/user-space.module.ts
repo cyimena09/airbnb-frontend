@@ -9,6 +9,9 @@ import {RealEstateModule} from '../real-estate/real-estate.module';
 import {ReservationsHistoryComponent} from './components/reservations-history/reservations-history.component';
 import {CurrentReservationComponent} from './components/current-reservation/current-reservation.component';
 import { UserRealEstatesListComponent } from './components/user-real-estates-list/user-real-estates-list.component';
+import { UserRealEstateComponent } from './components/user-real-estate/user-real-estate.component';
+import { RealEstateComponent } from './pages/real-estate/real-estate.component';
+import { UserComponent } from './pages/user/user.component';
 
 
 @NgModule({
@@ -18,6 +21,9 @@ import { UserRealEstatesListComponent } from './components/user-real-estates-lis
     ReservationsHistoryComponent,
     CurrentReservationComponent,
     UserRealEstatesListComponent,
+    UserRealEstateComponent,
+    RealEstateComponent,
+    UserComponent,
   ],
   imports: [
     CommonModule,

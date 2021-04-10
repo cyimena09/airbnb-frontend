@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Comment} from '../../../../lib/models/comment';
 import {RealEstate} from '../../../../lib/models/real-estate';
 import {FormBuilder, Validators} from '@angular/forms';
@@ -12,6 +12,7 @@ import {CommentService} from '../../services/comment/comment.service';
 export class AddCommentComponent implements OnInit {
 
   commentForm;
+  @Input() realEstateId
 
   constructor(private formBuilder: FormBuilder, private commentService: CommentService) {
   }
@@ -33,15 +34,17 @@ export class AddCommentComponent implements OnInit {
     comment.text = value.text;
     // on ajoute l'id du real estate dans un objet real estate
     let realEstate = new RealEstate();
-    realEstate.id = 1;
+    realEstate.id = this.realEstateId;
     // on ajoute le real estate dans l'objet comment
     comment.realEstate = realEstate;
 
     this.commentService.addComment(comment).subscribe(
       () => {
-        // Todo on prévient qu'un nouveau commentaire a été ajouté
         console.log('Le commentaire a été ajouté');
+
+        this.commentService.commentSubject.next();
       }
     );
   }
+
 }

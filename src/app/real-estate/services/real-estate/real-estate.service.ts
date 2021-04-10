@@ -24,6 +24,15 @@ export class RealEstateService {
     return this.httpClient.get(this.apiURL + id);
   }
 
+  getRealEstateByUserId(id) {
+    id = 1;
+    return this.httpClient.get(this.apiURL + 'users/' + id).pipe(
+      map(response => {
+        return response['content'];
+      })
+    );
+  }
+
   createRealEstate(newRealEstate) {
     return this.httpClient.post(this.apiURL, newRealEstate);
   }

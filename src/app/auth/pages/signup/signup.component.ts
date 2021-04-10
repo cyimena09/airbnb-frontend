@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {User} from '../../../../lib/models/user';
 import {UserService} from '../../../user/services/user/user.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Address} from '../../../../lib/models/address';
 
 @Component({
   selector: 'app-signup',
@@ -37,18 +38,37 @@ export class SignupComponent implements OnInit {
   onCreateUser(){
     this.loading = true;
     let newUser = new User();
+    //let formValue =  this.signUpForm.value
+    // newUser.firstName = formValue.firstName;
+    // newUser.lastName = formValue.lastName;
+    // newUser.birthDate = formValue.birthDate;
+    // newUser.email = formValue.email;
+    // newUser.password = formValue.password;
+    // newUser.phoneNumber = formValue.phoneNumber;
+    // // Address
+    // let address = new Address();
+    // newUser.address.street = formValue.street;
+    // newUser.address.streetNumber = formValue.streetNumber;
+    // newUser.address.postalCode = formValue.postalCode;
+    // newUser.address.country = formValue.country;
+    // newUser.address.city = formValue.city;
 
-    newUser.firstName = this.signUpForm.value.firstName;
-    newUser.lastName = this.signUpForm.value.lastName;
-    newUser.birthDate = this.signUpForm.value.birthDate;
-    newUser.email = this.signUpForm.value.email;
-    newUser.password = this.signUpForm.value.password;
-    newUser.phoneNumber = this.signUpForm.value.phoneNumber;
-    newUser.address.street = this.signUpForm.value.street;
-    newUser.address.streetNumber = this.signUpForm.value.streetNumber;
-    newUser.address.postalCode = this.signUpForm.value.postalCode;
-    newUser.address.country = this.signUpForm.value.country;
-    newUser.address.city = this.signUpForm.value.city;
+    newUser.firstName = "Emile";
+    newUser.lastName = "Cyimena";
+    newUser.birthDate = "1992-10-08";
+    newUser.email = "cyimena09@hotmail.com";
+    newUser.password = "Emiliano--032";
+    newUser.phoneNumber = "0484090853";
+    // Address
+    let address = new Address();
+    address.street = "Rue de la source";
+    address.streetNumber = "18"
+    address.postalCode = "1301";
+    address.country = "Belgique";
+    address.city = "Louvain-la-Neuve";
+
+    newUser.address = address;
+
 
     this.userService.createUser(newUser).subscribe(
       () => {

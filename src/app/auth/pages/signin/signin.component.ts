@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth/auth.service';
 
@@ -9,10 +9,10 @@ import {AuthService} from '../../services/auth/auth.service';
 })
 export class SigninComponent implements OnInit {
 
+  signInForm: FormGroup;
 
-    signInForm: FormGroup
-
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
+  }
 
   ngOnInit(): void {
     this.initForm();
@@ -25,7 +25,7 @@ export class SigninComponent implements OnInit {
     });
   }
 
-  onLogin(){
+  onLogin() {
 
   }
 }
