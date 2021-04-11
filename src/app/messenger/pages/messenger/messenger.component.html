@@ -1,11 +1,13 @@
 <div class="page">
   <div class="content-page">
+
     <!--    CONVERSATIONS -->
     <div class="conversations">
+      <app-search-user></app-search-user>
       <button (click)="onSendMessage()">Send message</button>
       <button (click)="onCreateConversation()">Nouvelle conversation</button>
       <button (click)="onCreateParticipation()">Nouvelle participation</button>
-      <h2>Conversations</h2>
+      <h2>Vos conversations</h2>
 
       <!--      Conversation-->
       <div *ngFor="let participation of participations" class="conversation"
@@ -35,9 +37,13 @@
               <div class="picture-container">
                 <img src="assets/images/profiles/emile.jpg" alt="">
               </div>
-              <div class="message-text-container">
-                <p [innerHTML]="message.text"></p>
+              <div class="message-text-date">
+                <div class="message-text-container">
+                  <p [innerHTML]="message.text"></p>
+                </div>
+                <p class="seen"><i class="fas fa-check-circle"></i>Envoyé le {{message.createAt | date: 'dd MMMM yy HH:mm:SS'}}</p>
               </div>
+
             </div>
           </div>
 
@@ -48,7 +54,7 @@
 
               </div>
 
-              <p class="seen"><i class="fas fa-check-circle"></i>Vu le 25/04/2020</p>
+              <p class="seen"><i class="fas fa-check-circle"></i>Envoyé {{message.createAt | date: 'dd MMMM yy HH:mm:SS'}}</p>
 
             </div>
           </div>
@@ -61,7 +67,6 @@
         <div class="button-wrapper">
           <button><i class="fas fa-paper-plane"></i></button>
         </div>
-
       </form>
 
     </div>

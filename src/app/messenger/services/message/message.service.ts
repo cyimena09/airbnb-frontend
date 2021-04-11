@@ -6,7 +6,9 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 })
 export class MessageService {
 
-  private apiURL = '/api/v1/messages/';
+  //private apiURL = '/api/v1/messages/';
+  private apiURL = '/api/v1/messenger/messages/';
+
 
   constructor(private httpClient: HttpClient) {
   }

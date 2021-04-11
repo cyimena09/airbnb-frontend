@@ -5,9 +5,7 @@ import {Conversation} from '../../../../lib/models/conversation';
 import {ConversationService} from '../../services/conversation/conversation.service';
 import {ParticipationService} from '../../services/participation/participation.service';
 import {Participation} from '../../../../lib/models/participation';
-import {FormBuilder, Validators} from '@angular/forms';
-import {Comment} from '../../../../lib/models/comment';
-import {RealEstate} from '../../../../lib/models/real-estate';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-messenger',
@@ -18,7 +16,7 @@ export class MessengerComponent implements OnInit {
 
   participations: Participation[]
   messages: Message[];
-  messageForm;
+  messageForm: FormGroup;
 
   constructor(
     private messageService: MessageService,
@@ -31,6 +29,7 @@ export class MessengerComponent implements OnInit {
     this.initForm()
     this.getParticipationsByUserId();
     this.getConversationById(4)
+   // this.getMessagesToDisplay();
   }
 
   initForm(): void {

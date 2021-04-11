@@ -7,7 +7,7 @@ import {map} from 'rxjs/operators';
 })
 export class RealEstateService {
 
-  private apiURL = '/api/v1/real_estates/';
+  private apiURL = '/api/v1/assets/real_estates/';
 
   constructor(private httpClient: HttpClient) {
   }

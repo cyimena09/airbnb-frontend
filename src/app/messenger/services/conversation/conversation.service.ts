@@ -6,7 +6,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ConversationService {
 
-  private apiURL = '/api/v1/conversations/';
+  //private apiURL = '/api/v1/conversations/';
+  private apiURL = '/api/v1/messenger/conversations/';
 
   constructor(private httpClient: HttpClient) {
   }

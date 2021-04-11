@@ -6,7 +6,9 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ParticipationService {
 
-  private apiURL = '/api/v1/participations/';
+  //private apiURL = '/api/v1/participations/';
+  private apiURL = '/api/v1/messenger/participations/';
+
 
   constructor(private httpClient: HttpClient) {
   }

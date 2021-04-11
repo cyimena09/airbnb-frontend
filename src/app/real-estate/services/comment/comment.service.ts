@@ -8,7 +8,7 @@ import {map} from 'rxjs/operators';
 })
 export class CommentService {
 
-  private apiURL = '/api/v1/comments/';
+  private apiURL = '/api/v1/assets/comments/';
 
   commentSubject = new Subject();
 
