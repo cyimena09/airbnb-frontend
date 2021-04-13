@@ -2,6 +2,6 @@ import {Conversation} from './conversation';
 
 export class Participation {
   id;
-  userId;
+  participantId;
   conversation: Conversation
 }

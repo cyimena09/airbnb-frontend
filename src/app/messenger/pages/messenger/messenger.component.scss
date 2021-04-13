@@ -9,41 +9,7 @@ h2 {
   border-bottom: solid #dedbdb 1px;
 }
 
-// CONVERSATIONS
 
-.conversations {
-  width: 30%;
-  border-right: solid #dedbdb 1px;
-}
-
-.conversation {
-  display: flex;
-  align-items: center;
-  padding: 10px 10px;
-  cursor: pointer;
-
-  .picture-container {
-    margin-right: 20px;
-    width: 40px;
-
-    img {
-      width: 100%;
-      border-radius: 100%;
-    }
-  }
-}
-
-.conversation:hover {
-  background-color: #e8eff5;
-}
-
-.interlocutor {
-  font-weight: bold;
-}
-
-.last-message {
-  font-size: 12px;
-}
 
 // MESSAGES & FORM
 
@@ -55,71 +21,7 @@ h2 {
   padding-bottom: 2px;
 }
 
-// MESSAGES
 
-.row-other-message, .row-own-message {
-  display: flex;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-.row-own-message {
-  justify-content: flex-end;
-}
-
-// INTERLOCUTOR MESSAGE
-
-//  wrapper comprends l'image de l'interlocuteur + contenu du message
-.other-message {
-  display: flex;
-
-  .picture-container {
-    margin-right: 15px;
-    display: flex;
-    align-items: flex-end;
-
-    img {
-      width: 20px;
-      border-radius: 100%;
-    }
-  }
-
-  .message-text-container {
-    width: 50%;
-    background-color: #0ba9f7;
-  }
-}
-
-// OWN MESSAGE
-
-.own-message {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  .message-text-container {
-    width: 60%;
-    background-color: #808080;
-  }
-}
-
-.seen {
-  margin-top: 3px;
-  padding-right: 3px;
-  font-size: 11px;
-  color: #373737;
-
-  i {
-    margin-right: 3px;
-    color: green;
-  }
-}
-
-.message-text-container {
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-}
 
 // FORM
 

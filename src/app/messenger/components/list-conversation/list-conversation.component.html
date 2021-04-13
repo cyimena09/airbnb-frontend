@@ -1,0 +1,15 @@
+<h2>Vos conversations</h2>
+
+<div *ngFor="let conversation of conversations" class="conversation"
+     (click)="onSelectConversation(conversation.id)">
+  <div class="picture-container">
+    <img src="assets/images/profiles/emile.jpg" alt="">
+  </div>
+  <div *ngFor="let participation of conversation.participations" class="wrapper">
+    <div *ngIf="this.currentUserId != participation.participantId">
+      <p class="interlocutor">Interlocuteurs id : {{participation.participantId}}</p>
+      <p class="last-message">Désolé je ne peux pas venir</p>
+    </div>
+
+  </div>
+</div>

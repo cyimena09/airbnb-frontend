@@ -1,0 +1,45 @@
+<!--    MESSAGES -->
+<div class="messages">
+
+  <div *ngIf="messages">
+    <div  *ngFor="let message of messages">
+      <div *ngIf="message.senderId != currentUserId" class="row-other-message">
+        <div class="other-message">
+          <div class="picture-container">
+            <img src="assets/images/profiles/emile.jpg" alt="">
+          </div>
+          <div class="message-text-date">
+            <div class="message-text-container">
+              <p [innerHTML]="message.text"></p>
+            </div>
+            <p class="seen"><i class="fas fa-check-circle"></i>Envoyé le {{message.createAt | date: 'dd MMMM yy HH:mm:SS'}}</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div *ngIf="message.senderId == currentUserId" class="row-own-message">
+        <div class="own-message">
+          <div class="message-text-container">
+            <p [innerHTML]="message.text"></p>
+
+          </div>
+
+          <p class="seen"><i class="fas fa-check-circle"></i>Envoyé {{message.createAt | date: 'dd MMMM yy HH:mm:SS'}}</p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--        IF NO MESSAGES -> NO CONVERSATION-->
+  <div *ngIf="messages == null">
+    <p>Selectionner une conversation pour l'afficher</p>
+  </div>
+
+  <div *ngIf="messages == []">
+    <p>Il n y a pas de message à afficher </p>
+  </div>
+
+</div>

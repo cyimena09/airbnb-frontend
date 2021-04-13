@@ -3,72 +3,16 @@
 
     <!--    CONVERSATIONS -->
     <div class="conversations">
-      <app-search-user></app-search-user>
-      <button (click)="onSendMessage()">Send message</button>
-      <button (click)="onCreateConversation()">Nouvelle conversation</button>
-      <button (click)="onCreateParticipation()">Nouvelle participation</button>
-      <h2>Vos conversations</h2>
-
-      <!--      Conversation-->
-      <div *ngFor="let participation of participations" class="conversation"
-           (click)="getConversationById(participation.conversation.id)">
-        <div class="picture-container">
-          <img src="assets/images/profiles/emile.jpg" alt="">
-        </div>
-        <div class="wrapper">
-          <p class="interlocutor">User id : {{participation.userId}} Conversation id
-            = {{participation.conversation.id}}</p>
-          <p class="last-message">Désolé je ne peux pas venir</p>
-        </div>
-      </div>
-
-
+      <app-search-user (participantId)="onDisplayThreadByParticipantsIds($event)"></app-search-user>
+      <app-list-conversation [conversations]="conversations"
+                             (conversationId)="onDisplayThreadByConvId($event)"></app-list-conversation>
     </div>
 
     <!--    MESSAGES & FORM -->
     <div class="messages-form">
-
-
-      <!--    MESSAGES -->
-      <div class="messages">
-        <div *ngFor="let message of messages">
-          <div *ngIf="message.senderId != 1" class="row-other-message">
-            <div class="other-message">
-              <div class="picture-container">
-                <img src="assets/images/profiles/emile.jpg" alt="">
-              </div>
-              <div class="message-text-date">
-                <div class="message-text-container">
-                  <p [innerHTML]="message.text"></p>
-                </div>
-                <p class="seen"><i class="fas fa-check-circle"></i>Envoyé le {{message.createAt | date: 'dd MMMM yy HH:mm:SS'}}</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div *ngIf="message.senderId == 1" class="row-own-message">
-            <div class="own-message">
-              <div class="message-text-container">
-                <p [innerHTML]="message.text"></p>
-
-              </div>
-
-              <p class="seen"><i class="fas fa-check-circle"></i>Envoyé {{message.createAt | date: 'dd MMMM yy HH:mm:SS'}}</p>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <form class="form"  [formGroup]="messageForm" (ngSubmit)="onSendMessage()">
-        <textarea id="story" name="story" rows="1" placeholder="Votre message ..." formControlName="text"></textarea>
-        <div class="button-wrapper">
-          <button><i class="fas fa-paper-plane"></i></button>
-        </div>
-      </form>
-
+      <app-discussion-thread [messages]="messages" [currentUserId]="currentUserId"></app-discussion-thread>
+      <app-form-message [messages]="messages" [currentUserId]="currentUserId"></app-form-message>
     </div>
+
   </div>
 </div>

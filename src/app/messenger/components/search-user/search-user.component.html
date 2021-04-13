@@ -1,5 +1,5 @@
 <div class="search-user">
-  <form class="form"  [formGroup]="searchForm" (ngSubmit)="onSearchUser()" style="display: flex">
+  <form class="form" [formGroup]="searchForm" (ngSubmit)="onSearchUser()" style="display: flex">
     <input type="text" placeholder="Trouver un utilisateur" formControlName="firstName">
     <div class="button-wrapper">
       <button><i class="fas fa-search"></i></button>
@@ -9,6 +9,6 @@
 
 <div *ngIf="users" class="container-search-result">
   <div *ngFor="let user of users" class="result">
-    <p style="cursor: pointer" (click)="onGetMessages(user.id)">{{user.firstName}} {{user.lastName}}</p>
+    <p style="cursor: pointer" (click)="onSelectUser(user.id)">{{user.firstName}} {{user.lastName}}</p>
   </div>
 </div>

@@ -29,6 +29,7 @@ export class SignupComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       street: ['', Validators.required],
       streetNumber: ['', Validators.required],
+      mailBox: [''],
       postalCode: ['', Validators.required],
       country: ['', Validators.required],
       city: ['', Validators.required]
@@ -53,10 +54,10 @@ export class SignupComponent implements OnInit {
     // newUser.address.country = formValue.country;
     // newUser.address.city = formValue.city;
 
-    newUser.firstName = "Emile";
-    newUser.lastName = "Cyimena";
-    newUser.birthDate = "1992-10-08";
-    newUser.email = "cyimena09@hotmail.com";
+    newUser.firstName = "Mike";
+    newUser.lastName = "Cyamukungu";
+    newUser.birthDate = "1995-10-08";
+    newUser.email = "amaury032@hotmail.com";
     newUser.password = "Emiliano--032";
     newUser.phoneNumber = "0484090853";
     // Address

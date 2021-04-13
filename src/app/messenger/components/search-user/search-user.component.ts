@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Message} from '../../../../lib/models/message';
-import {Conversation} from '../../../../lib/models/conversation';
 import {UserService} from '../../../user/services/user/user.service';
 import {User} from '../../../../lib/models/user';
+import {ConversationService} from '../../services/conversation/conversation.service';
+import {MessageService} from '../../services/message/message.service';
+import {AuthService} from '../../../auth/services/auth/auth.service';
+import {ParticipationService} from '../../services/participation/participation.service';
 
 @Component({
   selector: 'app-search-user',
@@ -14,8 +16,15 @@ export class SearchUserComponent implements OnInit {
   searchForm: FormGroup;
   users: User[];
 
+  @Output('participantId')
+  participantIdEmitter = new EventEmitter<Array<number>>();
+
   constructor(
     private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private messageService: MessageService,
+    private conversationService: ConversationService,
+    private participationService: ParticipationService,
     private userService: UserService) {
   }
 
@@ -30,19 +39,19 @@ export class SearchUserComponent implements OnInit {
   }
 
   onSearchUser() {
-    console.log('Recherche de l\'utilisateur');
     let firstName = this.searchForm.value.firstName;
 
     this.userService.getUserByFilter(firstName).subscribe(
       (data: any) => {
-        console.log('Recherche effectuée', data);
         this.users = data.content;
       }
     );
   }
 
-  onGetMessages(id) {
-
+  onSelectUser(id) {
+    let listIds = [];
+    listIds.push(id)
+    this.participantIdEmitter.emit(listIds); // permet de rechercher la conversation avec ce participant
   }
 
 }

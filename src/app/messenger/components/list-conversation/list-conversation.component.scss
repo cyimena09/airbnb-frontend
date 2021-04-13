@@ -1,0 +1,35 @@
+// CONVERSATIONS
+
+.conversations {
+  width: 30%;
+  border-right: solid #dedbdb 1px;
+}
+
+.conversation {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  cursor: pointer;
+
+  .picture-container {
+    margin-right: 20px;
+    width: 40px;
+
+    img {
+      width: 100%;
+      border-radius: 100%;
+    }
+  }
+}
+
+.conversation:hover {
+  background-color: #e8eff5;
+}
+
+.interlocutor {
+  font-weight: bold;
+}
+
+.last-message {
+  font-size: 12px;
+}

@@ -1,0 +1,6 @@
+<form class="form"  [formGroup]="messageForm" (ngSubmit)="onSendMessage()">
+  <textarea id="story" name="story" rows="1" placeholder="Votre message ..." formControlName="text"></textarea>
+  <div class="button-wrapper">
+    <button><i class="fas fa-paper-plane"></i></button>
+  </div>
+</form>
