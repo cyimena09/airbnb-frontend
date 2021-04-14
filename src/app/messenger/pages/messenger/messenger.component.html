@@ -1,18 +1,22 @@
 <div class="page">
   <div class="content-page">
 
-    <!--    CONVERSATIONS -->
-    <div class="conversations">
-      <app-search-user (participantId)="onDisplayThreadByParticipantsIds($event)"></app-search-user>
-      <app-list-conversation [conversations]="conversations"
-                             (conversationId)="onDisplayThreadByConvId($event)"></app-list-conversation>
-    </div>
 
-    <!--    MESSAGES & FORM -->
-    <div class="messages-form">
-      <app-discussion-thread [messages]="messages" [currentUserId]="currentUserId"></app-discussion-thread>
-      <app-form-message [messages]="messages" [currentUserId]="currentUserId"></app-form-message>
-    </div>
+
+
+<!--    -->
+<!--    &lt;!&ndash;    CONVERSATIONS &ndash;&gt;-->
+<!--    <div class="conversations">-->
+<!--      <app-search-user (participantId)="onDisplayThreadByParticipantsIds($event)"></app-search-user>-->
+<!--      <app-list-conversation [conversations]="conversations"-->
+<!--                             (conversationId)="onDisplayThreadByConvId($event)"></app-list-conversation>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash;    MESSAGES & FORM &ndash;&gt;-->
+<!--    <div class="messages-form">-->
+<!--      <app-discussion-thread [messages]="messages" [currentUserId]="currentUserId"></app-discussion-thread>-->
+<!--      <app-form-message [messages]="messages" [currentUserId]="currentUserId"></app-form-message>-->
+<!--    </div>-->
 
   </div>
 </div>

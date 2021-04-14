@@ -1,11 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Message} from '../../../../lib/models/message';
 import {MessageService} from '../../services/message/message.service';
 import {Conversation} from '../../../../lib/models/conversation';
 import {ConversationService} from '../../services/conversation/conversation.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../auth/services/auth/auth.service';
 import {ParticipationService} from '../../services/participation/participation.service';
+import {Participation} from '../../../../lib/models/participation';
+import {SocketService} from '../../services/socket/socket.service';
+import {catchError, map, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-messenger',
@@ -16,16 +19,15 @@ export class MessengerComponent implements OnInit {
 
   currentUserId = this.authService.currentUserId;
   conversations: Conversation[]; // toutes les conversations de la liste
-  messageForm: FormGroup;
   messages: Message[] = null;
 
   constructor(
     private messageService: MessageService,
+    private socketService: SocketService,
     private formBuilder: FormBuilder,
     private conversationService: ConversationService,
     private participationService: ParticipationService,
-    private authService: AuthService) {
-  }
+    private authService: AuthService) { }
 
   ngOnInit(): void {
     this.getConversationsByUserId(this.currentUserId);

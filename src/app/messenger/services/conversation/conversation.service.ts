@@ -13,6 +13,7 @@ export class ConversationService {
   private apiURL = '/api/v1/messenger/conversations/';
 
   constructor(private httpClient: HttpClient) {
+
   }
 
   // Récupère toutes les conversations auxquelles l'utilisateur a participé
