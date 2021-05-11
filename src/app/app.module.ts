@@ -17,7 +17,6 @@ import {AuthModule} from './auth/auth.module';
 import {HomeModule} from './home/home.module';
 import {SharedModule} from './shared/shared.module';
 import { NotificationModule } from './notification/notification.module';
-import { AlertModule } from './alert/alert.module';
 
 @NgModule({
   declarations: [
@@ -36,9 +35,8 @@ import { AlertModule } from './alert/alert.module';
     HomeModule,
     AuthModule,
     SharedModule,
-    AppRoutingModule,
     NotificationModule,
-    AlertModule,
+    AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: "fr-Fr" }

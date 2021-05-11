@@ -12,6 +12,7 @@ import { ListRealEstatesComponent } from './components/list-real-estates/list-re
 import { SingleRealEstateComponent } from './components/single-real-estate/single-real-estate.component';
 import { ListCommentsComponent } from './components/list-comments/list-comments.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
+import { RealEstateComponent } from './pages/real-estate/real-estate.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AddCommentComponent } from './components/add-comment/add-comment.compon
     ListRealEstatesComponent,
     SingleRealEstateComponent,
     ListCommentsComponent,
-    AddCommentComponent
+    AddCommentComponent,
+    RealEstateComponent
   ],
   imports: [
     CommonModule,

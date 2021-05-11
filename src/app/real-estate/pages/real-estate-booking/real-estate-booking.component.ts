@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {RealEstateService} from '../../services/real-estate/real-estate.service';
-import {RealEstate} from '../../../../lib/models/real-estate';
-import {Booking} from '../../../../lib/models/booking';
 import {BookingService} from '../../../booking/services/booking/booking.service';
+import {RealEstate} from '../../models/realEstate';
+import {Booking} from '../../../booking/models/booking';
 
 @Component({
   selector: 'app-real-estate-booking',

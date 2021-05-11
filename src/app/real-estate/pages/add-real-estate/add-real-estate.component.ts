@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {RealEstateService} from '../../services/real-estate/real-estate.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {RealEstate} from '../../../../lib/models/real-estate';
-import {Address} from '../../../../lib/models/address';
-import {User} from '../../../../lib/models/user';
+import {RealEstate} from '../../models/realEstate';
+import {Address} from '../../../shared/models/address';
+import {User} from '../../../user/models/user';
+import {CategoryEnum} from '../../models/categoryEnum';
 
 @Component({
   selector: 'app-add-real-estate',
@@ -56,10 +57,10 @@ export class AddRealEstateComponent implements OnInit {
     // Real Estate
     let newRE = new RealEstate();
     newRE.name = 'Villa Massaï';
-    newRE.type = 'Villa';
+    newRE.category.name = CategoryEnum.VILLA;
     newRE.description = 'Villa luxueux et spacieux située au bord du lac kivu';
     newRE.bedroom = 5;
-    newRE.garden = true;
+    newRE.hasGarden = true;
     newRE.price = 350;
     // Address
     let address = new Address();

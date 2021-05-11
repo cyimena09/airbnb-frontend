@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RealEstate} from '../../../../lib/models/real-estate';
+import {RealEstate} from '../../models/realEstate';
 
 @Component({
   selector: 'app-list-real-estates',
@@ -13,6 +13,7 @@ export class ListRealEstatesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

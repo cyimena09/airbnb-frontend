@@ -1,4 +1,4 @@
-import {RealEstate} from './real-estate';
+import {RealEstate} from './realEstate';
 
 export class Comment {
   id;

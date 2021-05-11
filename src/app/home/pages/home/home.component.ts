@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RealEstateService} from '../../../real-estate/services/real-estate/real-estate.service';
-import {RealEstate} from '../../../../lib/models/real-estate';
+import {RealEstate} from '../../../real-estate/models/realEstate';
 
 
 @Component({

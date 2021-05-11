@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Comment} from '../../../../lib/models/comment';
-import {RealEstate} from '../../../../lib/models/real-estate';
+import {Comment} from '../../models/comment';
 import {FormBuilder, Validators} from '@angular/forms';
 import {CommentService} from '../../services/comment/comment.service';
+import {RealEstate} from '../../models/realEstate';
 
 @Component({
   selector: 'app-add-comment',

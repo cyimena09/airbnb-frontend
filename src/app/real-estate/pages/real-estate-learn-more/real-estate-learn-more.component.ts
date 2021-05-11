@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {RealEstate} from '../../../../lib/models/real-estate';
 import {RealEstateService} from '../../services/real-estate/real-estate.service';
-import {Comment} from '../../../../lib/models/comment';
+import {Comment} from '../../models/comment';
 import {CommentService} from '../../services/comment/comment.service';
+import {RealEstate} from '../../models/realEstate';
 
 @Component({
   selector: 'app-real-estate-learn-more',

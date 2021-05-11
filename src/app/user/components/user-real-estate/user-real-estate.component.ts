@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RealEstate} from '../../../../lib/models/real-estate';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {RealEstate} from '../../../real-estate/models/realEstate';
 
 @Component({
   selector: 'app-user-real-estate',
@@ -25,9 +25,9 @@ export class UserRealEstateComponent implements OnInit {
       // real estate information
       name: [{value: this.realEstate.name, disabled: true}, Validators.required],
       bedroom: [{value: this.realEstate.bedroom, disabled: true}, Validators.required],
-      garden: [{value: this.realEstate.garden, disabled: true}, Validators.required],
+      garden: [{value: this.realEstate.hasGarden, disabled: true}, Validators.required],
       price: [{value: this.realEstate.price, disabled: true}, Validators.required],
-      type: [{value: this.realEstate.type, disabled: true}, Validators.required],
+      category: [{value: this.realEstate.category, disabled: true}, Validators.required],
       // real estate address
       street: [{value: this.realEstate.address.street, disabled: true}, Validators.required],
       streetNumber: [{value: this.realEstate.address.streetNumber, disabled: true}, Validators.required],

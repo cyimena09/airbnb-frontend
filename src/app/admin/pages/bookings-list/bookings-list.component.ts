@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BookingService} from '../../../booking/services/booking/booking.service';
-import {Booking} from '../../../../lib/models/booking';
+import {Booking} from '../../../booking/models/booking';
 
 @Component({
   selector: 'app-bookings-list',
@@ -8,7 +8,7 @@ import {Booking} from '../../../../lib/models/booking';
   styleUrls: ['./bookings-list.component.scss']
 })
 export class BookingsListComponent implements OnInit {
-  bookings: [Booking];
+  bookings: Booking[] = [];
 
   constructor(private bookingService: BookingService) { }
 

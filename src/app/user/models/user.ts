@@ -1,4 +1,4 @@
-import {Address} from './address';
+import {Address} from '../../shared/models/address';
 
 export class User {
   id: number;

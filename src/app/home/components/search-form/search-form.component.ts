@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RealEstateService} from '../../../real-estate/services/real-estate/real-estate.service';
-import {RealEstate} from '../../../../lib/models/real-estate';
+import {RealEstate} from '../../../real-estate/models/realEstate';
 
 @Component({
   selector: 'app-search-form',
@@ -9,11 +9,13 @@ import {RealEstate} from '../../../../lib/models/real-estate';
   styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit {
-  realEstates: [RealEstate];
+  realEstates: RealEstate[] = [];
   loading = false;
   catalogForm: FormGroup;
 
-  constructor(private realEstateService: RealEstateService, private formBuilder: FormBuilder) {
+  constructor(
+    private realEstateService: RealEstateService,
+    private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -29,7 +31,6 @@ export class SearchFormComponent implements OnInit {
       city: ['', Validators.required]
     });
   }
-
 
   onSearch() {
     // warning, search is case sensitive

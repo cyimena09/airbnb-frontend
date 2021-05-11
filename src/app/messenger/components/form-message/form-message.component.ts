@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MessageService} from '../../services/message/message.service';
-import {Message} from '../../../../lib/models/message';
-import {Conversation} from '../../../../lib/models/conversation';
-import {Participation} from '../../../../lib/models/participation';
+import {Message} from '../../models/message';
+import {Conversation} from '../../models/conversation';
+import {Participation} from '../../models/participation';
 import {ParticipationService} from '../../services/participation/participation.service';
 
 @Component({

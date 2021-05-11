@@ -12,6 +12,7 @@ import { UserRealEstatesListComponent } from './components/user-real-estates-lis
 import { UserRealEstateComponent } from './components/user-real-estate/user-real-estate.component';
 import { RealEstateComponent } from './pages/real-estate/real-estate.component';
 import { UserComponent } from './pages/user/user.component';
+//import { UserFormComponent } from './components/user-form/user-form.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { UserComponent } from './pages/user/user.component';
     UserRealEstateComponent,
     RealEstateComponent,
     UserComponent,
+    //UserFormComponent,
   ],
   imports: [
     CommonModule,

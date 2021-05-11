@@ -1,11 +1,11 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../../user/services/user/user.service';
-import {User} from '../../../../lib/models/user';
 import {ConversationService} from '../../services/conversation/conversation.service';
 import {MessageService} from '../../services/message/message.service';
 import {AuthService} from '../../../auth/services/auth/auth.service';
 import {ParticipationService} from '../../services/participation/participation.service';
+import {User} from '../../../user/models/user';
 
 @Component({
   selector: 'app-search-user',

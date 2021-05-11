@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RealEstate} from '../../../../lib/models/real-estate';
+import {RealEstate} from '../../../real-estate/models/realEstate';
 
 @Component({
   selector: 'app-user-real-estates-list',

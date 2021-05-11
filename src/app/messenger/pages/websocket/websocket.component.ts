@@ -1,7 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FormGroup, Validators} from '@angular/forms';
 import {SocketService} from '../../services/socket/socket.service';
-import {ChatMessageDTO} from '../../../../lib/models/ChatMessageDTO';
 
 @Component({
   selector: 'app-websocket',
@@ -24,10 +22,10 @@ export class WebsocketComponent implements OnInit, OnDestroy {
   }
 
   onSendMessage() {
-    let chatMessage = new ChatMessageDTO;
-    chatMessage.message = "CECI EST UN MESSAGE"
-    chatMessage.user = "Emile"
-    this.webSocketService.sendMessage(chatMessage);
+    //let chatMessage = new ChatMessageDTO;
+    // chatMessage.message = "CECI EST UN MESSAGE"
+    // chatMessage.user = "Emile"
+    // this.webSocketService.sendMessage(chatMessage);
   }
 
 
