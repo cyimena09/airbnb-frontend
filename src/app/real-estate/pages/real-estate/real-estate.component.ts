@@ -9,7 +9,7 @@ import {RealEstate} from '../../models/realEstate';
   styleUrls: ['./real-estate.component.scss']
 })
 export class RealEstateComponent implements OnInit, OnDestroy {
-  realEstate: RealEstate[] = [];
+  realEstates: RealEstate[] = [];
   realEstateSub: Subscription;
 
   constructor(private realEstateService: RealEstateService) {
@@ -18,9 +18,8 @@ export class RealEstateComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.realEstateSub = this.realEstateService.getRealEstates().subscribe(
       (data: RealEstate[]) => {
-        this.realEstate = data;
-      }
-    );
+        this.realEstates = data;
+      });
   }
 
   ngOnDestroy() {

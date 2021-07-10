@@ -1,12 +1,12 @@
 import {Address} from '../../shared/models/address';
+import {Account} from './account';
 
 export class User {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   birthDate: string;
   phoneNumber: string;
-  email: string;
-  password: string;
   address: Address;
+  account: Account;
 }

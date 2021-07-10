@@ -1,0 +1,59 @@
+<section *ngIf="realEstate">
+  <h1>{{realEstate.name}}</h1>
+  <div class="note">
+    <span class="material-icons">star</span>
+    <span>8/10 (Noté par 1200 visiteurs)</span>
+  </div>
+
+  <div class="container-image-infos">
+    <div class="container-image">
+      <img src="" alt="">
+    </div>
+    <div class="infos">
+
+      <div class="info-group">
+        <span class="material-icons">king_bed</span>
+        <span>{{realEstate.bedroom}} chambre(s)</span>
+      </div>
+
+      <div class="info-group">
+        <span class="material-icons">grass</span>
+        <span>{{realEstate.hasGarden}}</span>
+      </div>
+
+      <div class="info-group">
+        <span class="material-icons">pool</span>
+        <span>{{realEstate.hasPool}}</span>
+      </div>
+
+
+    </div>
+
+    <div class="location">
+
+    </div>
+
+    <div class="meteo">
+      <span class="material-icons">wb_sunny</span>
+      <span>16° C Ciel couvert</span>
+    </div>
+
+    <div class="price">
+      <span>€ {{realEstate.price}}</span>
+      <span>par nuit</span>
+    </div>
+
+  </div>
+
+  <!--  Description-->
+  <div class="description">
+    <p>{{realEstate.description}}</p>
+  </div>
+
+<!--  Link-->
+  <div class="link">
+    <button>Partager à un ami</button>
+    <button>Voir sur une carte</button>
+    <button class="more-time"><span class="material-icons">more_time</span></button>
+  </div>
+</section>

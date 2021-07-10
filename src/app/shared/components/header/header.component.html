@@ -1,30 +1,33 @@
 <header class="page">
   <div class="content-page">
 
+    <!--    Logo & hamburger icon-->
     <div class="logo" routerLink="/home">
-      Airbnb
+      <span class="material-icons">menu</span>
+      Homaï Home
     </div>
 
-    <div *ngIf="disconnected == true">
-      <button routerLink="/signup">S'inscrire</button>
-      <!--    <button routerLink="/signin">Se connecter</button>-->
-      <button (click)="onLogin()">Se connecter</button>
+    <!--    Not connected-->
+    <div *ngIf="isAuthenticated === false">
+      <a routerLink="/signup">S'inscrire</a>
+      <a routerLink="/signin">Se connecter</a>
     </div>
 
-    <div *ngIf="disconnected == false" class="shortcuts">
+    <!--    Connected-->
+    <div *ngIf="isAuthenticated === true" class="shortcuts">
       <div class="shortcut" routerLink="/messenger">
-        <i class="fas fa-envelope"></i>
+        <span class="material-icons">local_post_office</span>
       </div>
       <div class="shortcut">
-        <i class="fas fa-bell"></i>
+        <span class="material-icons">notifications</span>
       </div>
-
       <div class="shortcut" routerLink="add_real_estate">
-        <i class="fas fa-plus"></i>
+        <span class="material-icons">add</span>
       </div>
       <div class="shortcut" routerLink="user/user_space">
         <img src="assets/images/profiles/emile.jpg" alt="">
       </div>
     </div>
+
   </div>
 </header>

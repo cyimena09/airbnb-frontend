@@ -1,1 +1,36 @@
-$color-main-green : rgb(57, 122, 62);
+// POLICE
+
+// Main
+$font-title: 'Oswald', sans-serif; // font used for importants titles and tabs.
+// secondary
+$font-text: 'Nunito Sans', sans-serif; // general font.
+
+
+// COLORS
+
+// white
+$color-white-dark:#EBEDEF;
+// grey
+$color-main-grey:#B2B2B2;
+$color-grey-light:#D4D2D2;
+//black
+$color-main-black:#4A4B4B;
+$color-dark-light:#707070;
+// blue
+$color-main-blue: #21556B;
+$color-blue-dark: #053F54;
+$color-blue-light: #376A80;
+$color-blue-lighter: #5C889B;
+// yellow
+$color-main-yellow: #F2AE3E;
+// green
+$color-main-green: #00766F;
+$color-green-light: #1F8E2E;
+// red
+$color-main-red: #AC1B1B;
+$color-red-light: #E32B2B;
+
+// OTHER
+
+// shadows
+//$box-shadow: 0 0 15px $color-shadow;

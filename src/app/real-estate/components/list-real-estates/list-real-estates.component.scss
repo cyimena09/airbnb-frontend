@@ -1,73 +1,105 @@
-// containers
-
-.real-estate {
-  width: 800px;
-  margin-bottom: 40px;
-}
-
-.wrapper-text {
-  width: 50%;
-  padding: 20px 20px 0 20px;
-}
-
-.description {
-  margin-top: 20px;
-  padding: 0 20px;
-}
-
-.image-container {
-  display: flex;
-  width: 50%;
-}
-
-// General
+@import "src/scss/variables";
 
 h3 {
-  font-size: 26px;
   margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.real-estate {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.container-image {
+  width: 30%;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding: 10px 10px 10px 20px;
 }
 
 h4 {
-  margin-bottom: 5px;
-}
-
-img {
-  object-fit: contain;
-}
-
-.label {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: bold;
-  color: #9a9a98;
-  width: 45px;
-}
-
-// Real-estate
-
-.image-main-info {
-  display: flex;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .info-group {
-  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
 
-  i {
+  .material-icons {
     margin-right: 10px;
+  }
+
+  .star, .score {
+    color: $color-main-yellow;
+  }
+
+  .score {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .visitors {
+    font-size: 12px;
+  }
+
+  .price {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $color-main-blue;
+  }
+
+  .by-day {
+    font-size: 12px;
+    font-weight: normal;
+    color: $color-main-blue;
   }
 }
 
-.price {
-  font-size: 26px;
-  font-weight: bold;
-}
-
-.footer-real-estate {
+.link {
   display: flex;
-  padding: 0 20px 20px 20px;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: solid 1px $color-white-dark;
 }
 
-.btn-container {
-  margin-top: 0;
-  margin-right: 10px;
+.left {
+  display: flex;
 }
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right img {
+  width: 24px;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+button:first-child {
+  margin-right: 15px;
+  text-transform: uppercase;
+}
+
+.more-time {
+  background-color: $color-grey-light;
+
+  span {
+    color: $color-main-green;
+  }
+}
+

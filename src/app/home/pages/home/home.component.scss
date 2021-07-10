@@ -1,4 +1,16 @@
-.content-page {
-  flex-direction: row;
+.page {
+  margin-top: 350px;
+}
+
+.components {
+  display: flex;
   justify-content: space-between;
+}
+
+app-search-form-real-estate {
+  width: 30%;
+}
+
+h2 {
+  text-align: center;
 }

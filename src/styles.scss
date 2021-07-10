@@ -1,9 +1,10 @@
-@import "src/scss/variables";
+@import "scss/variables";
 
 * {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: $color-main-black;
 }
 
 // Containers
@@ -17,12 +18,12 @@
   display: flex;
   flex-direction: column;
   width: 1250px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 section {
   padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 // General
@@ -38,6 +39,7 @@ li {
 // images
 
 img {
+  display: flex;
   width: 100%;
 }
 
@@ -67,47 +69,56 @@ img {
 
 // Buttons
 
-.btn-container {
-  background-color: $color-main-green;
-  padding: 10px;
+button {
+  border: unset;
+  padding: 10px 15px;
   cursor: pointer;
-  width: fit-content;
-  margin-top: 20px;
-  text-align: center;
-
-  a {
-    color: white;
-  }
-
-  input {
-    padding: 0;
-    border: unset;
-    background-color: unset;
-    color: white;
-    width: 100%;
-    font-size: 16px;
-    cursor: pointer;
-  }
+  background-color: $color-main-blue;
+  color: white;
 }
 
-.btn-container:hover {
-  background-color: darkgreen;
-}
+//
+//.btn-container {
+//  background-color: $color-main-green;
+//  padding: 10px;
+//  cursor: pointer;
+//  width: fit-content;
+//  margin-top: 20px;
+//  text-align: center;
+//
+//  a {
+//    color: white;
+//  }
+//
+//  input {
+//    padding: 0;
+//    border: unset;
+//    background-color: unset;
+//    color: white;
+//    width: 100%;
+//    font-size: 16px;
+//    cursor: pointer;
+//  }
+//}
+//
+//.btn-container:hover {
+//  background-color: darkgreen;
+//}
 
 // Forms
 
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
-
-  label {
-    margin-bottom: 5px;
-  }
+  margin-bottom: 20px;
 }
 
 .form-group:last-child {
   margin-bottom: 0;
+}
+
+label {
+  margin-bottom: 5px;
 }
 
 input, select {

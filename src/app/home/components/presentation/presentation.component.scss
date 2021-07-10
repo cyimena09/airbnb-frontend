@@ -1,0 +1,43 @@
+@import "src/scss/variables";
+
+.page {
+  position: relative;
+}
+
+.content-page {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 180px;
+}
+
+.container-image {
+  overflow: hidden;
+  height: 850px;
+  position: absolute;
+  z-index: -1;
+}
+
+img {
+  position: relative;
+  bottom: 150px;
+  opacity: 0.5;
+}
+
+.presentation-text {
+  width: 40%;
+}
+
+app-login {
+  width: 25%;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: $color-blue-dark;
+}
+
+p {
+  font-size: 22px;
+  color: $color-main-blue;
+}

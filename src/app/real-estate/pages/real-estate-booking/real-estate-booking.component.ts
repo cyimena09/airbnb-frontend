@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {RealEstateService} from '../../services/real-estate/real-estate.service';
 import {BookingService} from '../../../booking/services/booking/booking.service';
@@ -16,32 +16,35 @@ export class RealEstateBookingComponent implements OnInit {
 
   constructor(private realEstateService: RealEstateService,
               private bookingService: BookingService,
-              private activatedRoute: ActivatedRoute) { }
-
-  ngOnInit(): void {
-   this.getRealEstate();
+              private activatedRoute: ActivatedRoute) {
   }
 
-  getRealEstate(){
+  ngOnInit(): void {
+    this.getRealEstate();
+  }
+
+  getRealEstate() {
     this.realEstateService.getRealEstateById(this.id).subscribe(
       (data: any) => {
         this.realEstate = data;
       });
   }
 
-  onCreateBooking(id){
+  onCreateBooking(id) {
     let newBooking = new Booking();
     newBooking.realEstate.id = id;
-    newBooking.user.id   = 1;
-    newBooking.startDate = "2021-01-05 11:30:01";
-    newBooking.endDate = "2021-01-06 11:30:01";
+    newBooking.user.id = '1';
+    newBooking.startDate = '2021-01-05 11:30:01';
+    newBooking.endDate = '2021-01-06 11:30:01';
 
     this.bookingService.createBooking(newBooking).subscribe(
       () => {
-        console.log("Le bien a été réservé ")
+        console.log('Le bien a été réservé ');
       },
-      (message) => {console.log(message.error)}
-      );
+      (message) => {
+        console.log(message.error);
+      }
+    );
   }
 
 }

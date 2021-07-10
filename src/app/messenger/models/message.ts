@@ -1,10 +1,12 @@
 import {Conversation} from './conversation';
 
 export class Message {
-  id
-  text;
-  createAt;
-  updateAt;
-  senderId;
-  conversation: Conversation
+  id: string;
+  senderId: string;
+  text: string;
+  isGroup: boolean;
+  createAt: Date;
+  updateAt: Date;
+  swDisplay: boolean;
+  conversation: Conversation;
 }

@@ -3,13 +3,14 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {RealEstate} from '../../models/realEstate';
+import {environment} from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RealEstateService {
 
-  private apiURL = '/api/v1/assets/real_estates/';
+  private apiURL = environment.API_REAL_ESTATE;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -18,24 +19,14 @@ export class RealEstateService {
     return this.httpClient.get(this.apiURL).pipe(
       map(response => {
         return response['content'] as RealEstate[];
-      })
-    );
+      }));
   }
 
-  // getRealEstates() {
-  //   return this.httpClient.get(this.apiURL).subscribe(
-  //     (data: RealEstate[]) => {
-  //       return data;
-  //     }
-  //   )
-  // }
-
   getRealEstateById(id): Observable<RealEstate> {
-    return this.httpClient.get(this.apiURL + id).pipe(
+    return this.httpClient.get(`${this.apiURL}/${id}`).pipe(
       map(response => {
-        return response['content'] as RealEstate;
-      })
-    );
+        return response as RealEstate;
+      }));
   }
 
   getRealEstateByUserId(id) {
@@ -43,8 +34,7 @@ export class RealEstateService {
     return this.httpClient.get(this.apiURL + 'users/' + id).pipe(
       map(response => {
         return response['content'];
-      })
-    );
+      }));
   }
 
   createRealEstate(newRealEstate) {
@@ -60,7 +50,6 @@ export class RealEstateService {
   }
 
   searchRealEstate(type, bedroom, price, country, city) {
-
     let params = new HttpParams()
       .set('type', type)
       .set('bedroom', bedroom)

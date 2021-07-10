@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../../auth/services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  disconnected = true;
+  isAuthenticated;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private authService: AuthService) {
   }
 
-  onLogin() {
-    this.disconnected = !this.disconnected;
+  ngOnInit(): void {
+    this.isAuthenticated = this.authService.isAuthenticated;
+    this.authService.isAuthenticatedSubject.subscribe(
+      (data: boolean) => {
+        this.isAuthenticated = data;
+      });
   }
 
 }

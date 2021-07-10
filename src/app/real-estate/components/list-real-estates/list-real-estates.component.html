@@ -1,52 +1,44 @@
 <section class="wrapper">
-  <h2>Résultat de la recherche</h2>
+  <h3>Résultat de la recherche</h3>
   <div *ngIf="realEstates">
-
-
     <div *ngFor="let realEstate of realEstates" class="real-estate box-shadow">
+      <!--      Image -->
+      <div class="container-image">
+        <img src="../../../../assets/images/real-estates/realestate.jpg" alt="">
+      </div>
       <!--    Row information-->
-      <div class="image-main-info">
-        <div class="image-container">
-          <img src="../../../../assets/images/real-estates/realestate.jpg" alt="">
-        </div>
-        <div class="wrapper-text">
-          <h3>{{realEstate.name}}</h3>
-          <div class="info-group">
-            <h4><i class="fas fa-home"></i>Caractéristiques</h4>
-            <ul>
-              <li>{{realEstate.bedroom}} chambres</li>
-              <li>{{realEstate.hasGarden}} Jardin</li>
-            </ul>
-          </div>
-          <div class="info-group">
-            <h4><i class="fas fa-map-marker-alt"></i>Localisation</h4>
-            <p><span class="label">Rue</span>{{realEstate.address.street}} n° {{realEstate.address.streetNumber}}</p>
-            <p><span class="label">Ville</span>{{realEstate.address.city}}</p>
-            <p><span class="label">Pays</span>{{realEstate.address.country}}</p>
-          </div>
+      <div class="infos">
+        <h4>{{realEstate.name}}</h4>
 
-          <div class="info-group">
-            <h4><i class="fas fa-tag"></i>Tarif</h4>
-            <p class="price">{{realEstate.price}} €/j</p>
+        <div class="info-group">
+          <span class="star material-icons">star</span>
+          <span class="score">8.5</span>
+          <span class="visitors">(noté par 1211 visiteurs)</span>
+        </div>
+        <div class="info-group">
+          <span class="material-icons">location_on</span>
+          <span>{{realEstate.address.city}}</span>
+        </div>
+        <div class="info-group">
+          <span class="material-icons">king_bed</span>
+          <span>{{realEstate.bedroom}} chambre(s)</span>
+        </div>
+        <div class="info-group">
+          <span class="price">€ {{realEstate.price}} <span class="by-day">par jour</span> </span>
+        </div>
+        <div class="link">
+          <div class="left">
+            <button routerLink="/real_estates/{{realEstate.id}}">Consulter</button>
+            <button class="more-time"><span class="material-icons">more_time</span></button>
           </div>
-        </div>
-      </div>
-      <!--    Descriptions & buttons-->
-      <div class="info-group description">
-        <h4><i class="fas fa-info"></i>Description</h4>
-        <p>{{realEstate.description}}</p>
-      </div>
-
-      <div class="footer-real-estate">
-        <div class="btn-container" routerLink="/real_estate_learn_more/{{realEstate.id}}">
-          <a>Learn More</a>
-        </div>
-        <div class="btn-container" routerLink="/real_estate_booking">
-          <a>Louer</a>
+          <div class="right">
+            <span>Partager à un ami : </span>
+            <img src="assets/icons/icons8-facebook.svg" alt="Logo facebook"/>
+            <img src="assets/icons/icons8-twitter.svg" alt="Logo twitter"/>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 

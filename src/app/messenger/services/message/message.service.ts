@@ -3,18 +3,21 @@ import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {AuthService} from '../../../auth/services/auth/auth.service';
 import {ParticipationService} from '../participation/participation.service';
+import {Message} from '../../models/message';
+import {environment} from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
+  currentConversationId; // used when refreshing the discussion thread, especially when we sent a message
+  messageSubject = new Subject(); // defined which messages from which conversation should be displayed
 
-  currentConversationId; // utilisé lorsqu'on rafraichit le fil de la discussion, notamment lorsqu'on a envoyé un message
-  messageSubject = new Subject(); // défini quels messages de quelle conversation doivent etre affiché
+  private apiURL = environment.API_MESSENGER;
 
-  private apiURL = '/api/v1/messenger/messages/';
-
-  constructor(private authService: AuthService, private participationService: ParticipationService, private httpClient: HttpClient) {
+  constructor(private authService: AuthService,
+              private participationService: ParticipationService,
+              private httpClient: HttpClient) {
   }
 
   /**
@@ -37,8 +40,7 @@ export class MessageService {
       },
       () => {
         this.currentConversationId = null;
-      }
-    );
+      });
   }
 
   /**
@@ -46,16 +48,7 @@ export class MessageService {
    * @param id
    */
   getMessagesByConversationId(id) {
-
-    return this.httpClient.get(this.apiURL + 'by/conversations/' + id).subscribe(
-      (data: any) => {
-        this.currentConversationId = id;
-        this.emitDiscussionThread(data);
-      },
-      () => {
-        this.currentConversationId = null;
-      }
-    );
+    return this.httpClient.get(this.apiURL + '/by/conversations/' + id);
   }
 
   /**
@@ -63,7 +56,6 @@ export class MessageService {
    * @param data
    */
   emitDiscussionThread(data) {
-
     if (data) {
       // on récupère la liste des participants de la conversation du premier message (dans tous les message les participants sont les memes)
       this.messageSubject.next(data);
@@ -73,18 +65,8 @@ export class MessageService {
     }
   }
 
-  addMessage(message) {
-
-    return this.httpClient.post(this.apiURL, message).subscribe(
-      () => {
-        if (this.currentConversationId) {
-          this.getMessagesByConversationId(this.currentConversationId);
-        } else {
-          let participants = this.participationService.getParticipantsIds();
-          this.getMessagesByParticipations(participants);
-        }
-      }
-    );
+  sendMessage(message: Message) {
+    return this.httpClient.post(this.apiURL, message);
   }
 
 }

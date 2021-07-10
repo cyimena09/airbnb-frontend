@@ -1,0 +1,87 @@
+<section>
+  <h3>Critères de recherche</h3>
+
+  <form class="box-shadow" [formGroup]="catalogForm" (ngSubmit)="onSearch()">
+
+    <div class="form-group">
+      <label for="category">Catégorie</label>
+      <select id="category" formControlName="category">
+        <option value="LOCATION" selected>À louer</option>
+        <option value="SELL">À vendre</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="re-type">Type</label>
+      <select id="re-type" formControlName="type">
+        <option value="all" selected>Tous</option>
+        <option value="apartment">Appartement</option>
+        <option value="house">Maison</option>
+        <option value="villa">Villa</option>
+        <option value="hotel">Hôtel</option>
+        <option value="hostel">Auberge</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p class="label">Nombre de chambre</p>
+      <div class="wrapper">
+        <div class="sub-group">
+          <label for="min-bedroom">Min</label>
+          <input id="min-bedroom" type="text" formControlName="minBedroom">
+        </div>
+        <div class="sub-group">
+          <label for="bedroom-max">Max</label>
+          <input id="bedroom-max" type="text" formControlName="maxBedroom">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <p class="label">Fourchette de prix</p>
+      <div class="wrapper">
+        <div class="sub-group">
+          <label for="min-price">Min</label>
+          <input id="min-price" type="text" formControlName="minPrice">
+        </div>
+        <div class="sub-group">
+          <label for="max-price">Max</label>
+          <input id="max-price" type="text" formControlName="maxPrice">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Pays</label>
+      <select id="country" formControlName="country">
+        <option value="all" selected>Rwanda</option>
+        <option value="appartment">Belgique</option>
+        <option value="house">Sénégal</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="city">Ville</label>
+      <select id="city" formControlName="city">
+        <option value="KIGALI" selected>Kigali</option>
+        <option value="CYANGUGU">Cyangugu</option>
+        <option value="BRUXELLES">Bruxelles</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p class="label">Dates de réservation</p>
+      <div class="wrapper">
+        <div class="sub-group">
+          <label for="min-date">Min</label>
+          <input id="min-date" type="date" formControlName="minDate">
+        </div>
+        <div class="sub-group">
+          <label for="max-date">Max</label>
+          <input id="max-date" type="date" formControlName="maxDate">
+        </div>
+      </div>
+    </div>
+    <button>Lancer la recherche</button>
+  </form>
+</section>

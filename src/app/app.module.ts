@@ -17,6 +17,8 @@ import {AuthModule} from './auth/auth.module';
 import {HomeModule} from './home/home.module';
 import {SharedModule} from './shared/shared.module';
 import { NotificationModule } from './notification/notification.module';
+import {InjectableRxStompConfig, RxStompService, rxStompServiceFactory} from '@stomp/ng2-stompjs';
+import {rxStompConfig} from './rx-stomp.config';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { NotificationModule } from './notification/notification.module';
     AppRoutingModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: "fr-Fr" }
+    {provide: LOCALE_ID, useValue: "fr-Fr" },
+    {provide: InjectableRxStompConfig, useValue: rxStompConfig,},
+    {provide: RxStompService, useFactory: rxStompServiceFactory, deps: [InjectableRxStompConfig]}
   ],
   bootstrap: [AppComponent]
 })

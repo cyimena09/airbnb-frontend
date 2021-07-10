@@ -8,7 +8,6 @@ import { SearchUserComponent } from './components/search-user/search-user.compon
 import { ListConversationComponent } from './components/list-conversation/list-conversation.component';
 import { FormMessageComponent } from './components/form-message/form-message.component';
 import { DiscussionThreadComponent } from './components/discussion-thread/discussion-thread.component';
-import { WebsocketComponent } from './pages/websocket/websocket.component';
 
 
 @NgModule({
@@ -18,7 +17,6 @@ import { WebsocketComponent } from './pages/websocket/websocket.component';
     ListConversationComponent,
     FormMessageComponent,
     DiscussionThreadComponent,
-    WebsocketComponent,
   ],
     imports: [
         CommonModule,

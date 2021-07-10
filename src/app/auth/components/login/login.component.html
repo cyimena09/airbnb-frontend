@@ -1,0 +1,15 @@
+<section>
+  <h2>Se connecter</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="register-password">Mot de passe</label>
+      <input type="password" id="register-password" formControlName="password">
+    </div>
+    <button type="submit">Se connecter</button>
+    <p class="not-registered">Pas encore inscrit ? <a routerLink="/signup">S'inscire</a></p>
+  </form>
+</section>

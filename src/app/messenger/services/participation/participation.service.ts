@@ -14,7 +14,7 @@ export class ParticipationService {
 
 
   constructor(private authService: AuthService, private httpClient: HttpClient) {
-    this.currentUserId = this.authService.currentUserId;
+    //this.currentUserId = this.authService.currentUserId;
     this.participantsIds.push(this.currentUserId); // l'utilisateur courant fait par défaut parti des participants de la conversation
   }
 

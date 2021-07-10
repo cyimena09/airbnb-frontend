@@ -1,22 +1,49 @@
 <div class="page">
   <div class="content-page">
 
+    <div *ngIf="authenticatedUser">
+      <h2>Bienvenue {{authenticatedUser.firstName}} {{authenticatedUser.lastName}}</h2>
+    </div>
 
 
+    <div>
+      <h2>Liste des utilisateurs</h2>
+      <ul *ngFor="let user of users">
+        <li style="cursor: pointer;" (click)="onSetReceiver(user.id)" >{{user.firstName}} {{user.lastName}}</li>
+      </ul>
+      <p>Id de l'interlocuteur cliqué: {{receiverId}}</p>
+    </div>
 
-<!--    -->
-<!--    &lt;!&ndash;    CONVERSATIONS &ndash;&gt;-->
-<!--    <div class="conversations">-->
-<!--      <app-search-user (participantId)="onDisplayThreadByParticipantsIds($event)"></app-search-user>-->
-<!--      <app-list-conversation [conversations]="conversations"-->
-<!--                             (conversationId)="onDisplayThreadByConvId($event)"></app-list-conversation>-->
-<!--    </div>-->
+    <div>
+      <h2>Liste des conversations de l'utilisateur authentifié</h2>
+      <ul *ngFor="let conv of conversations">
+        <li style="cursor: pointer;" (click)="onLoadMessagesByConversationId(conv.id)">{{conv.id}}</li>
+      </ul>
+    </div>
 
-<!--    &lt;!&ndash;    MESSAGES & FORM &ndash;&gt;-->
-<!--    <div class="messages-form">-->
-<!--      <app-discussion-thread [messages]="messages" [currentUserId]="currentUserId"></app-discussion-thread>-->
-<!--      <app-form-message [messages]="messages" [currentUserId]="currentUserId"></app-form-message>-->
-<!--    </div>-->
+
+    <div>
+      <h2>Message recu</h2>
+      <ul *ngFor="let message of receivedMessages">
+        <li>{{message.text}}</li>
+      </ul>
+      <app-form-message (message)="onSendMessage($event)"></app-form-message>
+    </div>
+
+
+    <!--    -->
+    <!--    &lt;!&ndash;    CONVERSATIONS &ndash;&gt;-->
+    <!--    <div class="conversations">-->
+    <!--      <app-search-user (participantId)="onDisplayThreadByParticipantsIds($event)"></app-search-user>-->
+    <!--      <app-list-conversation [conversations]="conversations"-->
+    <!--                             (conversationId)="onDisplayThreadByConvId($event)"></app-list-conversation>-->
+    <!--    </div>-->
+
+    <!--    &lt;!&ndash;    MESSAGES & FORM &ndash;&gt;-->
+    <!--    <div class="messages-form">-->
+    <!--      <app-discussion-thread [messages]="messages" [currentUserId]="currentUserId"></app-discussion-thread>-->
+    <!--      <app-form-message [messages]="messages" [currentUserId]="currentUserId"></app-form-message>-->
+    <!--    </div>-->
 
   </div>
 </div>

@@ -1,21 +1,13 @@
+<app-presentation></app-presentation>
+
 <div class="page">
   <div class="content-page">
+    <h2>Trouver une résidence</h2>
 
-    <h2>Faites votre choix</h2>
-    <div>
-      <p>Acheter</p>
+    <div class="components">
+      <app-search-form-real-estate></app-search-form-real-estate>
+      <app-list-real-estates [realEstates]="realEstates"></app-list-real-estates>
     </div>
-
-    <div>
-      <p>Louer</p>
-    </div>
-
-<!--    <app-search-form></app-search-form>-->
-<!--    <app-list-real-estates [realEstates]="realEstates"></app-list-real-estates>-->
-
-
-
-
 
   </div>
 </div>

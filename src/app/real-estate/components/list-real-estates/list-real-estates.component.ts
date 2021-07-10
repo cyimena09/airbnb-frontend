@@ -13,7 +13,6 @@ export class ListRealEstatesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
 }

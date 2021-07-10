@@ -1,0 +1,68 @@
+<div class="page">
+  <div class="content-page">
+
+    <h1>S'inscrire</h1>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onCreateUser()">
+      <!--  Personal info-->
+      <section>
+        <h2>Informations personnelles</h2>
+      <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input type="text" id="firstName" formControlName="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" id="lastName" formControlName="lastName">
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Numéro de téléphone</label>
+        <input type="text" id="phoneNumber" formControlName="phoneNumber">
+      </div>
+      <div class="form-group">
+        <label for="birthDate">Date de naissance</label>
+        <input type="date" id="birthDate" formControlName="birthDate">
+      </div>
+      </section>
+
+      <!--  Address infos-->
+      <section>
+        <h2>Adresse de contact</h2>
+        <div class="form-group">
+          <label for="street">Rue</label>
+          <input type="text" id="street" formControlName="street">
+        </div>
+        <div class="form-group">
+          <label for="streetNumber">Numéro</label>
+          <input type="text" id="streetNumber" formControlName="streetNumber">
+        </div>
+        <div class="form-group">
+          <label for="postalCode">Code postal</label>
+          <input type="text" id="postalCode" formControlName="postalCode">
+        </div>
+        <div class="form-group">
+          <label for="city">Ville</label>
+          <input type="text" id="city" formControlName="city">
+        </div>
+        <div class="form-group">
+          <label for="country">Pays</label>
+          <input type="text" id="country" formControlName="country">
+        </div>
+      </section>
+
+      <!--  Authentification infos-->
+      <section>
+        <h2>Authentification</h2>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label for="register-password">Mot de passe</label>
+          <input type="password" id="register-password" formControlName="password">
+        </div>
+      </section>
+      <button type="submit">Enregistrer</button>
+    </form>
+  </div>
+</div>

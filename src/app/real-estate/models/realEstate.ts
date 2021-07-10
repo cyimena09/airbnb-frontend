@@ -5,7 +5,6 @@ import {Booking} from '../../booking/models/booking';
 import {Category} from './category';
 import {Purpose} from './purpose';
 
-
 export class RealEstate {
   id: string;
   name: string;
@@ -13,13 +12,14 @@ export class RealEstate {
   price: number;
   bedroom: number;
   hasGarden: boolean;
+  hasPool: boolean;
   rating: number;
-  isActive: boolean
+  isActive: boolean;
   address: Address;
-  category: Category
-  comment: Comment[]
+  category: Category;
+  comment: Comment[];
   goals: Purpose[];
   bookings: Booking[];
-  user: User
+  user: User;
 
 }
