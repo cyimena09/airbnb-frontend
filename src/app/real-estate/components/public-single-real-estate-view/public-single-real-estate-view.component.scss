@@ -1,0 +1,125 @@
+@import "src/scss/variables";
+
+section {
+  width: 50%;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .material-icons {
+    color: $color-main-yellow;
+    font-size: 16px;
+  }
+
+  .material-icons:last-child {
+    margin-right: 15px;
+  }
+
+  span:last-child {
+    margin-left: 15px;
+    font-size: 12px;
+  }
+}
+
+.container-image-infos {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.container-image {
+  width: 50%;
+  margin-right: 20px;
+}
+
+.info-group {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+
+  .material-icons {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+}
+
+.info-inline {
+  display: flex;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+
+  .address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.price {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: solid 1px $color-white-dark;
+
+  span {
+    color: $color-main-blue;
+  }
+
+  span:first-child {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  span:last-child {
+    font-size: 12px;
+  }
+}
+
+.description {
+  border-bottom: solid 1px $color-white-dark;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+
+  p {
+    color: $color-black-light
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  button {
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+
+  .see-card {
+    background-color: white;
+    border: solid 1px $color-main-blue;
+    color: $color-main-blue;
+  }
+
+  .container-more-time {
+    border-left: solid 1px $color-white-dark;
+    padding-left: 15px;
+  }
+
+  .more-time {
+    background-color: $color-grey-light;
+    padding: 5px 10px;
+
+    span {
+      color: $color-main-green;
+
+    }
+  }
+}

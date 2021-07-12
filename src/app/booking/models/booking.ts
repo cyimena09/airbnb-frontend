@@ -6,6 +6,6 @@ export class Booking {
   startDate;
   endDate;
   status;
-  user: User;
   realEstate: RealEstate;
+  user: User;
 }

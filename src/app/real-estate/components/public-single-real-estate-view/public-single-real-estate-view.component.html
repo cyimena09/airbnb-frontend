@@ -2,47 +2,62 @@
   <h1>{{realEstate.name}}</h1>
   <div class="note">
     <span class="material-icons">star</span>
+    <span class="material-icons">star</span>
+    <span class="material-icons">star</span>
+    <span class="material-icons">star</span>
+    <span class="material-icons">star</span>
+    <span class="material-icons">star</span>
+    <span class="material-icons">star</span>
+    <span class="material-icons">star</span>
+    <span class="material-icons">star</span>
+    <span class="material-icons">star</span>
     <span>8/10 (Noté par 1200 visiteurs)</span>
   </div>
 
   <div class="container-image-infos">
     <div class="container-image">
-      <img src="" alt="">
+      <img src="assets/images/real-estates/realestate.jpg" alt="">
     </div>
+
     <div class="infos">
-
-      <div class="info-group">
-        <span class="material-icons">king_bed</span>
-        <span>{{realEstate.bedroom}} chambre(s)</span>
+      <div class="info-inline">
+        <div class="info-group">
+          <span class="material-icons">king_bed</span>
+          <span>{{realEstate.bedroom}} chambre(s)</span>
+        </div>
+        <div class="info-group">
+          <span class="material-icons">grass</span>
+          <span>{{realEstate.hasGarden}}</span>
+        </div>
+        <div class="info-group">
+          <span class="material-icons">pool</span>
+          <span>{{realEstate.hasPool}} Piscine</span>
+        </div>
       </div>
 
-      <div class="info-group">
-        <span class="material-icons">grass</span>
-        <span>{{realEstate.hasGarden}}</span>
+
+
+    <div class="location info-group">
+      <div class="container-icon">
+        <span class="material-icons">location_on</span>
       </div>
-
-      <div class="info-group">
-        <span class="material-icons">pool</span>
-        <span>{{realEstate.hasPool}}</span>
+      <div class="address">
+        <span>{{realEstate.address.street}}</span>
+        <span>{{realEstate.address.postalCode}} {{realEstate.address.city}}</span>
+        <span>{{realEstate.address.country}}</span>
       </div>
-
-
     </div>
 
-    <div class="location">
-
-    </div>
-
-    <div class="meteo">
+    <div class="weather info-group">
       <span class="material-icons">wb_sunny</span>
       <span>16° C Ciel couvert</span>
     </div>
 
     <div class="price">
       <span>€ {{realEstate.price}}</span>
-      <span>par nuit</span>
+      <span> par nuit</span>
     </div>
-
+    </div>
   </div>
 
   <!--  Description-->
@@ -50,10 +65,13 @@
     <p>{{realEstate.description}}</p>
   </div>
 
-<!--  Link-->
-  <div class="link">
-    <button>Partager à un ami</button>
-    <button>Voir sur une carte</button>
-    <button class="more-time"><span class="material-icons">more_time</span></button>
+<!--  Actions-->
+  <div class="actions">
+    <button class="share">Partager à un ami</button>
+    <button class="see-card">Voir sur une carte</button>
+    <div class="container-more-time">
+      <button class="more-time"><span class="material-icons">more_time</span></button>
+    </div>
+
   </div>
 </section>

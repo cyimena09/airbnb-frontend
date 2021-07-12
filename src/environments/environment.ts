@@ -7,6 +7,7 @@ export const environment = {
   API_AUTH: 'api/v1/assets/authenticate',
   API_USER: 'api/v1/assets/users',
   API_REAL_ESTATE : 'api/v1/assets/real_estates',
+  API_BOOKING : 'api/v1/assets/bookings',
   API_MESSENGER : 'api/v1/messenger/messages',
 };
 

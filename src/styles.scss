@@ -7,7 +7,14 @@
   color: $color-main-black;
 }
 
-// Containers
+body {
+  background-color: #F8F8F8;
+}
+
+section {
+  background-color: white;
+  border: solid 1px $color-white-dark;
+}
 
 .page {
   display: flex;

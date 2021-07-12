@@ -9,7 +9,6 @@ import {RealEstateService} from '../../services/real-estate/real-estate.service'
   styleUrls: ['./search-form-real-estate.component.scss']
 })
 export class SearchFormRealEstateComponent implements OnInit {
-
   realEstates: RealEstate[] = [];
   loading = false;
   catalogForm: FormGroup;
@@ -61,6 +60,5 @@ export class SearchFormRealEstateComponent implements OnInit {
   get f() {
     return this.catalogForm.controls;
   }
-
 
 }

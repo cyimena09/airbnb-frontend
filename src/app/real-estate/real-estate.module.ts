@@ -16,6 +16,8 @@ import { RealEstateComponent } from './pages/real-estate/real-estate.component';
 import { SearchFormRealEstateComponent } from './components/search-form-real-estate/search-form-real-estate.component';
 import { PublicSingleRealEstateComponent } from './pages/public-single-real-estate/public-single-real-estate.component';
 import { PublicSingleRealEstateViewComponent } from './components/public-single-real-estate-view/public-single-real-estate-view.component';
+import {SharedModule} from '../shared/shared.module';
+import {BookingModule} from '../booking/booking.module';
 
 
 @NgModule({
@@ -33,12 +35,14 @@ import { PublicSingleRealEstateViewComponent } from './components/public-single-
     PublicSingleRealEstateComponent,
     PublicSingleRealEstateViewComponent
   ],
-  imports: [
-    CommonModule,
-    RealEstateRoutingModule,
-    NgbRatingModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        CommonModule,
+        RealEstateRoutingModule,
+        NgbRatingModule,
+        ReactiveFormsModule,
+        SharedModule,
+        BookingModule
+    ],
     exports: [
         RatingComponent,
         ListRealEstatesComponent,

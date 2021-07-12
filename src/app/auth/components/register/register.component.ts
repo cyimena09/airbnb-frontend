@@ -42,8 +42,6 @@ export class RegisterComponent implements OnInit {
 
   onCreateUser(): void {
     let values = this.registerForm.value;
-
-    console.log(values)
     // user
     const newUser = new User();
     newUser.firstName = values.firstName;
