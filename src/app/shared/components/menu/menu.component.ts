@@ -1,4 +1,5 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../../auth/services/auth/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,19 +7,19 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  isAuthenticated: boolean = false;
   menu;
   isMenuOpen: boolean = true;
 
-  constructor() {
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit() {
-    // todo fix width
-    // we get the width of the menu to apply it to the container
-    this.menu = document.getElementById('menu');
-    const width = this.menu.clientWidth
-    const containerMenu = document.getElementById('container-menu')
-    containerMenu.style.width = `${width}px`
+    this.isAuthenticated = this.authService.isAuthenticated;
+    this.authService.isAuthenticatedSubject.subscribe(
+      (data: boolean) => {
+        this.isAuthenticated = data;
+      });
   }
 
   onHideMenu() {
@@ -44,6 +45,10 @@ export class MenuComponent implements OnInit {
   onHideMenu2() {
     this.menu.style.transform = 'translate(-120px)';
     //menu.style.left = '100px';
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 
 }

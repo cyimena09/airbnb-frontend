@@ -1,8 +1,26 @@
 @import "src/scss/variables";
 
+.page {
+  margin: 0;
+}
+
+#container-header {
+  display: flex;
+position: relative;
+  //margin-bottom: 70px;
+}
+
 header {
+ // border: solid red;
+  display: flex;
+  flex-direction: column;
+  //position: relative;
+  position: fixed;
+  width: 98%;
   background-color: $color-main-green;
   padding: 20px;
+  z-index: 1000;
+  //height: 200px;
 }
 
 .content-page {
@@ -46,7 +64,6 @@ li {
 
 .shortcuts {
   display: flex;
-  font-size: 18px;
 }
 
 .shortcut {
@@ -58,7 +75,13 @@ li {
   margin-left: 15px;
   cursor: pointer;
 
-  span{
-    color: white;
+  .material-icons{
+    color: whitesmoke;
+  }
+}
+
+.actions-auth {
+  button:first-child {
+    margin-right: 20px;
   }
 }

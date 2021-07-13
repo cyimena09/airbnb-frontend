@@ -6,6 +6,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {RealEstateModule} from '../real-estate/real-estate.module';
 import { PresentationComponent } from './components/presentation/presentation.component';
 import {AuthModule} from '../auth/auth.module';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {AuthModule} from '../auth/auth.module';
         RealEstateModule,
         HomeRoutingModule,
         AuthModule,
+        SharedModule,
     ]
 })
 export class HomeModule {

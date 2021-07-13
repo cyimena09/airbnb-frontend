@@ -1,13 +1,11 @@
-<app-presentation></app-presentation>
-
+<app-presentation *ngIf="!isAuthenticated"></app-presentation>
 <div class="page">
+  <app-menu></app-menu>
   <div class="content-page">
     <h2>Trouver une résidence</h2>
-
     <div class="components">
       <app-search-form-real-estate></app-search-form-real-estate>
-      <app-list-real-estates [realEstates]="realEstates"></app-list-real-estates>
+      <app-list-real-estates-view [realEstates]="realEstates"></app-list-real-estates-view>
     </div>
-
   </div>
 </div>

@@ -1,10 +1,7 @@
 @import "src/scss/variables";
 
-.page {
-  position: relative;
-}
-
 .content-page {
+  position: absolute;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 180px;
@@ -13,7 +10,6 @@
 .container-image {
   overflow: hidden;
   height: 850px;
-  position: absolute;
   z-index: -1;
 }
 

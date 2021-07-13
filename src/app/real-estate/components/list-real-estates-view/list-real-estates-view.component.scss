@@ -1,0 +1,124 @@
+@import "src/scss/variables";
+
+section {
+  background-color: unset;
+  border: unset;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+h3 {
+  font-weight: normal;
+  flex: 1;
+}
+
+app-sort-view {
+  flex: 2.5;
+}
+
+.real-estates {
+  background-color: white;
+}
+
+.real-estate {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.container-image {
+  width: 30%;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding: 10px 10px 10px 20px;
+}
+
+h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.info-group {
+  display: flex;
+  align-items: center;
+
+  .material-icons {
+    margin-right: 10px;
+  }
+
+  .star, .score {
+    color: $color-main-yellow;
+  }
+
+  .score {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .visitors {
+    font-size: 12px;
+  }
+
+  .price {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $color-main-blue;
+  }
+
+  .by-day {
+    font-size: 12px;
+    font-weight: normal;
+    color: $color-main-blue;
+  }
+}
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: solid 1px $color-white-dark;
+}
+
+.left {
+  display: flex;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right img {
+  width: 24px;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+button:first-child {
+  margin-right: 15px;
+  text-transform: uppercase;
+}
+
+.more-time {
+  background-color: $color-grey-light;
+
+  span {
+    color: $color-main-green;
+  }
+}

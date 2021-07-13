@@ -1,13 +1,10 @@
 @import "src/scss/variables";
 
-#container-menu {
-  position: relative;
-}
-
 menu {
+  position: absolute;
+  left: 0;
   background-color: $color-main-blue;
   padding: 20px;
-  position: fixed;
 }
 
 li {
@@ -27,7 +24,11 @@ li {
     margin-right: 15px;
   }
 
-  .logout {
+  .logout-icon {
     color: $color-main-red;
+  }
+
+  .logout {
+    cursor: pointer;
   }
 }

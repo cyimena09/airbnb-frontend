@@ -1,33 +1,31 @@
-<header class="page">
-  <div class="content-page">
-
-    <!--    Logo & hamburger icon-->
-    <div class="logo" routerLink="/home">
-      <span class="material-icons">menu</span>
-      Homaï Home
+<div id="container-header">
+  <header id="header" class="page">
+    <div class="content-page">
+      <!--    Logo & hamburger icon-->
+      <div class="logo" routerLink="/home">
+        <span class="material-icons">menu</span>
+        Homaï Home
+      </div>
+      <!--    Not connected-->
+      <div *ngIf="isAuthenticated === false" class="actions-auth">
+        <button routerLink="/signup">S'inscrire</button>
+        <button routerLink="/home">Se connecter</button>
+      </div>
+      <!--    Connected-->
+      <div *ngIf="isAuthenticated === true" class="shortcuts">
+        <div class="shortcut" routerLink="/messenger">
+          <span class="material-icons">local_post_office</span>
+        </div>
+        <div class="shortcut">
+          <span class="material-icons">notifications</span>
+        </div>
+        <div class="shortcut" routerLink="add_real_estate">
+          <span class="material-icons">add</span>
+        </div>
+        <div class="shortcut" routerLink="user/user_space">
+          <img src="assets/images/profiles/emile.jpg" alt="Miniature de profil">
+        </div>
+      </div>
     </div>
-
-    <!--    Not connected-->
-    <div *ngIf="isAuthenticated === false">
-      <a routerLink="/signup">S'inscrire</a>
-      <a routerLink="/signin">Se connecter</a>
-    </div>
-
-    <!--    Connected-->
-    <div *ngIf="isAuthenticated === true" class="shortcuts">
-      <div class="shortcut" routerLink="/messenger">
-        <span class="material-icons">local_post_office</span>
-      </div>
-      <div class="shortcut">
-        <span class="material-icons">notifications</span>
-      </div>
-      <div class="shortcut" routerLink="add_real_estate">
-        <span class="material-icons">add</span>
-      </div>
-      <div class="shortcut" routerLink="user/user_space">
-        <img src="assets/images/profiles/emile.jpg" alt="">
-      </div>
-    </div>
-
-  </div>
-</header>
+  </header>
+</div>

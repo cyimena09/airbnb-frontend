@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {UserService} from '../../../user/services/user/user.service';
-import {PersonalValidator} from '../../../../utils/personal-validator';
-import {User} from '../../../user/models/user';
-import {Address} from '../../../shared/models/address';
-import {Account} from '../../../user/models/account';
 import {AuthService} from '../../services/auth/auth.service';
 import {Login} from '../../models/login';
 
@@ -35,9 +30,6 @@ export class LoginComponent implements OnInit {
     const login = new Login();
     login.email = values.email.trim();
     login.password = values.password;
-
-
-
     this.authService.login(login);
   }
 

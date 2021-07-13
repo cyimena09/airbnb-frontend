@@ -18,19 +18,17 @@ export class CommentService {
   getCommentsByRealEstateId(id) {
     return this.httpClient.get(this.apiURL + id).pipe(
       map(response => {
-        // on implémente le passage à la ligne des commentaires
-        let comments;
-        comments = response;
+        // We implement the passage to the line.
+        let comments = response['content'];
         comments.forEach(element => {
           element['text'] = element['text'].replaceAll('\n', '<br>');
         });
-
         return comments;
-      })
-    );
+      }));
   }
 
-  addComment(comment) {
+  createComment(comment) {
+    console.log(comment);
     return this.httpClient.post(this.apiURL, comment);
   }
 }

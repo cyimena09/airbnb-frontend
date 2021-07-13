@@ -13,7 +13,6 @@ export class AuthService {
   isAuthenticated: boolean = false;
   isAuthenticatedSubject = new Subject();
   authenticatedSubject: BehaviorSubject<User> = new BehaviorSubject(null);
-  testSubject : BehaviorSubject<User> //= new BehaviorSubject(null);
 
   private _authenticatedUser: User;
   private AUTH_TOKEN_KEY: string = 'homai-home-token';
@@ -57,7 +56,13 @@ export class AuthService {
    * Emet l'utilisateur s'il nest pas null, s'il est null on le charge
    */
   emitAuthUser(): void {
+    // todo Emet l'utilisateur s'il nest pas null, s'il est null on le charge
     this.authenticatedSubject.next(this.authenticatedUser);
+  }
+
+  emitIsAuthUser(): void {
+    // todo Emet l'utilisateur s'il nest pas null, s'il est null on le charge
+    this.isAuthenticatedSubject.next(this.isAuthenticated);
   }
 
   get authenticatedUser() {
@@ -78,6 +83,9 @@ export class AuthService {
 
   logout(): void {
     this.removeToken();
+    this.isAuthenticated = false;
+    this.emitIsAuthUser();
+    this.router.navigate(['home']);
   }
 
   getCurrentUserEmail(): string {

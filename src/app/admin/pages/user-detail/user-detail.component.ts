@@ -22,7 +22,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   getBookingsByUser(){
-    return this.bookingService.getBookingsByUser(this.id).subscribe(
+    return this.bookingService.getBookingsByUserId(this.id).subscribe(
       (data: any) => {
         this.bookings = data.content;
         this.user = this.bookings[0].user;

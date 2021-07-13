@@ -1,0 +1,23 @@
+@import "src/scss/variables";
+
+.container-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-white-dark;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  span:hover {
+    background-color: $color-grey-light;
+  }
+}
