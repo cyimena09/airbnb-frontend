@@ -20,4 +20,10 @@
   span:hover {
     background-color: $color-grey-light;
   }
+
+  .active {
+    background-color: $color-blue-lighter;
+    color: white;
+  }
 }
+

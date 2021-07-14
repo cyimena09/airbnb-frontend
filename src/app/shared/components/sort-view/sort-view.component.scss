@@ -16,7 +16,6 @@
     flex: 1;
     cursor: pointer;
   }
-
 }
 
 .sort:hover {
@@ -33,4 +32,12 @@
     color: $color-main-green;
     cursor: pointer;
   }
+
+  .material-icons:hover {
+    background-color: $color-grey-light;
+  }
+}
+
+.active {
+  border-top: solid 2px $color-main-green;
 }

@@ -1,0 +1,47 @@
+<div class="real-estates" *ngIf="realEstates">
+  <div *ngFor="let realEstate of realEstates" class="real-estate box-shadow">
+    <!--      Image -->
+    <div class="container-image">
+      <img src="../../../../assets/images/real-estates/realestate.jpg" alt="">
+    </div>
+    <!--    Row information-->
+    <div class="infos">
+      <div class="header">
+        <h4>{{realEstate.name}}</h4>
+        <p>4000 personnes ont loué cette résidence</p>
+      </div>
+      <div class="info-group">
+        <div class="left">
+          <span class="star material-icons">star</span>
+          <span class="score">8.5</span>
+          <span class="visitors">(noté par 1211 visiteurs)</span>
+        </div>
+        <div class="right">
+          voir les 64 commentaires
+        </div>
+      </div>
+      <div class="info-group">
+        <span class="material-icons">location_on</span>
+        <span>{{realEstate.address.city}}</span>
+      </div>
+      <div class="info-group">
+        <span class="material-icons">king_bed</span>
+        <span>{{realEstate.bedroom}} chambre(s)</span>
+      </div>
+      <div class="info-group">
+        <span class="price">€ {{realEstate.price}} <span class="by-day">par jour</span> </span>
+      </div>
+      <div class="link">
+        <div class="left">
+          <button routerLink="/real_estates/{{realEstate.id}}">Consulter</button>
+          <button class="more-time"><span class="material-icons">more_time</span></button>
+        </div>
+        <div class="right">
+          <span>Partager à un ami : </span>
+          <img src="assets/icons/icons8-facebook.svg" alt="Logo facebook"/>
+          <img src="assets/icons/icons8-twitter.svg" alt="Logo twitter"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

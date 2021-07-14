@@ -1,17 +1,17 @@
-import {Component, OnInit} from '@angular/core';
-import {RealEstateService} from '../../services/real-estate/real-estate.service';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {RealEstateService} from '../../services/real-estate/real-estate.service';
 import {RealEstate} from '../../models/realEstate';
+import {CategoryEnum} from '../../models/categoryEnum';
 import {Address} from '../../../shared/models/address';
 import {User} from '../../../user/models/user';
-import {CategoryEnum} from '../../models/categoryEnum';
 
 @Component({
-  selector: 'app-add-real-estate',
-  templateUrl: './add-real-estate.component.html',
-  styleUrls: ['./add-real-estate.component.scss']
+  selector: 'app-create-real-estate-view',
+  templateUrl: './create-real-estate-view.component.html',
+  styleUrls: ['./create-real-estate-view.component.scss']
 })
-export class AddRealEstateComponent implements OnInit {
+export class CreateRealEstateViewComponent implements OnInit {
   loading = false;
   realEstateForm: FormGroup;
 

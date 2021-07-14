@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 
 @Component({
   selector: 'app-sort-view',
@@ -7,6 +7,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class SortViewComponent implements OnInit {
 
+  @Input() currentSort: string;
   @Output() sortEvent = new EventEmitter<any>();
 
   constructor() {
@@ -15,11 +16,12 @@ export class SortViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSort(toSort, isAsc: boolean = true) {
+  onSort(toSort, order: string = 'asc', isStrict: boolean = false) {
     const parameter = {
-      toSort :toSort,
-      isAsc: isAsc
-    }
+      toSort: toSort,
+      order: order,
+      isStrict: isStrict
+    };
     this.sortEvent.emit(parameter);
   }
 

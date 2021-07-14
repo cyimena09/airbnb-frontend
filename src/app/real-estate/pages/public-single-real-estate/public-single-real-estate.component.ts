@@ -32,7 +32,7 @@ export class PublicSingleRealEstateComponent implements OnInit {
   }
 
   loadData() {
-    // residence
+    // realEstates
     this.realEstateService.getRealEstateById(this.realEstateId).subscribe(
       (data: RealEstate) => {
         this.realEstate = data;

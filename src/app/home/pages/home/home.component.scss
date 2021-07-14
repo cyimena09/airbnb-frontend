@@ -3,8 +3,31 @@
   justify-content: space-between;
 }
 
-app-search-form-real-estate {
-  width: 30%;
+section{
+  background-color: unset;
+  border: unset;
+}
+
+.header {
+  display: flex;
+  height: 50px;
+  align-items: center;
+
+  h3 {
+    font-weight: normal;
+  }
+}
+
+.search-result .header {
+  justify-content: space-between;
+
+  h3 {
+    flex: 1;
+  }
+
+  app-sort-view {
+    flex: 2.5;
+  }
 }
 
 h2 {

@@ -1,33 +1,33 @@
 <div class="sorts">
-  <div class="sort">
+  <div class="sort" [ngClass]="{'active': currentSort === 'price'}">
     <span class="sort-name" (click)="onSort('price')">Prix</span>
     <div class="arrows">
-      <span class="material-icons" (click)="onSort('price')">expand_less</span>
-      <span class="material-icons" (click)="onSort('price', false)">expand_more</span>
+      <span class="material-icons" (click)="onSort('price', 'asc', true)">expand_less</span>
+      <span class="material-icons" (click)="onSort('price', 'desc', true)">expand_more</span>
     </div>
   </div>
 
-  <div class="sort">
+  <div class="sort" [ngClass]="{'active': currentSort === 'note'}">
     <span class="sort-name" (click)="onSort('rating')">Note</span>
     <div class="arrows">
-      <span class="material-icons" (click)="onSort('rating')">expand_less</span>
-      <span class="material-icons" (click)="onSort('rating', false)">expand_more</span>
+      <span class="material-icons" (click)="onSort('rating', 'asc',true)">expand_less</span>
+      <span class="material-icons" (click)="onSort('rating', 'desc', true)">expand_more</span>
     </div>
   </div>
 
-  <div class="sort">
+  <div class="sort" [ngClass]="{'active': currentSort === 'popularity'}">
     <span class="sort-name" (click)="onSort('popularity')">Popularité</span>
     <div class="arrows">
-      <span class="material-icons" (click)="onSort('popularity')">expand_less</span>
-      <span class="material-icons" (click)="onSort('popularity', false)">expand_more</span>
+      <span class="material-icons" (click)="onSort('popularity', 'asc',true)">expand_less</span>
+      <span class="material-icons" (click)="onSort('popularity', 'desc', true)">expand_more</span>
     </div>
   </div>
 
-  <div class="sort">
+  <div class="sort" [ngClass]="{'active': currentSort === 'bedroom'}">
     <span class="sort-name" (click)="onSort('bedroom')">Chambres</span>
     <div class="arrows">
-      <span class="material-icons" (click)="onSort('bedroom')">expand_less</span>
-      <span class="material-icons" (click)="onSort('bedroom', false)">expand_more</span>
+      <span class="material-icons" (click)="onSort('bedroom', 'asc',true)">expand_less</span>
+      <span class="material-icons" (click)="onSort('bedroom', 'desc', true)">expand_more</span>
     </div>
   </div>
 </div>

@@ -1,10 +1,5 @@
 <div class="container-pagination">
-  <span class="material-icons">navigate_before</span>
-  <span>1</span>
-  <span>1</span>
-  <span>1</span>
-  <span>1</span>
-  <span>1</span>
-  <span>1</span>
-  <span class="material-icons">navigate_next</span>
+  <span class="material-icons" (click)="prevPage()">navigate_before</span>
+  <span *ngFor="let page of pages" (click)="changePage(page)" [ngClass]="{'active': page === currentPage}"> {{page + 1}}</span>
+  <span class="material-icons" (click)="nextPage()">navigate_next</span>
 </div>
