@@ -25,25 +25,10 @@ export class PaginationViewComponent implements OnInit {
   nextPage(): void {
     const next = DiversConstant.NEXT;
     this.pageEvent.emit(next);
-
-    // const newCurrentPage = this.currentPage + 1;
-    // const prod = this.prodService.getProductByPage(newCurrentPage);
-    // if (prod.length) {
-    //   this.products = prod;
-    //   this.currentPage = newCurrentPage;
-    //}
-
   }
 
   prevPage(): void {
     const previous = DiversConstant.PREVIOUS;
     this.pageEvent.emit(previous);
-    //console.log('previous');
-    //   const newCurrentPage = this.currentPage - 1;
-    //   const prod = this.prodService.getProductByPage(newCurrentPage);
-    //   if (prod.length) {
-    //     this.products = prod;
-    //     this.currentPage = newCurrentPage;
-    //   }
   }
 }
