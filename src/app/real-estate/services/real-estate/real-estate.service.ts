@@ -4,6 +4,7 @@ import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {RealEstate} from '../../models/realEstate';
 import {environment} from '../../../../environments/environment';
+import {RealEstateConstant} from '../../models/realEstateConstant';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import {environment} from '../../../../environments/environment';
 export class RealEstateService {
   totalPages: number;
   PAGE_SIZE: number = 20; // number of elements by page
-  SORT: string = 'price'; // by default sorted by price
+  SORT: string = RealEstateConstant.PRICE; // by default sorted by price
   private _CURRENT_PAGE: number = 0;
   private _ORDER: string = 'asc'; // by default asc order
   private apiURL = environment.API_REAL_ESTATE;

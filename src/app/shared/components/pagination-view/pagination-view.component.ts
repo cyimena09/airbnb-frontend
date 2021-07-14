@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {DiversConstant} from '../../models/diversConstant';
 
 @Component({
   selector: 'app-pagination-view',
@@ -22,7 +23,8 @@ export class PaginationViewComponent implements OnInit {
   }
 
   nextPage(): void {
-    this.pageEvent.emit('next');
+    const next = DiversConstant.NEXT;
+    this.pageEvent.emit(next);
 
     // const newCurrentPage = this.currentPage + 1;
     // const prod = this.prodService.getProductByPage(newCurrentPage);
@@ -34,7 +36,8 @@ export class PaginationViewComponent implements OnInit {
   }
 
   prevPage(): void {
-    this.pageEvent.emit('previous');
+    const previous = DiversConstant.PREVIOUS;
+    this.pageEvent.emit(previous);
     //console.log('previous');
     //   const newCurrentPage = this.currentPage - 1;
     //   const prod = this.prodService.getProductByPage(newCurrentPage);

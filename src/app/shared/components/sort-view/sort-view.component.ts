@@ -1,4 +1,6 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import {DiversConstant} from '../../models/diversConstant';
+import {RealEstateConstant} from '../../../real-estate/models/realEstateConstant';
 
 @Component({
   selector: 'app-sort-view',
@@ -6,6 +8,12 @@ import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
   styleUrls: ['./sort-view.component.scss']
 })
 export class SortViewComponent implements OnInit {
+  asc = DiversConstant.DESC;
+  desc = DiversConstant.DESC;
+  price = RealEstateConstant.PRICE;
+  rating = RealEstateConstant.RATING;
+  popularity = RealEstateConstant.POPULARITY;
+  bedroom = RealEstateConstant.BEDROOM;
 
   @Input() currentSort: string;
   @Output() sortEvent = new EventEmitter<any>();
@@ -16,7 +24,7 @@ export class SortViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSort(toSort, order: string = 'asc', isStrict: boolean = false) {
+  onSort(toSort, order: string = this.asc, isStrict: boolean = false) {
     const parameter = {
       toSort: toSort,
       order: order,
