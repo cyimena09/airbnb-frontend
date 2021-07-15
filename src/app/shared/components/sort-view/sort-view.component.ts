@@ -1,6 +1,6 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {DiversConstant} from '../../models/diversConstant';
-import {RealEstateConstant} from '../../../real-estate/models/realEstateConstant';
+import {RealEstateConstant} from '../../../real-estate/models/real-estate-constant';
 
 @Component({
   selector: 'app-sort-view',

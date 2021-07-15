@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BookingService} from '../../../booking/services/booking/booking.service';
 import {ActivatedRoute} from '@angular/router';
 import {RealEstateService} from '../../../real-estate/services/real-estate/real-estate.service';
-import {RealEstate} from '../../../real-estate/models/realEstate';
+import {RealEstate} from '../../../real-estate/models/real-estate';
 
 @Component({
   selector: 'app-real-estate-detail',

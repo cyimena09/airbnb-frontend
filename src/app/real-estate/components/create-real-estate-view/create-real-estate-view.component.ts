@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RealEstateService} from '../../services/real-estate/real-estate.service';
-import {RealEstate} from '../../models/realEstate';
-import {CategoryEnum} from '../../models/categoryEnum';
 import {Address} from '../../../shared/models/address';
 import {User} from '../../../user/models/user';
+import {RealEstate} from '../../models/real-estate';
+import {CategoryEnum} from '../../models/category-enum';
+import {TypeEnum} from '../../models/type-enum';
 
 @Component({
   selector: 'app-create-real-estate-view',
@@ -57,7 +58,8 @@ export class CreateRealEstateViewComponent implements OnInit {
     // Real Estate
     let newRE = new RealEstate();
     newRE.name = 'Villa Massaï';
-    newRE.category.name = CategoryEnum.VILLA;
+    newRE.category.name = CategoryEnum.LOCATION;
+    newRE.type.name = TypeEnum.APARTMENT;
     newRE.description = 'Villa luxueux et spacieux située au bord du lac kivu';
     newRE.bedroom = 5;
     newRE.hasGarden = true;

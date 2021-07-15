@@ -2,9 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import {RealEstate} from '../../models/realEstate';
 import {environment} from '../../../../environments/environment';
-import {RealEstateConstant} from '../../models/realEstateConstant';
+import {RealEstateConstant} from '../../models/real-estate-constant';
+import {RealEstate} from '../../models/real-estate';
+import {RealEstateFilter} from '../../models/real-estate-filter';
+import {CategoryEnum} from '../../models/category-enum';
+import {TypeEnum} from '../../models/type-enum';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +26,28 @@ export class RealEstateService {
   getRealEstates(): Observable<RealEstate[]> {
     const request = `${this.apiURL}?sort=${this.SORT},${this._ORDER}&size=${this.PAGE_SIZE}&page=${this._CURRENT_PAGE}`;
     return this.httpClient.get(request).pipe(
+      map(response => {
+        this.totalPages = response['totalPages'];
+        return response['content'] as RealEstate[];
+      }));
+  }
+
+  searchByFilter(filter: RealEstateFilter) {
+    filter.category = CategoryEnum.SELL;
+    filter.type = TypeEnum.VILLA;
+    filter.minBedroom = 0;
+    filter.maxBedroom = 10;
+    filter.minPrice = 200;
+    filter.maxPrice = 10000;
+    // filter.city = 'Benchu';
+    // filter.country = 'China';
+    // filter.minDate: string;
+    // filter.maxDate: string;
+
+    const params = new HttpParams()
+      .set('test', 'ceci est un test');
+
+    return this.httpClient.post(`${this.apiURL}/search`, filter, {params: params}).pipe(
       map(response => {
         this.totalPages = response['totalPages'];
         return response['content'] as RealEstate[];
@@ -54,23 +79,6 @@ export class RealEstateService {
   deleteRealEstate(id) {
     return this.httpClient.delete(this.apiURL + id);
   }
-
-  searchByFilter(filter) {
-    const params = new HttpParams()
-      .set('category', filter.category)
-      .set('type', filter.type)
-      .set('minBedroom', filter.minBedroom)
-      .set('maxBedroom', filter.maxBedroom)
-      .set('minPrice', filter.type)
-      .set('maxPrice', filter.bedroom)
-      .set('city', filter.city)
-      .set('country', filter.country)
-      .set('startDate', filter.startDate)
-      .set('endDate', filter.endDate);
-
-    return this.httpClient.get(`${this.apiURL}/search`, {params: params});
-  }
-
 
   get CURRENT_PAGE(): number {
     return this._CURRENT_PAGE;

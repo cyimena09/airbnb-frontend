@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {RealEstateService} from '../../services/real-estate/real-estate.service';
 import {Subscription} from 'rxjs';
-import {RealEstate} from '../../models/realEstate';
+import {RealEstate} from '../../models/real-estate';
 
 @Component({
   selector: 'app-real-estate',

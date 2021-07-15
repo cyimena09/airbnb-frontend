@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RealEstateService} from '../../../real-estate/services/real-estate/real-estate.service';
-import {RealEstate} from '../../../real-estate/models/realEstate';
 import {AuthService} from '../../../auth/services/auth/auth.service';
+import {RealEstate} from '../../../real-estate/models/real-estate';
 
 
 @Component({
@@ -39,7 +39,11 @@ export class HomeComponent implements OnInit {
   }
 
   onSearch(filter) {
-    this.realEstateService.searchByFilter(filter).subscribe();
+    this.realEstateService.searchByFilter(filter).subscribe(
+      (data:RealEstate[]) => {
+        this.realEstates = data;
+        this.setPages();
+      });
   }
 
   onSort(parameter) {

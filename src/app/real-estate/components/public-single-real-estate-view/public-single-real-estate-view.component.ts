@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RealEstate} from '../../models/realEstate';
+import {RealEstate} from '../../models/real-estate';
 
 @Component({
   selector: 'app-public-single-real-estate-view',

@@ -1,6 +1,6 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
-import {RealEstate} from '../../models/realEstate';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {RealEstate} from '../../models/real-estate';
 
 @Component({
   selector: 'app-search-real-estate-view',

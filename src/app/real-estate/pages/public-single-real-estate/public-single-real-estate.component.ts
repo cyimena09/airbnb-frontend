@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {RealEstate} from '../../models/realEstate';
 import {RealEstateService} from '../../services/real-estate/real-estate.service';
 import {ActivatedRoute} from '@angular/router';
 import {Booking} from '../../../booking/models/booking';
@@ -8,6 +7,7 @@ import {AuthService} from '../../../auth/services/auth/auth.service';
 import {User} from '../../../user/models/user';
 import {CommentService} from '../../services/comment/comment.service';
 import {Comment} from '../../models/comment';
+import {RealEstate} from '../../models/real-estate';
 
 @Component({
   selector: 'app-public-single-real-estate',

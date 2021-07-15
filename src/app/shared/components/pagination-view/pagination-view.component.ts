@@ -31,4 +31,5 @@ export class PaginationViewComponent implements OnInit {
     const previous = DiversConstant.PREVIOUS;
     this.pageEvent.emit(previous);
   }
+
 }

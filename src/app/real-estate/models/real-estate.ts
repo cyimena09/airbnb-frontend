@@ -3,7 +3,7 @@ import {User} from '../../user/models/user';
 import {Comment} from './comment';
 import {Booking} from '../../booking/models/booking';
 import {Category} from './category';
-import {Purpose} from './purpose';
+import {Type} from './type';
 
 export class RealEstate {
   id: string;
@@ -17,9 +17,8 @@ export class RealEstate {
   isActive: boolean;
   address: Address;
   category: Category;
+  type: Type
   comment: Comment[];
-  goals: Purpose[];
   bookings: Booking[];
   user: User;
-
 }

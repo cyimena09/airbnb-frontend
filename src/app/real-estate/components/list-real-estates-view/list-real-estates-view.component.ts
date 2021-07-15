@@ -1,5 +1,5 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {RealEstate} from '../../models/realEstate';
+import {Component, Input, OnInit} from '@angular/core';
+import {RealEstate} from '../../models/real-estate';
 
 @Component({
   selector: 'app-list-real-estates-view',

@@ -1,5 +1,5 @@
-import {RealEstate} from './realEstate';
 import {User} from '../../user/models/user';
+import {RealEstate} from './real-estate';
 
 export class Comment {
   id: string;
