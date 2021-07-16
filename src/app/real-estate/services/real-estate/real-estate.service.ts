@@ -33,21 +33,21 @@ export class RealEstateService {
   }
 
   searchByFilter(filter: RealEstateFilter) {
-    filter.category = CategoryEnum.SELL;
-    filter.type = TypeEnum.VILLA;
+    filter.category = CategoryEnum.LOCATION;
+    filter.type = TypeEnum.HOTEL;
     filter.minBedroom = 0;
     filter.maxBedroom = 10;
     filter.minPrice = 200;
     filter.maxPrice = 10000;
-    // filter.city = 'Benchu';
-    // filter.country = 'China';
-    // filter.minDate: string;
-    // filter.maxDate: string;
+    filter.city = 'Micoud';
+    filter.country = 'Saint Lucia';
+    filter.startDate = "2021-08-02";
+    filter.endDate = "2021-08-03";
+    filter.byAvailability = true;
+    console.log(filter)
+    const request = `${this.apiURL}/search?sort=${this.SORT},${this._ORDER}&size=${this.PAGE_SIZE}&page=${this._CURRENT_PAGE}`;
 
-    const params = new HttpParams()
-      .set('test', 'ceci est un test');
-
-    return this.httpClient.post(`${this.apiURL}/search`, filter, {params: params}).pipe(
+    return this.httpClient.post(request, filter).pipe(
       map(response => {
         this.totalPages = response['totalPages'];
         return response['content'] as RealEstate[];

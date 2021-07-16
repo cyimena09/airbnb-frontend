@@ -1,14 +1,13 @@
 export class RealEstateFilter {
   category: string;
   type: string;
+  city: string;
+  country: string;
   minBedroom: number;
   maxBedroom: number;
   minPrice: number;
   maxPrice: number;
-  city: string;
-  country: string;
-  startDate: Date;
-  endDate: Date;
+  startDate: any;
+  endDate: any;
+  byAvailability: boolean = true;
 }
-
-// todo dev start date and enddate

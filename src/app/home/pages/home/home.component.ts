@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {RealEstateService} from '../../../real-estate/services/real-estate/real-estate.service';
 import {AuthService} from '../../../auth/services/auth/auth.service';
 import {RealEstate} from '../../../real-estate/models/real-estate';
+import {RealEstateFilter} from '../../../real-estate/models/real-estate-filter';
+import {DiversConstant} from '../../../shared/models/diversConstant';
 
 
 @Component({
@@ -10,11 +12,12 @@ import {RealEstate} from '../../../real-estate/models/real-estate';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  isAuthenticated = true;
+  isAuthenticated: boolean;
   realEstates: RealEstate[] = [];
   pages: number[] = [];
-  currentPage;
-  currentSort;
+  currentPage: number;
+  currentSort: string;
+  filter: RealEstateFilter;
 
   constructor(private authService: AuthService, private realEstateService: RealEstateService) {
   }
@@ -26,10 +29,9 @@ export class HomeComponent implements OnInit {
         this.isAuthenticated = data;
       });
     this.loadRealEstates();
-    this.setPages();
   }
 
-  loadRealEstates() {
+  private loadRealEstates() {
     this.realEstateService.getRealEstates().subscribe(
       (data: RealEstate[]) => {
         this.realEstates = data;
@@ -38,26 +40,34 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  onSearch(filter) {
+  private loadRealEstatesByFilter(filter) {
     this.realEstateService.searchByFilter(filter).subscribe(
-      (data:RealEstate[]) => {
+      (data: RealEstate[]) => {
         this.realEstates = data;
         this.setPages();
       });
   }
 
+  onSearch(filter) {
+    this.loadRealEstatesByFilter(filter);
+  }
+
   onSort(parameter) {
+    const asc = DiversConstant.ASC;
+    const desc = DiversConstant.DESC;
     if (parameter.isStrict) {
       this.realEstateService.ORDER = parameter.order;
       this.realEstateService.SORT = parameter.toSort;
     } else {
       if (this.realEstateService.SORT === parameter.toSort) {
-        this.realEstateService.ORDER = this.realEstateService.ORDER === 'asc' ? 'desc' : 'asc';
+        this.realEstateService.ORDER = this.realEstateService.ORDER === asc ? desc : asc;
       } else {
         this.realEstateService.SORT = parameter.toSort;
       }
     }
-    this.loadRealEstates();
+    if (this.filter) {
+      this.loadRealEstatesByFilter(this.filter);
+    }
   }
 
   setPages() {
@@ -70,9 +80,11 @@ export class HomeComponent implements OnInit {
   }
 
   onChangePage(page: number | string) {
-    if (page === 'next') {
+    const next = DiversConstant.NEXT;
+    const prev = DiversConstant.PREVIOUS;
+    if (page === next) {
       this.realEstateService.CURRENT_PAGE += 1;
-    } else if (page === 'previous') {
+    } else if (page === prev) {
       this.realEstateService.CURRENT_PAGE -= 1;
     } else {
       this.realEstateService.CURRENT_PAGE = page as number;

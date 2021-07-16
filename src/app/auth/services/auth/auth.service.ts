@@ -20,6 +20,7 @@ export class AuthService {
   private USER_API_URL: string = environment.API_USER;
 
   constructor(private httpClient: HttpClient, private router: Router) {
+    // todo error when decoded token is null
     this.loadAuthenticatedUser(null);
   }
 
