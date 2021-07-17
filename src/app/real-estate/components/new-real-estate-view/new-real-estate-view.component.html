@@ -1,15 +1,13 @@
 <div class="page">
   <div class="content-page">
-
-    <form class="col-lg-4 offset-4" [formGroup]="realEstateForm" (ngSubmit)="onCreateRE()">
-
+    <form [formGroup]="realEstateForm" (ngSubmit)="onCreateRE()">
       <div class="form-field">
         <!--      Propriety information-->
-        <div class="propriety-info">
-          <h3>Information de votre propriété</h3>
+        <section class="propriety-info">
+          <h3>Information de la résidence</h3>
           <div class="form-group">
             <label for="realEstateName">Nom du bien</label>
-            <input type="text" class="form-control" id="realEstateName" formControlName="name">
+            <input type="text" id="realEstateName" formControlName="name">
           </div>
           <div class="form-group">
             <label for="type">Type de logement</label>
@@ -24,13 +22,13 @@
           </div>
           <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" class="form-control" id="description" formControlName="description">
+            <input type="text" id="description" formControlName="description">
           </div>
 
           <div>
             <div class="form-group">
               <label for="bedroom">Nombre de chambre</label>
-              <input type="text" class="form-control" id="bedroom" formControlName="bedroom">
+              <input type="text" id="bedroom" formControlName="bedroom">
             </div>
             <div class="form-group">
               <p>Jardin</p>
@@ -47,48 +45,49 @@
             </div>
             <div class="form-group">
               <label for="price">Prix</label>
-              <input type="text" class="form-control" id="price" formControlName="price">
+              <input type="text" id="price" formControlName="price">
             </div>
             <div class="form-group">
               <label for="photo">Ajouter une photo</label>
-              <input type="text" class="form-control" id="photo">
+              <input type="text" id="photo">
             </div>
           </div>
-        </div>
+        </section>
+
         <!--      Localisation-->
-        <div class="localisation">
-          <h3>Adresse</h3>
+        <section class="localisation">
+          <h3>Adresse de la résidence</h3>
           <div class="street-and-number">
-
-
             <div class="form-group">
               <label for="street">Rue</label>
-              <input type="text" class="form-control" id="street" formControlName="street">
+              <input type="text" id="street" formControlName="street">
             </div>
             <div class="form-group streetNumber">
               <label for="streetNumber">Numéro</label>
-              <input type="text" class="form-control" id="streetNumber" formControlName="streetNumber">
+              <input type="text" id="streetNumber" formControlName="streetNumber">
             </div>
           </div>
           <div class="form-group">
             <label for="city">Ville</label>
-            <input type="text" class="form-control" id="city" formControlName="city">
+            <input type="text" id="city" formControlName="city">
           </div>
           <div class="form-group">
             <label for="postalCode">Code postal</label>
-            <input type="text" class="form-control" id="postalCode" formControlName="postalCode">
+            <input type="text" id="postalCode" formControlName="postalCode">
           </div>
           <div class="form-group">
             <label for="country">Pays</label>
-            <input type="text" class="form-control" id="country" formControlName="country">
+            <input type="text" id="country" formControlName="country">
           </div>
-        </div>
+        </section>
+        <!--        Purpose-->
+        <section>
+          <h2>Vos objectifs</h2>
+          <p>Que souhaitez-vous faire de la résidence</p>
+        </section>
       </div>
       <!--      Submit-->
-      <div class="btn-container">
-        <input type="submit" value="Ajouter le logement">
-      </div>
-
+      <button>Ajouter la résidence</button>
     </form>
 
   </div>

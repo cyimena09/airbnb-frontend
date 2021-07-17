@@ -1,1 +1,14 @@
-<app-user-real-estate *ngIf="realEstate" [realEstate]="realEstate"></app-user-real-estate>
+<div class="page">
+  <div class="content-page">
+    <div class="action">
+      <button routerLink="/user/new_real_estate">
+        <span class="material-icons">add</span>
+        Ajouter une résidence
+      </button>
+    </div>
+    <div class="search-sort">
+      <app-sort-view></app-sort-view>
+    </div>
+    <app-private-list-real-estates-view [realEstates]="realEstates"></app-private-list-real-estates-view>
+  </div>
+</div>

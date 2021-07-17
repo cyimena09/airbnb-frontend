@@ -1,6 +1,14 @@
+section {
+  margin-bottom: 20px;
+}
+
 h3 {
   font-size: 26px;
   margin-bottom: 30px;
+}
+
+.content-page {
+  align-items: center;
 }
 
 form {
@@ -12,8 +20,7 @@ label, p {
 }
 
 .form-field {
-  display: flex;
-  justify-content: space-between;
+
 }
 
 .form-group {

@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {RealEstateService} from '../../services/real-estate/real-estate.service';
-import {Address} from '../../../shared/models/address';
-import {User} from '../../../user/models/user';
 import {RealEstate} from '../../models/real-estate';
 import {CategoryEnum} from '../../models/category-enum';
 import {TypeEnum} from '../../models/type-enum';
+import {Address} from '../../../shared/models/address';
+import {Category} from '../../models/category';
+import {Type} from '../../models/type';
 
 @Component({
-  selector: 'app-create-real-estate-view',
-  templateUrl: './create-real-estate-view.component.html',
-  styleUrls: ['./create-real-estate-view.component.scss']
+  selector: 'app-new-real-estate-view',
+  templateUrl: './new-real-estate-view.component.html',
+  styleUrls: ['./new-real-estate-view.component.scss']
 })
-export class CreateRealEstateViewComponent implements OnInit {
-  loading = false;
+export class NewRealEstateViewComponent implements OnInit {
   realEstateForm: FormGroup;
 
-  constructor(private realEstateService: RealEstateService, private formBuilder: FormBuilder) {
+  @Output() realEstateEmitter = new EventEmitter<any>();
+
+  constructor(private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -40,9 +41,7 @@ export class CreateRealEstateViewComponent implements OnInit {
   }
 
   onCreateRE() {
-    this.loading = true;
-    let formValue = this.realEstateForm.value;
-
+    const formValue = this.realEstateForm.value;
     // newRE.name = formValue.name;
     // newRE.type = formValue.type;
     // newRE.description = formValue.description;
@@ -56,37 +55,29 @@ export class CreateRealEstateViewComponent implements OnInit {
     // newRE.address.country = formValue.country;
 
     // Real Estate
-    let newRE = new RealEstate();
+    const newRE = new RealEstate();
     newRE.name = 'Villa Massaï';
-    newRE.category.name = CategoryEnum.LOCATION;
-    newRE.type.name = TypeEnum.APARTMENT;
     newRE.description = 'Villa luxueux et spacieux située au bord du lac kivu';
     newRE.bedroom = 5;
     newRE.hasGarden = true;
     newRE.price = 350;
+    // Category
+    const newCategory = new Category();
+    newCategory.name = CategoryEnum.LOCATION;
+    newRE.category = newCategory;
+    // Type
+    const newType = new Type();
+    newType.name = TypeEnum.APARTMENT;
+    newRE.type = newType;
     // Address
-    let address = new Address();
+    const address = new Address();
     address.street = 'Rue du lac kivu';
     address.streetNumber = '18';
     address.postalCode = '1301';
     address.city = 'Kigali';
     address.country = 'Rwanda';
-    // User
-    let user = new User();
-    user.id = '1';
-    // Add address & user in real estate
     newRE.address = address;
-    newRE.user = user;
-
-    this.realEstateService.createRealEstate(newRE).subscribe(
-      () => {
-        console.log('Le logement à bien été ajouté !');
-        this.loading = false;
-      },
-      (message) => {
-        console.log(message.error);
-        this.loading = false;
-      });
+    this.realEstateEmitter.emit(newRE);
   }
 
   get f() {

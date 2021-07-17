@@ -1,0 +1,105 @@
+@import "src/scss/variables";
+
+* {
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+section {
+  width: 700px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+  .title-ticket {
+    display: flex;
+    align-items: center;
+  }
+
+  .ticket {
+    background-color: $color-red-light;
+    margin-left: 20px;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: $color-white-dark;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+  }
+
+  .material-icons {
+    font-size: 20px;
+    color: $color-red-light;
+  }
+}
+
+.content {
+  display: flex;
+  border-bottom: solid 1px $color-white-dark;
+  padding-bottom: 10px;
+}
+
+.container-image {
+  width: 170px;
+}
+
+.reservations-amounts, .comment-notes {
+  flex: 1;
+}
+
+.reservations-amounts {
+  border-right: solid 1px $color-white-dark;
+  padding: 0 20px;
+  margin-right: 20px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+
+  .value {
+    font-weight: bold;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+
+  button {
+    border-radius: 5px;
+  }
+
+  button:first-child {
+    margin-right: 15px;
+  }
+
+  button:last-child {
+    background-color: white;
+    border: solid 1px $color-main-red;
+    color: $color-main-red;
+  }
+}

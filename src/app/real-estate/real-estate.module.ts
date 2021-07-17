@@ -11,9 +11,10 @@ import {SharedModule} from '../shared/shared.module';
 import {BookingModule} from '../booking/booking.module';
 import { ListCommentsViewComponent } from './components/list-comments-view/list-comments-view.component';
 import { NewCommentViewComponent } from './components/new-comment-view/new-comment-view.component';
-import { ListRealEstatesViewComponent } from './components/list-real-estates-view/list-real-estates-view.component';
 import { SearchRealEstateViewComponent } from './components/search-real-estate-view/search-real-estate-view.component';
-import { CreateRealEstateViewComponent } from './components/create-real-estate-view/create-real-estate-view.component';
+import { PrivateListRealEstatesViewComponent } from './components/private-list-real-estates-view/private-list-real-estates-view.component';
+import { NewRealEstateViewComponent } from './components/new-real-estate-view/new-real-estate-view.component';
+import { PublicListRealEstatesViewComponent } from './components/public-list-real-estates-view/public-list-real-estates-view.component';
 
 
 @NgModule({
@@ -23,9 +24,10 @@ import { CreateRealEstateViewComponent } from './components/create-real-estate-v
     PublicSingleRealEstateViewComponent,
     ListCommentsViewComponent,
     NewCommentViewComponent,
-    ListRealEstatesViewComponent,
     SearchRealEstateViewComponent,
-    CreateRealEstateViewComponent
+    PrivateListRealEstatesViewComponent,
+    NewRealEstateViewComponent,
+    PublicListRealEstatesViewComponent
   ],
   imports: [
     CommonModule,
@@ -36,8 +38,10 @@ import { CreateRealEstateViewComponent } from './components/create-real-estate-v
     BookingModule
   ],
   exports: [
-    ListRealEstatesViewComponent,
-    SearchRealEstateViewComponent
+    SearchRealEstateViewComponent,
+    PrivateListRealEstatesViewComponent,
+    NewRealEstateViewComponent,
+    PublicListRealEstatesViewComponent
   ]
 })
 export class RealEstateModule {

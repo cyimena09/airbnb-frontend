@@ -12,6 +12,9 @@ import { UserRealEstatesListComponent } from './components/user-real-estates-lis
 import { UserRealEstateComponent } from './components/user-real-estate/user-real-estate.component';
 import { RealEstateComponent } from './pages/real-estate/real-estate.component';
 import { UserComponent } from './pages/user/user.component';
+import {SharedModule} from '../shared/shared.module';
+import { AccountComponent } from './pages/account/account.component';
+import { NewRealEstateComponent } from './pages/new-real-estate/new-real-estate.component';
 //import { UserFormComponent } from './components/user-form/user-form.component';
 
 
@@ -25,13 +28,16 @@ import { UserComponent } from './pages/user/user.component';
     UserRealEstateComponent,
     RealEstateComponent,
     UserComponent,
+    AccountComponent,
+    NewRealEstateComponent,
     //UserFormComponent,
   ],
   imports: [
     CommonModule,
     UserSpaceRoutingModule,
     ReactiveFormsModule,
-    RealEstateModule
+    RealEstateModule,
+    SharedModule
   ]
 })
 export class UserSpaceModule {

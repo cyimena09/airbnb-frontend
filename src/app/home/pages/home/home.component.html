@@ -4,7 +4,6 @@
   <div class="content-page">
     <h2>Trouver une résidence</h2>
     <div class="components">
-
       <!--      Search criteria-->
       <section class="search-criteria">
         <div class="header">
@@ -12,18 +11,15 @@
         </div>
         <app-search-real-estate-view (filterEvent)="onSearch($event)"></app-search-real-estate-view>
       </section>
-
       <!--      Search result-->
       <section class="search-result">
         <div class="header">
           <h3>Résultat de la recherche</h3>
           <app-sort-view [currentSort]="currentSort" (sortEvent)="onSort($event)"></app-sort-view>
         </div>
-        <app-list-real-estates-view [realEstates]="realEstates"></app-list-real-estates-view>
+        <app-public-list-real-estates-view [realEstates]="realEstates"></app-public-list-real-estates-view>
         <app-pagination-view [pages]="pages" [currentPage]="currentPage" (pageEvent)="onChangePage($event)"></app-pagination-view>
       </section>
-
-
     </div>
   </div>
 </div>

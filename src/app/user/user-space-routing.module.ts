@@ -2,7 +2,9 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {UserSpaceComponent} from './pages/user-space/user-space.component';
 import {UserComponent} from './pages/user/user.component';
+import {AccountComponent} from './pages/account/account.component';
 import {RealEstateComponent} from './pages/real-estate/real-estate.component';
+import {NewRealEstateComponent} from './pages/new-real-estate/new-real-estate.component';
 
 const routes: Routes = [
 
@@ -11,8 +13,9 @@ const routes: Routes = [
     component: UserComponent,
     children: [
       {path: '', component: UserSpaceComponent},
-      {path: 'user_space', component: UserSpaceComponent},
-      {path: 'real_estate/:id', component: RealEstateComponent}
+      {path: 'account', component: AccountComponent},
+      {path: 'real_estates', component: RealEstateComponent},
+      {path: 'new_real_estate', component: NewRealEstateComponent}
     ]
   }
 ];

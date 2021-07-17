@@ -1,0 +1,17 @@
+@import "src/scss/variables";
+
+.action {
+  margin-bottom: 15px;
+
+  button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-main-green;
+  }
+  .material-icons {
+    color: white;
+  }
+}

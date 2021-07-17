@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
 import {RealEstateService} from '../../../real-estate/services/real-estate/real-estate.service';
+import {AuthService} from '../../../auth/services/auth/auth.service';
+import {RealEstate} from '../../../real-estate/models/real-estate';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-real-estate',
@@ -8,24 +10,25 @@ import {RealEstateService} from '../../../real-estate/services/real-estate/real-
   styleUrls: ['./real-estate.component.scss']
 })
 export class RealEstateComponent implements OnInit {
+  realEstates: RealEstate[] = [];
+  authenticatedUser;
 
-  id;
-  realEstate;
-
-  constructor(private activatedRoute: ActivatedRoute, private realEstateService: RealEstateService) {
+  constructor(private authService: AuthService, private realEstateService: RealEstateService) {
   }
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.getRealEstateById();
+    this.authService.authenticatedSubject.subscribe(
+      (data: User) => {
+        this.authenticatedUser = data;
+        this.getRealEstateByUserId();
+      });
   }
 
-  getRealEstateById() {
-    this.realEstateService.getRealEstateById(this.id).subscribe(
-      (data) => {
-        this.realEstate = data;
-      }
-    );
+  getRealEstateByUserId() {
+    this.realEstateService.getRealEstateByUserId(this.authenticatedUser.id).subscribe(
+      (data: RealEstate[]) => {
+        this.realEstates = data;
+      });
   }
 
 }

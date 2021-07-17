@@ -1,0 +1,87 @@
+<div class="page">
+  <div *ngIf="user" class="content-page">
+    <h1>Bienvenue {{user.firstName}} {{user.lastName}}</h1>
+
+    <section>
+      <h2>Informations personnelles</h2>
+      <div class="infos">
+        <div class="info">
+          <span>Nom</span>
+          <span class="value">{{user.lastName}}</span>
+        </div>
+        <div class="info">
+          <span>Prénom</span>
+          <span class="value">{{user.firstName}}</span>
+        </div>
+        <div class="info">
+          <span>Date de naissance</span>
+          <span class="value">{{user.birthDate}}</span>
+        </div>
+        <div class="info">
+          <span>Genre</span>
+          <span class="value">{{user.firstName}}</span>
+        </div>
+        <div class="info">
+          <span>Email</span>
+          <span class="value">{{user.account.email}}</span>
+        </div>
+      </div>
+      <div class="action">
+        <button>Mettre à jour</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Coordonnées</h2>
+      <div class="infos">
+        <div class="info">
+          <span>Rue</span>
+          <span class="value">{{user.address.street}}</span>
+        </div>
+        <div class="info">
+          <span>Numéro</span>
+          <span class="value">{{user.address.streetNumber}}</span>
+        </div>
+        <div class="info">
+          <span>Boite</span>
+          <span class="value">{{user.address.streetNumber}}</span>
+        </div>
+        <div class="info">
+          <span>Code postal</span>
+          <span class="value">{{user.address.postalCode}}</span>
+        </div>
+        <div class="info">
+          <span>Ville</span>
+          <span class="value">{{user.address.city}}</span>
+        </div>
+
+        <div class="info">
+          <span>Pays</span>
+          <span class="value">{{user.address.country}}</span>
+        </div>
+      </div>
+      <div class="action">
+        <button>Mettre à jour</button>
+      </div>
+    </section>
+
+    <h2 style="margin-top: 60px">Zone dangereuse</h2>
+    <section class="dangerous">
+      <div class="change-password">
+        <h3>Changer de mot de passe</h3>
+        <div class="wrapper">
+          <p>Une fois le mot de passe changé, vous serez déconnecté.</p>
+          <button>Changer votre mot de passe</button>
+        </div>
+      </div>
+
+      <div class="delete-account">
+        <h3>Supprimer le compte</h3>
+        <div class="wrapper">
+          <p>Attention, Cette action est irréversible !</p>
+          <button>Supprimer votre compte</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

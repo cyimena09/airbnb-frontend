@@ -12,7 +12,7 @@ import {User} from '../../../user/models/user';
 export class AuthService {
   isAuthenticated: boolean = false;
   isAuthenticatedSubject = new Subject();
-  authenticatedSubject: BehaviorSubject<User> = new BehaviorSubject(null);
+  authenticatedSubject: BehaviorSubject<User>;
 
   private _authenticatedUser: User;
   private AUTH_TOKEN_KEY: string = 'homai-home-token';
@@ -21,6 +21,7 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient, private router: Router) {
     // todo error when decoded token is null
+    console.log('chargement auth service ...');
     this.loadAuthenticatedUser(null);
   }
 
@@ -44,11 +45,14 @@ export class AuthService {
           this._authenticatedUser = data;
           this.isAuthenticated = true;
           this.isAuthenticatedSubject.next(true);
-          this.emitAuthUser();
-
+          console.log('on a load')
+          this.authenticatedSubject = new BehaviorSubject(this.authenticatedUser);
           if (redirect) {
             this.router.navigate([redirect]);
           }
+        },
+        () => {
+          this.logout();
         });
     }
   }
@@ -57,6 +61,7 @@ export class AuthService {
    * Emet l'utilisateur s'il nest pas null, s'il est null on le charge
    */
   emitAuthUser(): void {
+    console.log('on émet')
     // todo Emet l'utilisateur s'il nest pas null, s'il est null on le charge
     this.authenticatedSubject.next(this.authenticatedUser);
   }
@@ -73,7 +78,7 @@ export class AuthService {
   login(logger): Subscription {
     return this.httpClient.post(this.AUTH_API_URL, logger).subscribe(
       (data: any) => {
-        let tokenString = data.token;
+        const tokenString = data.token;
         localStorage.setItem(this.AUTH_TOKEN_KEY, tokenString);
         this.loadAuthenticatedUser('home');
       },

@@ -1,0 +1,64 @@
+@import "src/scss/variables";
+
+.content-page {
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section {
+  width: 700px;
+  margin-bottom: 20px;
+}
+
+.infos {
+  margin-bottom: 20px;
+  border-bottom: solid 1px $color-white-dark;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.value {
+  font-weight: bold;
+}
+
+.action {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    background-color: $color-main-green;
+  }
+}
+
+.dangerous {
+  border: solid 1px $color-red-light;
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .content {
+    background-color: white;
+    padding: 20px;
+    border: solid 1px $color-white-dark;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  button {
+    background-color: $color-main-red;
+  }
+}
