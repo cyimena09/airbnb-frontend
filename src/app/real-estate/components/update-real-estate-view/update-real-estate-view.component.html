@@ -1,0 +1,73 @@
+<h2>Informations générales</h2>
+<div class="image-form">
+  <div class="container-image">
+    <img src="assets/images/real-estates/realestate.jpg" alt="">
+  </div>
+  <form [formGroup]="realEstateForm" (ngSubmit)="onUpdate()">
+    <div class="form-group">
+      <label for="name">Nom</label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label for="bedroom">Chambres</label>
+      <input id="bedroom" type="text" formControlName="bedroom">
+    </div>
+
+    <div class="form-group">
+      <label for="hasGarden">Jardin</label>
+      <input id="hasGarden" type="text" formControlName="hasGarden">
+    </div>
+
+    <div class="form-group">
+      <label for="hasPool">Piscine</label>
+      <input id="hasPool" type="text" formControlName="hasPool">
+    </div>
+
+    <div class="form-group">
+      <label for="price">Prix par nuit</label>
+      <input id="price" type="text" formControlName="price">
+    </div>
+  </form>
+</div>
+
+<div class="description">
+  <form [formGroup]="realEstateForm" (ngSubmit)="onUpdate()">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" cols="30" rows="10" formControlName="description"></textarea>
+  </form>
+</div>
+
+<div class="localisation">
+  <h2>Localisation</h2>
+  <form [formGroup]="realEstateForm" (ngSubmit)="onUpdate()">
+    <div class="form-group">
+      <label for="street">Rue</label>
+      <input id="street" type="text" formControlName="street">
+    </div>
+
+    <div class="form-group">
+      <label for="streetNumber">Numéro</label>
+      <input id="streetNumber" type="text" formControlName="streetNumber">
+    </div>
+    <div class="form-group">
+      <label for="boxNumber">Boite</label>
+      <input id="boxNumber" type="text" formControlName="boxNumber">
+    </div>
+
+    <div class="form-group">
+      <label for="postalCode">Code postal</label>
+      <input id="postalCode" type="text" formControlName="postalCode">
+    </div>
+
+    <div class="form-group">
+      <label for="city">Ville</label>
+      <input id="city" type="text" formControlName="city">
+    </div>
+    <div class="form-group">
+      <label for="country">Pays</label>
+      <input id="country" type="text" formControlName="country">
+    </div>
+    <button type="submit">Sauvegarder</button>
+  </form>
+</div>

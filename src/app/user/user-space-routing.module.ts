@@ -1,20 +1,19 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {UserSpaceComponent} from './pages/user-space/user-space.component';
 import {UserComponent} from './pages/user/user.component';
 import {AccountComponent} from './pages/account/account.component';
-import {RealEstateComponent} from './pages/real-estate/real-estate.component';
 import {NewRealEstateComponent} from './pages/new-real-estate/new-real-estate.component';
+import {PrivateListRealEstatesComponent} from './pages/private-list-real-estates/private-list-real-estates.component';
+import {PrivateSingleRealEstateComponent} from './pages/private-single-real-estate/private-single-real-estate.component';
 
 const routes: Routes = [
-
   {
     path: 'user',
     component: UserComponent,
     children: [
-      {path: '', component: UserSpaceComponent},
       {path: 'account', component: AccountComponent},
-      {path: 'real_estates', component: RealEstateComponent},
+      {path: 'real_estates', component: PrivateListRealEstatesComponent},
+      {path: 'real_estates/:id', component: PrivateSingleRealEstateComponent},
       {path: 'new_real_estate', component: NewRealEstateComponent}
     ]
   }

@@ -1,0 +1,43 @@
+<div *ngFor="let realEstate of realEstates" class="real-estates">
+  <div class="container-image">
+    <img src="assets/images/real-estates/realestate.jpg" alt="">
+  </div>
+  <div class="infos">
+<!--    Top-->
+    <div class="row">
+      <div class="wrapper">
+        <h3>{{realEstate.name}}</h3>
+        <div class="icon-label">
+          <span class="material-icons star">star</span>
+          <span>8.5</span>
+        </div>
+      </div>
+      <div class="price">
+        <span>€ {{realEstate.price}} / nuit</span>
+      </div>
+    </div>
+<!--    Bottom-->
+    <div class="row">
+      <div class="icon-label">
+        <span class="material-icons">location_on</span>
+        <span>{{realEstate.address.city}}</span>
+      </div>
+
+      <div class="icon-label">
+        <span class="material-icons">bed</span>
+        <span>{{realEstate.bedroom}} chambres</span>
+      </div>
+
+      <div class="icon-label">
+        <span class="material-icons">grass</span>
+        <span>{{realEstate.hasGarden}}</span>
+      </div>
+
+      <div class="icon-label">
+        <span class="material-icons">pool</span>
+        <span>{{realEstate.hasPool}}</span>
+      </div>
+    </div>
+
+  </div>
+</div>

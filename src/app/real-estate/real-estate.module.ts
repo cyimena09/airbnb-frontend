@@ -15,6 +15,8 @@ import { SearchRealEstateViewComponent } from './components/search-real-estate-v
 import { PrivateListRealEstatesViewComponent } from './components/private-list-real-estates-view/private-list-real-estates-view.component';
 import { NewRealEstateViewComponent } from './components/new-real-estate-view/new-real-estate-view.component';
 import { PublicListRealEstatesViewComponent } from './components/public-list-real-estates-view/public-list-real-estates-view.component';
+import { UpdateRealEstateViewComponent } from './components/update-real-estate-view/update-real-estate-view.component';
+import { BrowseRealEstateViewComponent } from './components/browse-real-estate-view/browse-real-estate-view.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { PublicListRealEstatesViewComponent } from './components/public-list-rea
     SearchRealEstateViewComponent,
     PrivateListRealEstatesViewComponent,
     NewRealEstateViewComponent,
-    PublicListRealEstatesViewComponent
+    PublicListRealEstatesViewComponent,
+    UpdateRealEstateViewComponent,
+    BrowseRealEstateViewComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +45,9 @@ import { PublicListRealEstatesViewComponent } from './components/public-list-rea
     SearchRealEstateViewComponent,
     PrivateListRealEstatesViewComponent,
     NewRealEstateViewComponent,
-    PublicListRealEstatesViewComponent
+    PublicListRealEstatesViewComponent,
+    UpdateRealEstateViewComponent,
+    BrowseRealEstateViewComponent
   ]
 })
 export class RealEstateModule {

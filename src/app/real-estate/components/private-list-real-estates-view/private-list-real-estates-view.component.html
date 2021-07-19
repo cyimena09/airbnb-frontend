@@ -1,7 +1,7 @@
-<section class="real-estate">
+<section *ngFor="let realEstate of realEstates" class="real-estate">
   <div class="header">
     <div class="title-ticket">
-      <h2>Villa Massaï</h2>
+      <h2>{{realEstate.name}}</h2>
       <span class="ticket">En cours de réservation</span>
     </div>
     <div class="delete">
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="actions">
-    <button>Voir</button>
+    <button routerLink="/user/real_estates/{{realEstate.id}}">Voir</button>
     <button>Désactiver</button>
   </div>
 </section>

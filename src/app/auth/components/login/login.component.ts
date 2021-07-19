@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    let values = this.loginForm.value;
+    const values = this.loginForm.value;
     const login = new Login();
     login.email = values.email.trim();
     login.password = values.password;

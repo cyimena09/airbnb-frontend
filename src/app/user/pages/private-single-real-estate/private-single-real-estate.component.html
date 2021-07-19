@@ -1,0 +1,24 @@
+<div class="page">
+  <div *ngIf="realEstate" class="content-page">
+    <!--    Main section-->
+    <section class="main-section">
+      <div class="header">
+        <div class="title-edit">
+          <h1>{{realEstate.name}}</h1>
+          <button><span class="material-icons">edit</span></button>
+        </div>
+        <p>En cours de réservation par <span>Emile Cyimena</span></p>
+      </div>
+      <section>
+        <app-update-real-estate-view [realEstate]="realEstate"></app-update-real-estate-view>
+      </section>
+    </section>
+    <!--    Browse real estate-->
+    <section class="secondary-section">
+      <h2>Parcourir</h2>
+      <app-sort-view></app-sort-view>
+      <app-browse-real-estate-view [realEstates]="realEstates"></app-browse-real-estate-view>
+      <app-pagination-view></app-pagination-view>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+@import "src/scss/variables";
+
+.content-page{
+  flex-direction: row;
+}
+
+.main-section {
+  flex: 2;
+}
+
+.secondary-section {
+  flex: 1.5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.title-edit {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-left: 10px;
+    border-radius: 3px;
+    background-color: $color-main-green;
+  }
+  .material-icons {
+    font-size: 16px;
+  }
+}
+
+.header p {
+  background-color: $color-red-light;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.header span {
+  font-weight: bold;
+  color: white;
+}

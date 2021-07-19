@@ -2,12 +2,9 @@
   <div class="content-page">
     <app-public-single-real-estate-view [realEstate]="realEstate"></app-public-single-real-estate-view>
     <app-new-booking-view (bookingEvent)="onCreateBooking($event)"></app-new-booking-view>
-
     <section>
-<!--      <h2>Commentaires</h2>-->
       <app-new-comment-view (commentEvent)="onCreateComment($event)"></app-new-comment-view>
       <app-list-comments-view [comments]="comments"></app-list-comments-view>
     </section>
-
   </div>
 </div>

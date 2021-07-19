@@ -15,9 +15,7 @@ export class MessageService {
 
   private apiURL = environment.API_MESSENGER;
 
-  constructor(private authService: AuthService,
-              private participationService: ParticipationService,
-              private httpClient: HttpClient) {
+  constructor(private participationService: ParticipationService, private httpClient: HttpClient) {
   }
 
   /**

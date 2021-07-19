@@ -1,0 +1,34 @@
+@import "src/scss/variables";
+
+.image-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  .container-image {
+    flex: 1;
+  }
+
+  form {
+    flex: 1.5;
+  }
+
+  .container-image {
+    margin-right: 20px;
+  }
+}
+
+.description {
+  display: flex;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  button {
+    margin-top: 10px;
+    background-color: $color-main-green;
+  }
+}

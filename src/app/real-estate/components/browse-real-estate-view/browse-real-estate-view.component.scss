@@ -1,0 +1,59 @@
+@import "src/scss/variables";
+
+h3 {
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.real-estates {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.container-image {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.infos {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+
+.icon-label {
+  display: flex;
+  align-items: center;
+}
+
+.material-icons {
+  margin-right: 5px;
+}
+
+.star {
+  color: $color-main-yellow;
+}
+
+.price {
+  background-color: $color-green-light;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 3px;
+
+  span {
+    color: white;
+  }
+}

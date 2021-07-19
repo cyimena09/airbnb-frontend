@@ -1,15 +1,16 @@
-import {Component, OnInit} from '@angular/core';
-import {RealEstateService} from '../../../real-estate/services/real-estate/real-estate.service';
-import {AuthService} from '../../../auth/services/auth/auth.service';
+import { Component, OnInit } from '@angular/core';
 import {RealEstate} from '../../../real-estate/models/real-estate';
+import {AuthService} from '../../../auth/services/auth/auth.service';
+import {RealEstateService} from '../../../real-estate/services/real-estate/real-estate.service';
 import {User} from '../../models/user';
 
 @Component({
-  selector: 'app-real-estate',
-  templateUrl: './real-estate.component.html',
-  styleUrls: ['./real-estate.component.scss']
+  selector: 'app-private-list-real-estates',
+  templateUrl: './private-list-real-estates.component.html',
+  styleUrls: ['./private-list-real-estates.component.scss']
 })
-export class RealEstateComponent implements OnInit {
+export class PrivateListRealEstatesComponent implements OnInit {
+
   realEstates: RealEstate[] = [];
   authenticatedUser;
 
@@ -20,7 +21,10 @@ export class RealEstateComponent implements OnInit {
     this.authService.authenticatedSubject.subscribe(
       (data: User) => {
         this.authenticatedUser = data;
-        this.getRealEstateByUserId();
+
+        if (this.authenticatedUser !== null) {
+          this.getRealEstateByUserId();
+        }
       });
   }
 

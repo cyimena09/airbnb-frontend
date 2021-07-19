@@ -37,7 +37,6 @@ import {AuthInterceptor} from './auth/interceptor/auth.interceptor';
     MessengerModule,
     AuthModule,
     HomeModule,
-    AuthModule,
     SharedModule,
     NotificationModule,
     AppRoutingModule

@@ -56,10 +56,11 @@ export class NewRealEstateViewComponent implements OnInit {
 
     // Real Estate
     const newRE = new RealEstate();
-    newRE.name = 'Villa Massaï';
+    newRE.name = 'Emile House 5';
     newRE.description = 'Villa luxueux et spacieux située au bord du lac kivu';
     newRE.bedroom = 5;
     newRE.hasGarden = true;
+    newRE.hasPool = true;
     newRE.price = 350;
     // Category
     const newCategory = new Category();

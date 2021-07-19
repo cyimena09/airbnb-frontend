@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { MessengerRoutingModule } from './messenger-routing.module';
+import {MessengerRoutingModule} from './messenger-routing.module';
 import {MessengerComponent} from './pages/messenger/messenger.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { SearchUserComponent } from './components/search-user/search-user.component';
-import { ListConversationComponent } from './components/list-conversation/list-conversation.component';
-import { FormMessageComponent } from './components/form-message/form-message.component';
-import { DiscussionThreadComponent } from './components/discussion-thread/discussion-thread.component';
+import {SearchUserComponent} from './components/search-user/search-user.component';
+import {ListConversationComponent} from './components/list-conversation/list-conversation.component';
+import {FormMessageComponent} from './components/form-message/form-message.component';
+import {DiscussionThreadComponent} from './components/discussion-thread/discussion-thread.component';
 
 
 @NgModule({
@@ -18,10 +18,11 @@ import { DiscussionThreadComponent } from './components/discussion-thread/discus
     FormMessageComponent,
     DiscussionThreadComponent,
   ],
-    imports: [
-        CommonModule,
-        MessengerRoutingModule,
-        ReactiveFormsModule
-    ]
+  imports: [
+    CommonModule,
+    MessengerRoutingModule,
+    ReactiveFormsModule
+  ]
 })
-export class MessengerModule { }
+export class MessengerModule {
+}
