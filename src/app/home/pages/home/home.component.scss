@@ -8,6 +8,14 @@ section{
   border: unset;
 }
 
+.search-criteria {
+  flex: 1;
+}
+
+.search-result {
+  flex: 2;
+}
+
 .header {
   display: flex;
   height: 50px;

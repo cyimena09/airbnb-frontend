@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,10 @@ export class ConversationService {
 
   // Récupère toutes les conversations auxquelles l'utilisateur a participé
   getConversationsByUserId(id) {
-    return this.httpClient.get(this.apiURL + 'by/participations/' + id);
+    return this.httpClient.get(this.apiURL + 'by/participations/' + id).pipe(map( response => {
+      //console.log(response)
+      return response['content'];
+    }));
   }
 
 }

@@ -7,7 +7,11 @@
     <!--    Row information-->
     <div class="infos">
       <div class="header">
-        <h4>{{realEstate.name}}</h4>
+        <div class="left">
+          <h4>{{realEstate.name}}</h4>
+          <span class="ticket">{{realEstate.type.name}}</span>
+        </div>
+
         <p>4000 personnes ont loué cette résidence</p>
       </div>
       <div class="info-group">
@@ -16,28 +20,24 @@
           <span class="score">8.5</span>
           <span class="visitors">(noté par 1211 visiteurs)</span>
         </div>
-        <div class="right">
-          voir les 64 commentaires
+        <div class="right"><a routerLink="/real_estates/{{realEstate.id}}">voir les 64 commentaires</a></div>
+      </div>
+      <div class="info-group">
+        <div class="left">
+          <span class="material-icons">king_bed</span>
+          <span>{{realEstate.bedroom}} chambre(s)</span>
         </div>
       </div>
       <div class="info-group">
-        <span class="material-icons">location_on</span>
-        <span>Ville : {{realEstate.address.city}} </span>
-        <span> Pays : {{realEstate.address.country}}</span>
-      </div>
-      <div class="info-group">
-        <span class="material-icons">location_on</span>
-        <span>Catégorie : {{realEstate.category.name}}</span>
-        <span>Type : {{realEstate.type.name}}</span>
-      </div>
-      <div class="info-group">
-        <span class="material-icons">king_bed</span>
-        <span>{{realEstate.bedroom}} chambre(s)</span>
+        <div class="left">
+          <span class="material-icons">location_on</span>
+          <span>{{realEstate.address.city}}, {{realEstate.address.country}}</span>
+        </div>
       </div>
       <div class="info-group">
         <span class="price">€ {{realEstate.price}} <span class="by-day">par jour</span> </span>
       </div>
-      <div class="link">
+      <div class="actions">
         <div class="left">
           <button routerLink="/real_estates/{{realEstate.id}}">Consulter</button>
           <button class="more-time"><span class="material-icons">more_time</span></button>

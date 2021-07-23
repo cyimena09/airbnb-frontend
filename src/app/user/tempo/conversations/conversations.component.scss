@@ -1,0 +1,16 @@
+.container {
+  border: solid red;
+}
+.container-image {
+  width: 50px;
+}
+
+.person {
+  display: flex;
+  cursor: pointer;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}

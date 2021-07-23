@@ -17,7 +17,6 @@ export class AccountComponent implements OnInit {
     this.authService.authenticatedSubject.subscribe(
       (data) => {
         this.user = data;
-        console.log('cocou')
       });
   }
 

@@ -4,6 +4,7 @@ import {AuthService} from '../../../auth/services/auth/auth.service';
 import {RealEstate} from '../../../real-estate/models/real-estate';
 import {RealEstateFilter} from '../../../real-estate/models/real-estate-filter';
 import {DiversConstant} from '../../../shared/models/diversConstant';
+import {VersatileNotifService} from '../../../notification/services/versatile-notif/versatile-notif.service';
 
 
 @Component({
@@ -19,7 +20,10 @@ export class HomeComponent implements OnInit {
   currentSort: string;
   filter: RealEstateFilter;
 
-  constructor(private authService: AuthService, private realEstateService: RealEstateService) {
+  constructor(
+    private authService: AuthService,
+    private realEstateService: RealEstateService,
+    private notifService: VersatileNotifService) {
   }
 
   ngOnInit(): void {
@@ -90,6 +94,10 @@ export class HomeComponent implements OnInit {
       this.realEstateService.CURRENT_PAGE = page as number;
     }
     this.loadRealEstates();
+  }
+
+  onNotify(message) {
+    this.notifService.notify(message);
   }
 
 }

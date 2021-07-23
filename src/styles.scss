@@ -15,6 +15,8 @@ body {
 section {
   background-color: white;
   border: solid 1px $color-white-dark;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .page {
@@ -27,11 +29,6 @@ section {
   flex-direction: column;
   width: 1250px;
   margin-top: 50px;
-}
-
-section {
-  padding: 20px;
-  border-radius: 5px;
 }
 
 // General
@@ -131,4 +128,35 @@ label {
 
 input, select {
   padding: 8px;
+}
+
+/* TABLE */
+
+table td {
+  text-align: center;
+}
+
+thead th {
+  padding: 10px 0;
+  //background-color: #26a4ae;
+ // color: #eeecec;;
+
+}
+
+tbody tr {
+  text-align: center;
+  background-color: #b8d6d9;
+}
+
+tr th {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+tbody tr a:first-child {
+  margin-right: 10px
+}
+
+tbody td {
+  padding: 13px 0;
 }

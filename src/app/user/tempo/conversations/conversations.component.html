@@ -1,0 +1,17 @@
+<div class="container">
+<h2>Conversations</h2>
+<div class="search">
+  <p>Rechercher une conversation</p>
+</div>
+<div class="persons">
+  <div *ngFor="let conversation of conversations" class="person" (click)="onGetConversation(conversation.id)">
+    <div class="container-image">
+      <img src="assets/images/profiles/emile.jpg" alt="">
+    </div>
+    <div class="wrapper" >
+      <span>{{conversation.id}}</span>
+      <span>J'avais un annif tantot mais ... <span>7h</span></span>
+    </div>
+  </div>
+</div>
+</div>

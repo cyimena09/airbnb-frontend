@@ -1,0 +1,24 @@
+<div class="page">
+  <div class="content-page">
+    <!--    Conversations-->
+    <section>
+      <app-search-user-form (searchEmitter)="onSearchUser($event)"></app-search-user-form>
+      <p>Utilisateur trouvé</p>
+      <ul>
+        <li *ngFor="let user of userFromSearch" (click)="onGetMessagesByParticipantsIds(user.id)">{{user.firstName}} {{user.lastName}}</li>
+      </ul>
+      <app-conversations [conversations]="conversations" (conversationEmitter)="onGetMessagesByConversationId($event)"></app-conversations>
+    </section>
+    <!--    Messages-->
+    <section class="section-message">
+      <div class="header">
+        <div class="container-image">
+          <img src="assets/images/profiles/emile.jpg" alt="">
+        </div>
+        <span>Emile Cyimena</span>
+      </div>
+      <app-messages [messages]="messages"></app-messages>
+      <app-new-message-form (messageEmitter)="onSendMessage($event)"></app-new-message-form>
+    </section>
+  </div>
+</div>

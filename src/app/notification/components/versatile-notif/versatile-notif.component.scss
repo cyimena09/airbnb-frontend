@@ -1,0 +1,19 @@
+.notification {
+  padding: 20px;
+  background-color: rgb(3, 129, 3, 0.8);
+  color: white;
+  box-shadow: 3px 0 15px #302f2f;
+  z-index: 1500;
+}
+
+p {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+i {
+  margin-right: 15px;
+  font-size: 24px;
+}

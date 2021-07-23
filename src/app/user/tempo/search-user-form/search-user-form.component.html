@@ -1,0 +1,7 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+  <div class="form-group">
+    <label for="firstName"></label>
+    <input type="text" id="firstName" formControlName="firstName" placeholder="Rechercher un utilisateur">
+  </div>
+  <button type="submit">Chercher</button>
+</form>

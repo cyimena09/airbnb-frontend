@@ -15,6 +15,17 @@ import { AccountComponent } from './pages/account/account.component';
 import { NewRealEstateComponent } from './pages/new-real-estate/new-real-estate.component';
 import { PrivateSingleRealEstateComponent } from './pages/private-single-real-estate/private-single-real-estate.component';
 import { PrivateListRealEstatesComponent } from './pages/private-list-real-estates/private-list-real-estates.component';
+import { ResumeComponent } from './pages/resume/resume.component';
+import { ResumeViewComponent } from './components/resume-view/resume-view.component';
+import { BookingComponent } from './pages/booking/booking.component';
+import { BillComponent } from './pages/bill/bill.component';
+import { SeeLaterComponent } from './pages/see-later/see-later.component';
+import { ParameterComponent } from './pages/parameter/parameter.component';
+import { ConversationsComponent } from './tempo/conversations/conversations.component';
+import { MessagesComponent } from './tempo/messages/messages.component';
+import {MessengerComponent} from './pages/messenger/messenger.component';
+import { SearchUserFormComponent } from './tempo/search-user-form/search-user-form.component';
+import { NewMessageFormComponent } from './tempo/new-message-form/new-message-form.component';
 
 
 @NgModule({
@@ -29,6 +40,17 @@ import { PrivateListRealEstatesComponent } from './pages/private-list-real-estat
     NewRealEstateComponent,
     PrivateSingleRealEstateComponent,
     PrivateListRealEstatesComponent,
+    ResumeComponent,
+    ResumeViewComponent,
+    BookingComponent,
+    BillComponent,
+    SeeLaterComponent,
+    ParameterComponent,
+    ConversationsComponent,
+    MessagesComponent,
+    MessengerComponent,
+    SearchUserFormComponent,
+    NewMessageFormComponent
   ],
   imports: [
     CommonModule,

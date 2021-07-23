@@ -1,15 +1,10 @@
 @import "src/scss/variables";
 
-section {
-  background-color: unset;
-  border: unset;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  margin-bottom: 5px;
 }
 
 h3 {
@@ -32,7 +27,27 @@ app-sort-view {
 }
 
 .container-image {
-  width: 30%;
+  width: 33%;
+}
+
+.header {
+  font-size: 12px;
+}
+
+h4 {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.ticket {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0 5px;
+  background-color: #732DD9;
+  border-radius: 3px;
+  font-size: 10px;
+  //background-color: #FF5722;
 }
 
 .infos {
@@ -41,19 +56,21 @@ app-sort-view {
   justify-content: center;
   width: 70%;
   padding: 10px 10px 10px 20px;
-}
-
-h4 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .info-group {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  .left {
+    align-items: center;
+  }
 
   .material-icons {
     margin-right: 10px;
+    font-size: 20px;
   }
 
   .star, .score {
@@ -63,15 +80,12 @@ h4 {
   .score {
     font-weight: bold;
     margin-right: 5px;
-  }
-
-  .visitors {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .price {
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: $color-main-blue;
   }
@@ -83,12 +97,12 @@ h4 {
   }
 }
 
-.link {
+.actions {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 5px;
+  padding-top: 5px;
   border-top: solid 1px $color-white-dark;
 }
 
@@ -106,8 +120,9 @@ h4 {
 }
 
 button {
-  padding: 5px 10px;
+  padding: 2px 10px;
   border-radius: 3px;
+  font-size: 12px;
 }
 
 button:first-child {
@@ -121,4 +136,8 @@ button:first-child {
   span {
     color: $color-main-green;
   }
+}
+
+a {
+  color: dodgerblue;
 }

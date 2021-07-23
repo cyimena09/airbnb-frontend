@@ -1,0 +1,19 @@
+@import "src/scss/variables";
+
+section {
+  margin-bottom: 15px;
+}
+
+.info-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+}
+
+.info-group:hover {
+  background-color: $color-white-dark;
+}
+
+.value {
+  font-weight: bold;
+}

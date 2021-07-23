@@ -6,12 +6,10 @@ import {AuthService} from '../../../auth/services/auth/auth.service';
   providedIn: 'root'
 })
 export class ParticipationService {
-
   currentUserId;
 
-  private participantsIds: Array<number> = []; // ids des participants de la discussion actuellement affiché. Chaque élement dans le tableau doit être unique
+  private participantsIds: Array<string> = []; // ids des participants de la discussion actuellement affiché. Chaque élement dans le tableau doit être unique
   private apiURL = '/api/v1/messenger/participations/';
-
 
   constructor(private authService: AuthService, private httpClient: HttpClient) {
     //this.currentUserId = this.authService.currentUserId;
@@ -30,7 +28,7 @@ export class ParticipationService {
    * Modifie la liste des participants, si l'utilisateur connecté n'est pas dedans, il sera ajouté
    * @param participantsIds
    */
-  setParticipantsIds(participantsIds: Array<number>) {
+  setParticipantsIds(participantsIds: Array<string>) {
     console.log("ANCIENNE LISTE ", this.participantsIds)
     console.log("NOUVELLE LISTE EN AMONT  ", participantsIds)
     if (!participantsIds.includes(this.currentUserId)) {
@@ -46,7 +44,7 @@ export class ParticipationService {
    * Ajoute un id dans la liste des participants si celui ci n'est pas déjà dans la liste
    * @param id
    */
-  addToParticipantsIds(id: number) {
+  addToParticipantsIds(id: string) {
     if (this.participantsIds.includes(id)) {
       return;
     } else {
